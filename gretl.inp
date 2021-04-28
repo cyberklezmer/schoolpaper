@@ -1,0 +1,80 @@
+# Log started 2021-04-26 10:06
+# Record of session commands.  Please note that this will
+# likely require editing if it is to be run as a script.
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=4
+setobs 52 2020-03-02 --time-series
+
+
+
+kind <- ols Y1 I U1 V1 
+
+fg <- ols Y2 I U2 V2 
+
+sg <- ols Y3 I U3 V3
+
+sec <- ols Y4 I U4 V4 
+
+
+kindred <- ols Y1 I U1
+
+fgred <- ols Y2 I U2  
+
+sgred <- ols Y3 I U3
+
+secred <- ols Y4 I U4
+
+corr U1 V1 
+
+corr U2 V2 
+corr U3 V3 
+corr U4 V4
+
+
+
+
+#certain
+
+smpl ((M1>0 && S1 > 0.8) || U1==0) --restrict
+kindcertain <- ols Y1 I U1
+smpl --full
+
+
+smpl ((M2>0 && S2 > 0.8) || U2==0) --restrict
+fgcertain <- ols Y2 I U2
+smpl --full
+
+
+smpl (M3>0 && S3>0.8) || U3==0 --restrict
+sgcertain <- ols Y3 I U3
+smpl --full
+
+smpl (M4>0 && S4 > 0.8) || U4==0 --restrict
+seccertain <- ols Y4 I U4
+smpl --full
+
+
+
+
+# psi
+
+
+kindpsi <- ols Y1 I U1  W1 
+
+fgapsi <- ols Y2 I U2  W2 
+
+sgapsi <- ols Y3 I U3  W3 
+
+secall <- ols Y4 I U4  W4 
+
+
+
+#ratios
+
+rkind <- ols A1 const S1(-1)
+
+rfg <- ols A2 const S2(-1)
+
+rsg <- ols A3 const S3(-1)
+
+rsec <- ols A4 const S4(-1)
+
