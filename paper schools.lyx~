@@ -463,258 +463,7 @@ The values of
  The observations corresponding to summer holidays are excluded as well
  the observations corresponding to weeks where the rotational schooling
  took place (see the electronic supplement).
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{c|cccccccc}																															 Date	&	
-\backslash
-multicolumn{2}{c}{Kindergartens}	&	
-\backslash
-multicolumn{2}{c}{First grade}	&	
-\backslash
-multicolumn{2}{c}{Second grade}	&	
-\backslash
-multicolumn{2}{c}{Secondary}	
-\backslash
-
-\backslash
-																						 	&	open	&	masks											&	open	&	masks			&	open	&	masks
-			&	open	&	masks	
-\backslash
-
-\backslash
- 06-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 13-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 20-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 27-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 04-May-20	&	1	&	Y											&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 11-May-20	&	1	&	Y											&	0	&				&		&				&	0.25	&	Y	
-\backslash
-
-\backslash
- 18-May-20	&	1	&	Y											&	0	&				&		&				&	0.25	&	Y	
-\backslash
-
-\backslash
- 25-May-20	&	1	&	Y											&	0.5	&	Y			&		&				&		&		
-\backslash
-
-\backslash
- 01-Jun-20	&	1	&	Y											&	0.5	&	Y			&		&				&		&		
-\backslash
-
-\backslash
- 08-Jun-20	&	1	&	N											&	0.5	&	N			&		&				&	0	&		
-\backslash
-
-\backslash
- 15-Jun-20	&	1	&	N											&	0.5	&	N			&		&				&	0	&		
-\backslash
-
-\backslash
- 22-Jun-20	&	1	&	N											&	0.5	&	N			&		&				&	0	&		
-\backslash
-
-\backslash
- 29-Jun-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 06-Jul-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 13-Jul-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 20-Jul-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 27-Jul-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 03-Aug-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 10-Aug-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 17-Aug-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 24-Aug-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 31-Aug-20	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 07-Sep-20	&	1	&	N											&	1	&	N			&	1	&	N			&	1	&	N	
-\backslash
-
-\backslash
- 14-Sep-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
-\backslash
-
-\backslash
- 21-Sep-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
-\backslash
-
-\backslash
- 28-Sep-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
-\backslash
-
-\backslash
- 05-Oct-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
-\backslash
-
-\backslash
- 12-Oct-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
-\backslash
-
-\backslash
- 19-Oct-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 26-Oct-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 02-Nov-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 09-Nov-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 16-Nov-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 23-Nov-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
-\backslash
-
-\backslash
- 30-Nov-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
-\backslash
-
-\backslash
- 07-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
-\backslash
-
-\backslash
- 14-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
-\backslash
-
-\backslash
- 21-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 28-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 04-Jan-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 11-Jan-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 18-Jan-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 25-Jan-21	&		&												&		&				&		&				&		&		
-\backslash
-
-\backslash
- 01-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 08-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 15-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 22-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
-\backslash
-
-\backslash
- 01-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 08-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 15-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 22-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 29-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
- 05-Apr-21	&	0	&												&	0	&				&	0	&				&	0	&		
-\backslash
-
-\backslash
-  
-\backslash
-end{tabular}																															 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The following table shows numbers of observations at our disposal
+ The following table shows numbers of observations at our disposal
 \end_layout
 
 \begin_layout Standard
@@ -741,33 +490,28 @@ hline
 
 \begin_layout Plain Layout
 
-Observaions &	$43$&		$42$&		$36$&		$41$
+Observaions &	$44$&		$43$&		$44$&		$44$
 \backslash
 
 \backslash
-	 
-\end_layout
-
-\begin_layout Plain Layout
-
-Opened &	$33$&		$25$&		$6$&		$12$
+	 Opened &	$34$&		$26$&		$13$&		$24$
 \backslash
 
 \backslash
-	 
+	
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-dots with masks &		$20$&		$21$&		$5$&		$11$
+dots with masks &		$21$&		$22$&		$9$&		$23$
 \backslash
 
 \backslash
  
 \backslash
-dots without masks &		$13$&		$4$&		$1$&		$1$
+dots without masks &		$13$&		$4$&		$4$&		$1$
 \backslash
 
 \backslash
@@ -948,7 +692,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.025(0.0023)^{***}$
+\begin_inset Formula $0.030(0.0023)^{***}$
 \end_inset
 
 
@@ -960,7 +704,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.031(0.0013)^{***}$
+\begin_inset Formula $0.032(0.0013)^{***}$
 \end_inset
 
 
@@ -972,7 +716,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.028(0.0014)^{***}$
+\begin_inset Formula $0.026(0.0014)^{***}$
 \end_inset
 
 
@@ -998,7 +742,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.32(0.05)^{***}$
+\begin_inset Formula $0.36(0.05)^{***}$
 \end_inset
 
 
@@ -1010,7 +754,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.62(0.14)^{***}$
+\begin_inset Formula $0.60(0.14)^{***}$
 \end_inset
 
 
@@ -1022,7 +766,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.22(0.11)^{**}$
+\begin_inset Formula $0.22(0.10)^{**}$
 \end_inset
 
 
@@ -1034,7 +778,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.44(0.07)^{***}$
+\begin_inset Formula $0.50(0.07)^{***}$
 \end_inset
 
 
@@ -1074,7 +818,7 @@ cent.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.85$
+\begin_inset Formula $0.76$
 \end_inset
 
 
@@ -1086,7 +830,7 @@ cent.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.66$
+\begin_inset Formula $0.75$
 \end_inset
 
 
@@ -1098,7 +842,7 @@ cent.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.79$
+\begin_inset Formula $0.83$
 \end_inset
 
 
@@ -1154,29 +898,15 @@ For all the cohorts, however,
 
  came out insignificant while, for kindergartens, it came out significant
   negative.
- See Appendix (tbd)
 \end_layout
 
 \begin_layout Standard
-Finally, we made a prediction of cases increases in individual cohorts in
- week starting from April 19 without and with opened schools previous week
- given that masks are ordered.
- 
-\end_layout
-
-\begin_layout Standard
-To this end, we made another estimates of 
-\begin_inset Formula $\beta$
+Finally, to avoid dependence on our guesses of degree of openness, we re-estimat
+ed the equations using excluding records with 
+\begin_inset Formula $0<M_{t}^{i}<0.9$
 \end_inset
 
- and 
-\begin_inset Formula $\gamma,$
-\end_inset
-
-based only on records where either the particular schools were closed or
- masks were ordered (i.e.
- with excluded records when schools were opened without masks).
- 
+ with the following result
 \end_layout
 
 \begin_layout Standard
@@ -1264,7 +994,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.025(0.0018)^{***}$
+\begin_inset Formula $0.026(0.0018)^{***}$
 \end_inset
 
 
@@ -1276,7 +1006,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.031(0.020)^{***}$
+\begin_inset Formula $0.031(0.0018)^{***}$
 \end_inset
 
 
@@ -1288,7 +1018,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.028(0.0017)^{***}$
+\begin_inset Formula $0.025(0.0017)^{***}$
 \end_inset
 
 
@@ -1314,7 +1044,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.29(0.059)^{***}$
+\begin_inset Formula $0.32(0.059)^{***}$
 \end_inset
 
 
@@ -1326,7 +1056,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.69(0.02)^{***}$
+\begin_inset Formula $0.40(0.12)^{***}$
 \end_inset
 
 
@@ -1338,7 +1068,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.27(0.12)^{**}$
+\begin_inset Formula $0.28(0.12)^{**}$
 \end_inset
 
 
@@ -1350,7 +1080,7 @@ secondary
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.49(0.068)^{***}$
+\begin_inset Formula $0.53(0.068)^{***}$
 \end_inset
 
 
@@ -1378,7 +1108,7 @@ cent.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.84$
+\begin_inset Formula $0.81$
 \end_inset
 
 
@@ -1390,7 +1120,7 @@ cent.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.83$
+\begin_inset Formula $0.80$
 \end_inset
 
 
@@ -1414,7 +1144,7 @@ cent.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.80$
+\begin_inset Formula $0.86$
 \end_inset
 
 
@@ -1431,8 +1161,9 @@ cent.
 \end_layout
 
 \begin_layout Standard
-Using these data, we made predictions for week the week in question.
- 
+Using these data, we can estimate that opening of schools on April 12, 2021
+ without restrictions other that wearing masks in class would bring the
+ following increases in weekly new cases
 \end_layout
 
 \begin_layout Standard
@@ -1443,14 +1174,13 @@ status open
 
 
 \backslash
-begin{tabular}{c|cccc|ccc}
+begin{tabular}{c|ccccc}
 \end_layout
 
 \begin_layout Plain Layout
 
- & kindergartens	& first grade	& second grade	& secondary & all  & 
-\backslash
-multicolumn{2}{c}{CI95} 
+ & kindergartens	& first grade	& second grade	& secondary
+ & all  
 \backslash
 
 \backslash
@@ -1461,22 +1191,38 @@ hline
 
 \begin_layout Plain Layout
 
-Out	& $348(520)$	& $604(879)$	& $720(1014)$	& $650(903)$	& $2321(1699)$	&$869$	&
-$3773$	
+mean  & $314$	& $689$	& $514$ & $891$ & $2408$ 
 \backslash
 
 \backslash
- In	& $285(230)$	& $1188(310)$	& $496(515)$	& $824(367)$	& $2792(741)$	&$1340$	&
-$4244$	
-\backslash
 
-\backslash
- 
 \end_layout
 
 \begin_layout Plain Layout
 
-Actual	& $464$	& $1029$	& $806$	& $659$	& $2958$ 
+lower $95
+\backslash
+%$ & $201$	& $284$	& $82$	& $667$ & $1765$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+upper $95
+\backslash
+%$ & $427$	& $1093$	& $946$	& $1115$ & $3051$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 end{tabular}
 \end_layout
@@ -1484,19 +1230,6 @@ end{tabular}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Caption: Out/in means the number of infections out of / in schools.
- Actual numbers
-\end_layout
-
-\begin_layout Standard
-The actual situation of the previous week was that kindergartens were opened
- only for the oldest class, first grade schools were opened in ratation
- scheme (i.e.
- half of students attended classes physically this week), the second grade
- and secondary schools were closed.
 \end_layout
 
 \begin_layout Section*
@@ -1509,6 +1242,14 @@ Inconsistencies in kinderkgartens
 
 \begin_layout Standard
 Covers the hypothesis that children are infected else
+\end_layout
+
+\begin_layout Standard
+Sinsitivity to our estimates of 
+\begin_inset Formula $S$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
