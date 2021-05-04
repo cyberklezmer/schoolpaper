@@ -158,6 +158,10 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{l|c|c|c|c}
@@ -298,6 +302,10 @@ multicolumn{4}{c}{closed}
 
 \backslash
 end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
