@@ -918,7 +918,17 @@ Results
 \end_layout
 
 \begin_layout Standard
-Estimation of equations (
+For all the four cohorts, we estimated (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:awls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) first – See Estimation of equations (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:wls"
@@ -1642,8 +1652,533 @@ Covers the hypothesis that children are infected else
 Appendix
 \end_layout
 
+\begin_layout Subsection
+Estimation of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:awls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:wlsest"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Kindergartens
+\end_layout
+
 \begin_layout Standard
-TBD
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+kindall: OLS, using observations 2020-03-02--2021-04-12 ($T$ = 40)
+\backslash
+
+\backslash
+ Missing or incomplete observations dropped: 19
+\backslash
+
+\backslash
+ Dependent variable: Y14
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lr@{.}lr@{.}lr@{.}lr@{.}l}   &  
+\backslash
+multicolumn{2}{c}{Coefficient} &   
+\backslash
+multicolumn{2}{c}{Std.
+\backslash
+ Error} &    
+\backslash
+multicolumn{2}{c}{$t$-ratio} &     
+\backslash
+multicolumn{2}{c}{p-value} 
+\backslash
+
+\backslash
+[1ex] I14 &   0&0180697 &     0&00126442 &       14&29 &         0&0000
+ 
+\backslash
+
+\backslash
+ U1 &   $-$0&384991 &     0&124019 &       $-$3&104 &         0&0036 
+\backslash
+
+\backslash
+ V1 &   0&625108 &     0&107531 &       5&813 &         0&0000 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1ex} 
+\backslash
+begin{tabular}{lrlr} Mean dependent var &  3.293128 & S.D.
+ dependent var &  2.773201 
+\backslash
+
+\backslash
+ Sum squared resid &  21.98703 & S.E.
+ of regression &  0.770872 
+\backslash
+
+\backslash
+ Uncentered $R^2$ &  0.970034 & Centered $R^2$ &  0.926694 
+\backslash
+
+\backslash
+ $F(3, 37)$ &  399.2387 & P-value($F$) &  3.21
+\backslash
+textrm{e--28} 
+\backslash
+
+\backslash
+ Log-likelihood & $-$44.78901 & Akaike criterion &  95.57802 
+\backslash
+
+\backslash
+ Schwarz criterion &  100.6447 & Hannan--Quinn &  97.40995 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 	
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsubsection*
+First Grade
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+fgall: OLS, using observations 2021-04-19--2022-05-30 ($T$ = 40)
+\backslash
+
+\backslash
+ Missing or incomplete observations dropped: 19
+\backslash
+
+\backslash
+ Dependent variable: Y14
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lr@{.}lr@{.}lr@{.}lr@{.}l}   &  
+\backslash
+multicolumn{2}{c}{Coefficient} &   
+\backslash
+multicolumn{2}{c}{Std.
+\backslash
+ Error} &    
+\backslash
+multicolumn{2}{c}{$t$-ratio} &     
+\backslash
+multicolumn{2}{c}{p-value} 
+\backslash
+
+\backslash
+[1ex] I14 &   0&0272756 &     0&00222359 &       12&27 &         0&0000
+ 
+\backslash
+
+\backslash
+ U2 &   0&787465 &     0&407240 &       1&934 &         0&0608 
+\backslash
+
+\backslash
+ V2 &   $-$0&186294 &     0&404514 &       $-$0&4605 &         0&6478 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1ex} 
+\backslash
+begin{tabular}{lrlr} Mean dependent var &  6.225304 & S.D.
+ dependent var &  4.713154 
+\backslash
+
+\backslash
+ Sum squared resid &  111.7237 & S.E.
+ of regression &  1.737688 
+\backslash
+
+\backslash
+ Uncentered $R^2$ &  0.953767 & Centered $R^2$ &  0.871039 
+\backslash
+
+\backslash
+ $F(3, 37)$ &  254.4293 & P-value($F$) &  9.70
+\backslash
+textrm{e--25} 
+\backslash
+
+\backslash
+ Log-likelihood & $-$77.30052 & Akaike criterion &  160.6010 
+\backslash
+
+\backslash
+ Schwarz criterion &  165.6677 & Hannan--Quinn &  162.4330 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Second Grade
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+sgall: OLS, using observations 2022-06-06--2023-07-17 ($T$ = 33)
+\backslash
+
+\backslash
+ Missing or incomplete observations dropped: 26
+\backslash
+
+\backslash
+ Dependent variable: Y14
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lr@{.}lr@{.}lr@{.}lr@{.}l}   &  
+\backslash
+multicolumn{2}{c}{Coefficient} &   
+\backslash
+multicolumn{2}{c}{Std.
+\backslash
+ Error} &    
+\backslash
+multicolumn{2}{c}{$t$-ratio} &     
+\backslash
+multicolumn{2}{c}{p-value} 
+\backslash
+
+\backslash
+[1ex] I14 &   0&0329715 &     0&00152073 &       21&68 &         0&0000
+ 
+\backslash
+
+\backslash
+ U3 &   0&867498 &     0&342736 &       2&531 &         0&0168 
+\backslash
+
+\backslash
+ V3 &   $-$0&719920 &     0&353726 &       $-$2&035 &         0&0507 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1ex} 
+\backslash
+begin{tabular}{lrlr} Mean dependent var &  6.623582 & S.D.
+ dependent var &  3.257044 
+\backslash
+
+\backslash
+ Sum squared resid &  83.70757 & S.E.
+ of regression &  1.670405 
+\backslash
+
+\backslash
+ Uncentered $R^2$ &  0.953164 & Centered $R^2$ &  0.753415 
+\backslash
+
+\backslash
+ $F(3, 30)$ &  203.5097 & P-value($F$) &  5.01
+\backslash
+textrm{e--20} 
+\backslash
+
+\backslash
+ Log-likelihood & $-$62.18353 & Akaike criterion &  130.3671 
+\backslash
+
+\backslash
+ Schwarz criterion &  134.8566 & Hannan--Quinn &  131.8777 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Secondary
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+secall: OLS, using observations 2023-07-24--2024-09-02 ($T$ = 38)
+\backslash
+
+\backslash
+ Missing or incomplete observations dropped: 21
+\backslash
+
+\backslash
+ Dependent variable: Y14
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lr@{.}lr@{.}lr@{.}lr@{.}l}   &  
+\backslash
+multicolumn{2}{c}{Coefficient} &   
+\backslash
+multicolumn{2}{c}{Std.
+\backslash
+ Error} &    
+\backslash
+multicolumn{2}{c}{$t$-ratio} &     
+\backslash
+multicolumn{2}{c}{p-value} 
+\backslash
+
+\backslash
+[1ex] I14 &   0&0294929 &     0&00153658 &       19&19 &         0&0000
+ 
+\backslash
+
+\backslash
+ U4 &   1&00415 &     0&173897 &       5&774 &         0&0000 
+\backslash
+
+\backslash
+ V4 &   $-$0&639244 &     0&187261 &       $-$3&414 &         0&0016 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1ex} 
+\backslash
+begin{tabular}{lrlr} Mean dependent var &  5.928997 & S.D.
+ dependent var &  3.708238 
+\backslash
+
+\backslash
+ Sum squared resid &  95.87477 & S.E.
+ of regression &  1.655077 
+\backslash
+
+\backslash
+ Uncentered $R^2$ &  0.948024 & Centered $R^2$ &  0.811562 
+\backslash
+
+\backslash
+ $F(3, 35)$ &  212.7965 & P-value($F$) &  1.58
+\backslash
+textrm{e--22} 
+\backslash
+
+\backslash
+ Log-likelihood & $-$71.50334 & Akaike criterion &  149.0067 
+\backslash
+
+\backslash
+ Schwarz criterion &  153.9194 & Hannan--Quinn &  150.7546 
+\backslash
+
+\backslash
+ 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
