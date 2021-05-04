@@ -113,6 +113,108 @@ Opening of closed schools on April 12th, 2021 in CR without restrictions
 \end_layout
 
 \begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Closing or opening schools during the present pandemics is the one of the
+ most controversial issues.
+ According to epidemiological mainstream, schools are strong drivers of
+ respiratory diseases [cit].
+ Regarding the present COVID-19 pandemics, closing schools was one of the
+ first governmental reactions after its outbursts.
+ Yet, thanks to the the internet, online education could have been introduced
+ as a replacement for the in-person one, this replacement is only partial,
+ leaving deficits not only in the quality of education itself, but also
+ in the social contacts of the students.
+ Thus, for the society, decision whether and when to close or open school
+ means a painful trade-off, making any decision in this respect political
+ rather then scientific; science, however, has irreplaceable role here:
+ to give the best possible (quantitative) basis for decisions in this respect.
+\end_layout
+
+\begin_layout Standard
+Generally it is difficult to evaluate the effect of measures applied to
+ curb the present pandemic.
+ First reason is that the virus was completely unexplored as it came and
+ its knowledge increases only gradually.
+ Thus we only gradually get tot know, whether and how different the virus
+ affects children in comparison with the resot of the population; needles
+ to say that knowledge of these differences is essential [TBDcitation].
+ To estimate the effect of counter-epidemic measures from running data is
+ also difficult, mainly because the various measures are usually being introduce
+d (released) together, so it is difficult to distinguish their individual
+ effects, and even in cases when the measures are applied in different times,
+ still they can be assessed only in the context of the other measures applied.
+ [Kulweit], for instance, regards school closure as a very effective means
+ of curbing the present pandemics; however, it is necessarary to take into
+ account that school closures were usually the first measures applied, so
+ their measured effect may be overestimated.
+\end_layout
+
+\begin_layout Standard
+In our analysis, we use a 
+\begin_inset Quotes eld
+\end_inset
+
+gap
+\begin_inset Quotes erd
+\end_inset
+
+ in this puzzle: the fact that certain age cohorts of children nearly uniquely
+ correspond to the grades of schools and, except for kindergartens, the
+ majority of children do attend their classes.
+ Thus, it could be expected that closing (opening) of particular grades
+ will result in significant changes in infections in the corresponding cohorts.
+ The other measures, on the other hand, are usually much less age specific
+ (wearing masks, bans of gatherings) or are affecting different age cohorts
+ (home office) so they can be expected not to obscure the effects of school
+ closures.
+ Later we show that actual data prove us right in both these assumptions
+ – the effects of closures are strongly statistically significant and the
+ data do not exhibit co-linearity.
+\end_layout
+
+\begin_layout Standard
+We used data from the Czech Republic in our analysis.
+ Here, all kindergartens, primary– and secondary schools had been closed
+ on March 12 – shortly after the beginning of the first cases.
+ While the kindergartens had been reopened without much restriction in the
+ beginning of May, the primary and the secondary schools were opened during
+ May in a very limited regime until the summer holiday, after which all
+ the schools had been opened for two weeks nearly without any restriction.
+ Next, as the overall incidences started to rise, wearing mask duty in classes
+ had been imposed until the end of October, when all the schools, except
+ for kindergartens, had been closed, while the kindergartens remained open
+ until March 2021.
+ With the exception of the first two years of the elementary schools, which
+ opened from the half of November until February, the basic– and the elementary
+ schools remained closed until half of April 2021, when they gradually started
+ to be opened under rotation schemes.
+ See Table TBDMilan for overview.
+\end_layout
+
+\begin_layout Standard
+To evaluate the effects of the closures, we used a simple epidemiological-like
+ model, in which the infections in the children cohorts depend on the overall
+ state of epidemic plus the effect of schools.
+ The former is linearly dependent on the product of the current magnitude
+ of the epidemic and the current reproduction number, the latter linearly
+ depends on the the product the current school restrictions, number of infected
+ in the cohort in question, and the current reproduction number up to current
+ contact restriction.
+ We find the school closures as a whole as a significant inhibitor of the
+ epidemic, with masks being provably efficient in the second grade and in
+ secondary schools
+\end_layout
+
+\begin_layout Standard
+Later, we also discuss possible alternative explanations of the data and
+ show, that the one considering the string effect of school closures is
+ the only of the considered hypotheses giving significant results.
+\end_layout
+
+\begin_layout Section*
 Methods
 \end_layout
 
@@ -151,19 +253,24 @@ Denote
 \begin_inset Formula $M_{t}^{1},\dots,M_{t}^{4}$
 \end_inset
 
- zero-one variables indicating whether wearing in classes masks was ordered.
+ zero-one variables indicating whether wearing masks in classes is ordered
+ at 
+\begin_inset Formula $t$
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
 Our goal is to examine whether opening of schools contributes to the epidemic
  and whether masks play role in schools.
- To this end, each cohort 
+ To this end we assume that the expected weekly number number of newly infected
+ children of the 
 \begin_inset Formula $i$
 \end_inset
 
-, we assume that the expected number of newly infected children outside
- schools is Compound Poisson with mean 
+-th cohort outside schools is Compound Poisson with mean 
 \begin_inset Formula 
 \[
 \beta_{t}^{i}X_{t-1},\qquad X_{t-1}=\sum_{j=1}^{5}X_{t-1}^{j},\qquad\beta_{t}=R_{t}\beta,
@@ -214,7 +321,7 @@ where
 \begin_inset Formula $C_{\tau}$
 \end_inset
 
- is the contact restriction at 
+ is the overall contact restriction at 
 \begin_inset Formula $\tau$
 \end_inset
 
@@ -233,7 +340,7 @@ as usual
 
  which means that the rate of their infection is proportional to the reproductio
 n number and the number of infected in the whole population (a proxy for
- which up to constant is the daily number of infected is).
+ which up to constant is the daily number of infected).
  In schools, the situation is similar with the difference that we explicitly
  model the contact intensity therein (by variables 
 \begin_inset Formula $S$
@@ -251,12 +358,13 @@ n number and the number of infected in the whole population (a proxy for
 \begin_inset Formula $\delta$
 \end_inset
 
-), so the overall contact restriction does not play role; therefore, we
- assume the infection to be proportional to 
+), so the reproduction number has to be stripped of the influence of the
+ overall contact restriction; therefore, we assume the infection to be proportio
+nal to 
 \begin_inset Formula $r$
 \end_inset
 
- rather than 
+ rather than to 
 \begin_inset Formula $R$
 \end_inset
 
@@ -335,7 +443,7 @@ Note that
 \end_inset
 
 .
- As, in practice, the ratios of 
+ As, in practice, the ratio of 
 \begin_inset Formula $X_{t}^{i}$
 \end_inset
 
@@ -385,7 +493,8 @@ noprefix "false"
 
 \end_inset
 
-), this, however, means OLS after dividing the equation by 
+), i.e.
+ OLS after dividing the equation by 
 \begin_inset Formula $\sqrt{I_{t}}$
 \end_inset
 
@@ -414,8 +523,8 @@ The values
 \end_inset
 
  are taken from the data issued by the Czech Ministry of Health, namely
- the anonymized person-level dataset (osoby.htm) each record of which includes
- date of reporting the infection and the age.
+ the anonymized person-level dataset (cit osoby.htm) each record of which
+ includes date of reporting the infection and the age.
  
 \end_layout
 
@@ -433,7 +542,8 @@ The reproduction number is estimated as
 \end_inset
 
  is time in days.
- The weekly values are adjusted by exponential smoothing with factor 
+ The data series is consequently adjusted by exponential smoothing with
+ factor 
 \begin_inset Formula $\alpha=0.3$
 \end_inset
 
@@ -474,9 +584,9 @@ status open
 
 
 \backslash
-begin{tabular}{c|cccccccc}																															 Date	&	
+begin{tabular}{c|cccccccc}																																			 Date	&	
 \backslash
-multicolumn{2}{c}{Kindergartens}	&	
+multicolumn{2}{c}{Kindergartens}		&	
 \backslash
 multicolumn{2}{c}{First grade}	&	
 \backslash
@@ -486,226 +596,226 @@ multicolumn{2}{c}{Secondary}
 \backslash
 
 \backslash
-																						 	&	open	&	masks											&	open	&	masks			&	open	&	masks
-			&	open	&	masks	
+																									 	&	$S^1$		&	$M^1$											&	$S^2$		&	$M^2$			&	$S^3$
+		&	$M^3$			&	$S^4$		&	$M^4$	
 \backslash
 
 \backslash
- 06-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
+ 06-Apr-20	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 13-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
+ 13-Apr-20	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 20-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
+ 20-Apr-20	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 27-Apr-20	&	0	&												&	0	&				&	0	&				&	0	&		
+ 27-Apr-20	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 04-May-20	&	1	&	Y											&	0	&				&	0	&				&	0	&		
+ 04-May-20	&	$1$		&	Y											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 11-May-20	&	1	&	Y											&	0	&				&		&				&	0.25	&	Y	
+ 11-May-20	&	$1$		&	Y											&	$0$		&	N			&			&				&	$0.25$		&	Y	
 \backslash
 
 \backslash
- 18-May-20	&	1	&	Y											&	0	&				&		&				&	0.25	&	Y	
+ 18-May-20	&	$1$		&	Y											&	$0$		&	N			&			&				&	$0.25$		&	Y	
 \backslash
 
 \backslash
- 25-May-20	&	1	&	Y											&	0.5	&	Y			&		&				&		&		
+ 25-May-20	&	$1$		&	Y											&	$0.5^a$		&	Y			&			&				&	$^b$		&		
 \backslash
 
 \backslash
- 01-Jun-20	&	1	&	Y											&	0.5	&	Y			&		&				&		&		
+ 01-Jun-20	&	$1$		&	Y											&	$0.5$		&	Y			&			&				&			&		
 \backslash
 
 \backslash
- 08-Jun-20	&	1	&	N											&	0.5	&	N			&		&				&	0	&		
+ 08-Jun-20	&	$1$		&	N											&	$0.5$		&	N			&			&				&	$0$		&	N	
 \backslash
 
 \backslash
- 15-Jun-20	&	1	&	N											&	0.5	&	N			&		&				&	0	&		
+ 15-Jun-20	&	$1$		&	N											&	$0.5$		&	N			&			&				&	$0$		&	N	
 \backslash
 
 \backslash
- 22-Jun-20	&	1	&	N											&	0.5	&	N			&		&				&	0	&		
+ 22-Jun-20	&	$1$		&	N											&	$0.5$		&	N			&			&				&	$0$		&	N	
 \backslash
 
 \backslash
- 29-Jun-20	&		&												&		&				&		&				&		&		
+ 29-Jun-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 06-Jul-20	&		&												&		&				&		&				&		&		
+ 06-Jul-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 13-Jul-20	&		&												&		&				&		&				&		&		
+ 13-Jul-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 20-Jul-20	&		&												&		&				&		&				&		&		
+ 20-Jul-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 27-Jul-20	&		&												&		&				&		&				&		&		
+ 27-Jul-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 03-Aug-20	&		&												&		&				&		&				&		&		
+ 03-Aug-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 10-Aug-20	&		&												&		&				&		&				&		&		
+ 10-Aug-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 17-Aug-20	&		&												&		&				&		&				&		&		
+ 17-Aug-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 24-Aug-20	&		&												&		&				&		&				&		&		
+ 24-Aug-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 31-Aug-20	&		&												&		&				&		&				&		&		
+ 31-Aug-20	&	$0.8$		&	N											&	$0.8$		&	N			&	$0.8$		&	N			&	$0.8$		&	N	
 \backslash
 
 \backslash
- 07-Sep-20	&	1	&	N											&	1	&	N			&	1	&	N			&	1	&	N	
+ 07-Sep-20	&	$1$		&	N											&	$1$		&	N			&	$1$		&	N			&	$1$		&	N	
 \backslash
 
 \backslash
- 14-Sep-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
+ 14-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y	
 \backslash
 
 \backslash
- 21-Sep-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
+ 21-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y	
 \backslash
 
 \backslash
- 28-Sep-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
+ 28-Sep-20	&	$0.8$		&	N											&	$0.8$		&	Y			&	$0.8$		&	Y			&	$0.8$		&	Y	
 \backslash
 
 \backslash
- 05-Oct-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
+ 05-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y	
 \backslash
 
 \backslash
- 12-Oct-20	&	1	&	N											&	1	&	Y			&	1	&	Y			&	1	&	Y	
+ 12-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y	
 \backslash
 
 \backslash
- 19-Oct-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
+ 19-Oct-20	&	$1$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 26-Oct-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
+ 26-Oct-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 02-Nov-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
+ 02-Nov-20	&	$1$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 09-Nov-20	&	1	&	N											&	0	&				&	0	&				&	0	&		
+ 09-Nov-20	&	$1$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 16-Nov-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 16-Nov-20	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 23-Nov-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
+ 23-Nov-20	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0.25$		&	Y	
 \backslash
 
 \backslash
- 30-Nov-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
+ 30-Nov-20	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0.25$		&	Y	
 \backslash
 
 \backslash
- 07-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
+ 07-Dec-20	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0.25$		&	Y	
 \backslash
 
 \backslash
- 14-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0.25	&	Y	
+ 14-Dec-20	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0.25$		&	Y	
 \backslash
 
 \backslash
- 21-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 21-Dec-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 28-Dec-20	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 28-Dec-20	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 04-Jan-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 04-Jan-21	&			&												&			&				&			&				&			&		
 \backslash
 
 \backslash
- 11-Jan-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 11-Jan-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 18-Jan-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 18-Jan-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 25-Jan-21	&		&												&		&				&		&				&		&		
+ 25-Jan-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 01-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 01-Feb-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 08-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 08-Feb-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 15-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 15-Feb-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 22-Feb-21	&	1	&	Y											&	0.4	&	Y			&	0	&				&	0	&		
+ 22-Feb-21	&	$1$		&	Y											&	$0.4$		&	Y			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 01-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
+ 01-Mar-21	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 08-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
+ 08-Mar-21	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 15-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
+ 15-Mar-21	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 22-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
+ 22-Mar-21	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 29-Mar-21	&	0	&												&	0	&				&	0	&				&	0	&		
+ 29-Mar-21	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
- 05-Apr-21	&	0	&												&	0	&				&	0	&				&	0	&		
+ 05-Apr-21	&	$0$		&	N											&	$0$		&	N			&	$0$		&	N			&	$0$		&	N	
 \backslash
 
 \backslash
-  
+ 
 \backslash
-end{tabular}																															 
+end{tabular}																																																			 
 \end_layout
 
 \end_inset
@@ -714,7 +824,20 @@ end{tabular}
 \end_layout
 
 \begin_layout Standard
-Presented time schedule of class opening is based on resolutions of the government of the Czech Republic, which concern school attendance. These measures were put into effect through decrees of the Ministry of Education and determined the way in which school teaching had been organized during the affected period. Three important facts are shownt in columns for about kindergartens, first grade and second grad of primary schools and secondary schools. Is this school open or not and what is the quota of pupils in class? Is any kind of the face protection required? The meaning of the open parameter is the ratio of pupils, which are present at school. 0.5 is usually cused by splitting of class and rotation between the full-time and distant learning, 0.4 is for only first two classes of the first grade are opend, 0.25 is here for the only last year of secondary schools opened. 
+Presented time schedule of class opening is based on resolutions of the
+ government of the Czech Republic, which concern school attendance.
+ These measures were put into effect through decrees of the Ministry of
+ Education and determined the way in which school teaching had been organized
+ during the affected period.
+ Three important facts are shown in columns for about kindergartens, first
+ grade and second grad of primary schools and secondary schools.
+ Is this school open or not and what is the quota of pupils in class? Is
+ any kind of the face protection required? The meaning of the open parameter
+ is the ratio of pupils, which are present at school.
+ 0.5 is usually caused by splitting of class and rotation between the full-time
+ and distant learning, 0.4 is for only first two classes of the first grade
+ are opend, 0.25 is here for the only last year of secondary schools opened.
+ 
 \end_layout
 
 \begin_layout Standard
