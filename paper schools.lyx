@@ -153,6 +153,167 @@ d (released) together, so it is difficult to distinguish their individual
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{l|c|c|c|c}
+\end_layout
+
+\begin_layout Plain Layout
+
+Date	&	Kindergartens		&	First grade	&	Second grade	&	Secondary 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Mar-13	&	
+\backslash
+multicolumn{4}{c}{closed}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+May-04	&	open		&	closed	&	closed		&	closed 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+May-11	& & & last year& 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+May-25    & &max.
+ 15 l.y.
+ & & max.
+ 15 l.y.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Jun-01	& & max.
+ 15 l.y.
+ & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Jun-26	&	
+\backslash
+multicolumn{4}{c}{end of the school year} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sep-01	&	
+\backslash
+multicolumn{4}{c}{start of the school year} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Oct-14	& open & 
+\backslash
+multicolumn{3}{c}{closed} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Nov-16	& open & open $1^{st}$ $2^{nd}$ & closed & closed 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Nov-23	& open & open $1^{st}$ $2^{nd}$ & closed & last year 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Mar-01	&    
+\backslash
+multicolumn{4}{c}{closed}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In our analysis, we use a 
 \begin_inset Quotes eld
 \end_inset
