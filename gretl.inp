@@ -5,49 +5,96 @@ open /home/martin/Documents/s/covid/schools/data.ods --sheet=5
 setobs 52 2020-03-02 --time-series
 
 
-smpl COHORT==1 --restrict
+smpl feasible==1 && COHORT==1 --restrict
 corr U1 V1 
 kindall <- ols Y14 I14 U1 V1 
+scalar beta = $coeff(I14)
+scalar gamma = $coeff(U1)
+scalar mu = 0
+nkindall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U1
+   deriv beta = I14
+   deriv mu = -M * (gamma * U1)
+   deriv gamma = (1-mu * M) * U1 
+end nls --vcv
 kindred <- ols Y14 I14 U1
 indpsi <- ols Y14 I14 U1  W1 
+genr U1M = U1*M
+genr U1NM = U1*(1-M)
+kindexc <- ols Y14 I14 U1M U1NM
 smpl M==1  || U1==0 --restrict
 kindmask <- ols Y14 I14 U1
 smpl --full
-scalar gamma1 = $coeff(U1)
 
-smpl COHORT==2 --restrict
+smpl feasible==1 && COHORT==2 --restrict
 corr U2 V2 
 fgall <- ols Y14 I14 U2 V2 
+scalar beta = $coeff(I14)
+scalar gamma = $coeff(U2)
+scalar mu = 0
+nfgall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U2
+   deriv beta = I14
+   deriv mu = -M * (gamma * U2)
+   deriv gamma = (1-mu * M) * U2 
+end nls --vcv
 fgred <- ols Y14 I14 U2 
 fgapsi <- ols Y14 I14 U2  W2 
+genr U2M = U2*M
+genr U2NM = U2*(1-M)
+fgexc <- ols Y14 I14 U2M U2NM
 smpl M==1 || U2==0 --restrict
 fgmask <- ols Y14 I14 U2
 smpl --full
-scalar gamma2 = $coeff(U2)
 
 
-smpl COHORT==3 --restrict
+smpl feasible==1 && COHORT==3 --restrict
 corr U3 V3 
 sgall <- ols Y14 I14 U3 V3 
+scalar beta = $coeff(I14)
+scalar gamma = $coeff(U3)
+scalar mu = 0.5
+nsgall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U3
+   deriv beta = I14
+   deriv mu = -M * (gamma * U3)
+   deriv gamma = (1-mu * M) * U3 
+end nls --vcv
 sgred <- ols Y14 I14 U3  
 sgapsi <- ols Y14 I14 U3  W3 
+genr U3M = U3*M
+genr U3NM = U3*(1-M)
+sgexc <- ols Y14 I14 U3M U3NM
 smpl M==1 || U3==0 --restrict
 sgmask <- ols Y14 I14 U3
 smpl --full
-scalar gamma3 = $coeff(U3)
 
-smpl COHORT==4 --restrict
+smpl feasible == 1  && COHORT==4 --restrict
 corr U4 V4
 secall <- ols Y14 I14 U4 V4 
+scalar beta = $coeff(I14)
+scalar gamma = $coeff(U4)
+scalar mu = 0.6
+nsecall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U4
+   deriv beta = I14
+#   deriv mu = -M * (gamma * U4)
+   deriv gamma = (1-mu * M) * U4 
+end nls --vcv
 secred <- ols Y14 I14 U4 
 secpsi <- ols Y14 I14 U4  W4 
+genr U4M = U4*M
+genr U4NM = U4*(1-M)
+secexc <- ols Y14 I14 U4M U4NM
 smpl M==1 || U4==0 --restrict
 secmask <- ols Y14 I14 U4
 smpl --full
 
+
+
+# thrash
+
+
 scalar beta = $coeff(I14)
 scalar gamma4 = $coeff(U4)
 scalar mu = 0
+
 
 smpl feasible == 1 --restrict
 nlsall <- nls Y14 = beta * I14 + (1-mu * M) * gamma1 * U1 + (1-mu * M) * gamma2 * U2 + (1-mu * M) * gamma3 * U3 + (1-mu * M) * gamma4 * U4

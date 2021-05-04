@@ -1029,42 +1029,27 @@ hline
 
 \begin_layout Plain Layout
 
-Observaions &	$43$&		$42$&		$36$&		$41$
+Observaions &	$41$&		$40$&		$34$&		$39$
+\backslash
+
+\backslash
+	 Opened &	$31$&		$24$&		$7$&		$13$
 \backslash
 
 \backslash
 	 
-\end_layout
-
-\begin_layout Plain Layout
-
-Opened &	$33$&		$25$&		$6$&		$12$
 \backslash
-
-\backslash
-	 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-dots with masks &		$20$&		$21$&		$5$&		$11$
+dots with masks &		$18$&		$19$&		$5$&		$11$
 \backslash
 
 \backslash
  
 \backslash
-dots without masks &		$13$&		$4$&		$1$&		$1$
+dots without masks &		$13$&		$5$&		$2$&		$2$
 \backslash
 
 \backslash
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
 end{tabular}
 \end_layout
@@ -1079,7 +1064,19 @@ Results
 \end_layout
 
 \begin_layout Standard
-For all the four cohorts, we estimated (
+For all the four cohorts, we first estimated 
+\begin_inset Formula $\beta$
+\end_inset
+
+,
+\begin_inset Formula $\gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta$
+\end_inset
+
+ in (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:awls"
@@ -1089,7 +1086,67 @@ noprefix "false"
 
 \end_inset
 
-) first – See Estimation of equations (
+) see Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:wlsest"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for detailed results.
+ For all the cohorts, coefficient 
+\begin_inset Formula $\beta$
+\end_inset
+
+ came out undoubtedly significant.
+ Coefficient 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta$
+\end_inset
+
+ came out significant, yet counter-intuitive (negative 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ and positive 
+\begin_inset Formula $\delta$
+\end_inset
+
+), for the kindergartens, significant 
+\begin_inset Quotes eld
+\end_inset
+
+reasonably
+\begin_inset Quotes erd
+\end_inset
+
+ for the second grade and the secondary schools, and only 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ significant for the second grade.
+ As it is indicated by the Variance Inflation factors, all the estimates
+ except for the secondary schools possibly suffer from colinearity of 
+\begin_inset Formula $U$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ According to variance inflation ratio, this problem is most severe for
+ kindergartends
+\end_layout
+
+\begin_layout Standard
+– See Estimation of equations (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:wls"
@@ -1960,8 +2017,14 @@ end{center}
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Verbatim*
 
+Variance Inflation Factors 
+\end_layout
+
+\begin_layout Verbatim*
+
+         I    2.061           U1   22.673           V1   18.772
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2090,6 +2153,16 @@ end{center}
 
 \end_layout
 
+\begin_layout Verbatim*
+
+Variance Inflation Factors 
+\end_layout
+
+\begin_layout Verbatim*
+
+         I    1.434           U2   31.446           V2   32.472
+\end_layout
+
 \begin_layout Subsubsection*
 Second Grade
 \end_layout
@@ -2216,6 +2289,16 @@ end{center}
 
 \end_layout
 
+\begin_layout Verbatim*
+
+Variance Inflation Factors 
+\end_layout
+
+\begin_layout Verbatim*
+
+         I    1.049           U3   11.836           V3   11.928
+\end_layout
+
 \begin_layout Subsubsection*
 Secondary
 \end_layout
@@ -2340,6 +2423,16 @@ end{center}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Verbatim*
+
+Variance Inflation Factors 
+\end_layout
+
+\begin_layout Verbatim*
+
+         I    1.032           U4    5.645           V4    5.719
 \end_layout
 
 \end_body
