@@ -1,132 +1,104 @@
 # Log started 2021-04-26 10:06
 # Record of session commands.  Please note that this will
 # likely require editing if it is to be run as a script.
-open /home/martin/Documents/s/covid/schools/data.ods --sheet=5
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=4
 setobs 52 2020-03-02 --time-series
 
+kindall <- ols P1n Qn U1n
 
-smpl feasible==1 && COHORT==1 --restrict
-corr U1 V1 
-kindall <- ols Y14 I14 U1 V1 
-scalar beta = $coeff(I14)
-scalar gamma = $coeff(U1)
-scalar mu = 0
-nkindall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U1
-   deriv beta = I14
-   deriv mu = -M * (gamma * U1)
-   deriv gamma = (1-mu * M) * U1 
-end nls --vcv
-kindred <- ols Y14 I14 U1
-indpsi <- ols Y14 I14 U1  W1 
-genr U1M = U1*M
-genr U1NM = U1*(1-M)
-kindexc <- ols Y14 I14 U1M U1NM
-smpl M==1  || U1==0 --restrict
-kindmask <- ols Y14 I14 U1
-smpl --full
+scalar beta1 = $coeff(Qn)
+scalar beta1std = $stderr(Qn)
+scalar gamma1 = $coeff(U1n)
+scalar gamma1std = $stderr(U1n)
 
-smpl feasible==1 && COHORT==2 --restrict
-corr U2 V2 
-fgall <- ols Y14 I14 U2 V2 
-scalar beta = $coeff(I14)
-scalar gamma = $coeff(U2)
-scalar mu = 0
-nfgall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U2
-   deriv beta = I14
-   deriv mu = -M * (gamma * U2)
-   deriv gamma = (1-mu * M) * U2 
-end nls --vcv
-fgred <- ols Y14 I14 U2 
-fgapsi <- ols Y14 I14 U2  W2 
-genr U2M = U2*M
-genr U2NM = U2*(1-M)
-fgexc <- ols Y14 I14 U2M U2NM
-smpl M==1 || U2==0 --restrict
-fgmask <- ols Y14 I14 U2
+scalar ubeta1 = beta1
+scalar ubeta1std = beta1std
+scalar ugamma1 = gamma1
+scalar ugamma1std = gamma1std
+
+
+fdall <- ols P2n Qn U2n V2n
+
+scalar beta2 = $coeff(Qn)
+scalar beta2std = $stderr(Qn)
+scalar gamma2 = $coeff(U2n)
+scalar gamma2std = $stderr(U2n)
+scalar delta2 = $coeff(V2n)
+scalar delta2std = $stderr(V2n)
+
+smpl M2==1 || U2n==0 --restrict
+fgusual <- ols  P2n Qn U2n
+scalar ubeta2 = $coeff(Qn)
+scalar ubeta2std = $stderr(Qn)
+scalar ugamma2 = $coeff(U2n)
+scalar ugamma2std = $stderr(U2n)
 smpl --full
 
 
-smpl feasible==1 && COHORT==3 --restrict
-corr U3 V3 
-sgall <- ols Y14 I14 U3 V3 
-scalar beta = $coeff(I14)
-scalar gamma = $coeff(U3)
-scalar mu = 0.5
-nsgall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U3
-   deriv beta = I14
-   deriv mu = -M * (gamma * U3)
-   deriv gamma = (1-mu * M) * U3 
-end nls --vcv
-sgred <- ols Y14 I14 U3  
-sgapsi <- ols Y14 I14 U3  W3 
-genr U3M = U3*M
-genr U3NM = U3*(1-M)
-sgexc <- ols Y14 I14 U3M U3NM
-smpl M==1 || U3==0 --restrict
-sgmask <- ols Y14 I14 U3
-smpl --full
 
-smpl feasible == 1  && COHORT==4 --restrict
-corr U4 V4
-secall <- ols Y14 I14 U4 V4 
-scalar beta = $coeff(I14)
-scalar gamma = $coeff(U4)
-scalar mu = 0.6
-nsecall <- nls Y14 = beta * I14 + (1-mu * M) * gamma * U4
-   deriv beta = I14
-#   deriv mu = -M * (gamma * U4)
-   deriv gamma = (1-mu * M) * U4 
-end nls --vcv
-secred <- ols Y14 I14 U4 
-secpsi <- ols Y14 I14 U4  W4 
-genr U4M = U4*M
-genr U4NM = U4*(1-M)
-secexc <- ols Y14 I14 U4M U4NM
-smpl M==1 || U4==0 --restrict
-secmask <- ols Y14 I14 U4
+
+sdall <- ols P3n Qn U3n V3n
+scalar beta3 = $coeff(Qn)
+scalar beta3std = $stderr(Qn)
+scalar gamma3 = $coeff(U3n)
+scalar gamma3std = $stderr(U3n)
+scalar delta3 = $coeff(V3n)
+scalar delta3std = $stderr(V3n)
+
+smpl M3==1 || U3n==0 --restrict
+sdusual <- ols P3n Qn U3n 
+scalar ubeta3 = $coeff(Qn)
+scalar ubeta3std = $stderr(Qn)
+scalar ugamma3 = $coeff(U3n)
+scalar ugamma3std = $stderr(U3n)
 smpl --full
 
 
+secdall <- ols P4n Qn U4n V4n
+scalar beta4 = $coeff(Qn)
+scalar beta4std = $stderr(Qn)
+scalar gamma4 = $coeff(U4n)
+scalar gamma4std = $stderr(U4n)
+scalar delta4 = $coeff(V4n)
+scalar delta4std = $stderr(V4n)
+smpl M4==1 || U4n==0 --restrict
+secusual <- ols P4n Qn U4n 
+scalar ubeta4 = $coeff(Qn)
+scalar ubeta4std = $stderr(Qn)
+scalar ugamma4 = $coeff(U4n)
+scalar ugamma4std = $stderr(U4n)
+smpl --full
+
+
+
+fdpall <- ols P2pn Qn U2pn
+scalar beta2p = $coeff(Qn)
+scalar beta2pstd = $stderr(Qn)
+scalar gamma2p = $coeff(U2pn)
+scalar gamma2pstd = $stderr(U2pn)
+scalar ubeta2p = $coeff(Qn)
+scalar ubeta2pstd = $stderr(Qn)
+scalar ugamma2p = $coeff(U2pn)
+scalar ugamma2pstd = $stderr(U2pn)
+
+
+kindw  <- ols P1n Qn U1n W1n
+fdw <- ols P2n Qn U2n V2n W2n
+sdw <- ols P3n Qn U3n V3n W3n
+secw <- ols P4n Qn U4n V4n W4n
+fdpcw <- ols P2pn Qn U2pn V2pn W2pn
+
+all <- ols Pn Qn
+ 
+ print beta1 gamma1 beta2 gamma2 delta2 beta3 gamma3 delta3 beta4 gamma4 delta4 beta2p gamma2p
+
+print beta1std gamma1std beta2std delta2std gamma2std beta3std gamma3std delta3std beta4std gamma4std delta4std beta2pstd gamma2pstd
+
+print ubeta1 ugamma1 ubeta2 ugamma2 ubeta3 ugamma3 ubeta4 ugamma4 ubeta2p ugamma2p
+
+print ubeta1std ugamma1std ubeta2std ugamma2std ubeta3std ugamma3std ubeta4std ugamma4std  ubeta2pstd ugamma2pstd
+ 
+stophere
 
 # thrash
-
-
-scalar beta = $coeff(I14)
-scalar gamma4 = $coeff(U4)
-scalar mu = 0
-
-
-smpl feasible == 1 --restrict
-nlsall <- nls Y14 = beta * I14 + (1-mu * M) * gamma1 * U1 + (1-mu * M) * gamma2 * U2 + (1-mu * M) * gamma3 * U3 + (1-mu * M) * gamma4 * U4
-   deriv beta = I14
-   deriv mu = -M * (gamma1 * U1 + gamma2 * U2 + gamma3 * U3 + gamma4 * U4)
-   deriv gamma1 = (1-mu * M) * U1 
-   deriv gamma2 = (1-mu * M) * U2 
-   deriv gamma3 = (1-mu * M) * U3
-   deriv gamma4 = (1-mu * M) * U4 
-end nls --vcv
-smpl --full
-
-smpl feasible == 1 && COHORT>1 --restrict
-nlsschools <- nls Y14 = beta * I14 + (1-mu * M) * gamma2 * U2 + (1-mu * M) * gamma3 * U3 + (1-mu * M) * gamma4 * U4
-   deriv beta = I14
-   deriv mu = -M * (gamma2 * U2 + gamma3 * U3 + gamma4 * U4)
-   deriv gamma2 = (1-mu * M) * U2 
-   deriv gamma3 = (1-mu * M) * U3
-   deriv gamma4 = (1-mu * M) * U4 
-end nls --vcv
-smpl --full
-
-scalar gamma = gamma3
-smpl feasible == 1 && COHORT>1 --restrict
-nlssimple <- nls Y14 = beta * I14 + (1-mu * M) * gamma * (U2 / 573 + U3 / 456 +  U4 / 383)
-   deriv beta = I14
-   deriv mu = -M * (gamma * U2 / 573 + gamma * U3 / 456 + gamma * U4 / 383)
-   deriv gamma = (1-mu * M) * U2 / 573 + (1-mu * M) * U3 / 456 + (1-mu * M) * U4 / 383
-end nls --vcv
-smpl --full
-
-
-
-
 
