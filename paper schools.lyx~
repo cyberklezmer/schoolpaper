@@ -76,7 +76,7 @@
 \begin_body
 
 \begin_layout Title
-How Opaning Schools Influence COVID Infections – Empirical Evidence from
+How Opening Schools Influence COVID Infections – Empirical Evidence from
  Czech Republic
 \end_layout
 
@@ -85,12 +85,12 @@ Main findings
 \end_layout
 
 \begin_layout Itemize
-Opening of schools increases the infection numbers of students
+Opening of schools strongly increases the infection numbers of students
 \end_layout
 
 \begin_layout Itemize
-Data suggest that the effect of ordering masks in classrooms is significant
- in the second degree of primary schools and in secondary schools
+The effect of ordering masks in classrooms is significant in primary schools
+ and in secondary schools
 \end_layout
 
 \begin_layout Itemize
@@ -99,8 +99,19 @@ Data do not support the hypothesis that the increase of reported cases after
 \end_layout
 
 \begin_layout Itemize
-Neither they support the hypothesis that, when being out of schools, children
- are infected elsewhere
+Neither, except for kindergartens, they support the hypothesis that, when
+ being out of schools, children are infected elsewhere
+\end_layout
+
+\begin_layout Itemize
+Simple indicator of safe opening schools can be constructed.
+ 
+\end_layout
+
+\begin_layout Itemize
+We show, that hypothetical opening of schools in the middle of the pandemics
+ would not overturn the subsequent decreasing yet increasing the infections
+ significantly.
 \end_layout
 
 \begin_layout Section*
@@ -429,6 +440,15 @@ where
 \end_layout
 
 \begin_layout Standard
+In addition to these four cohorts, we studied the infections in the first
+ two grades, which had been exclusively open during winter, taking 
+\begin_inset Formula $X_{t}^{2*}=\frac{1}{2}Z_{t}^{6}+Z_{t}^{7}+\frac{1}{2}Z_{t}^{8}$
+\end_inset
+
+ as number of cases therein.
+\end_layout
+
+\begin_layout Standard
 In line with the mainstream epidemiological modeling we assume that the
  number of overall infections 
 \begin_inset Formula $X_{t}$
@@ -495,7 +515,7 @@ where
 \end_layout
 
 \begin_layout Standard
-Further, assuming that, only ratio 
+Further, assuming that, only a ratio 
 \begin_inset Formula $c$
 \end_inset
 
@@ -766,12 +786,14 @@ The values of
 .
  Thus, we excluded observations corresponding to holidays, weeks with no
  more than two possible school days, and the weeks with non-standard regime,
- such as rotations, limited number of students in a room.
+ such as rotations or limited numbers of students in a room.
+ We also excluded the weeks where only first two classes had been open which
+ we study separately.
  
 \end_layout
 
 \begin_layout Standard
-The resulting values of 
+The corresponding values of 
 \begin_inset Formula $S$
 \end_inset
 
@@ -785,12 +807,8 @@ The resulting values of
 \end_inset
 
  and reasons of observation exclusions.
- The additional column contains values computed for primary schools as a
- whole.
-\end_layout
-
-\begin_layout Standard
-The following table summarizes our data-set.
+ The additional column contains values for the first two degrees.
+ The following table summarizes our data-set.
  
 \end_layout
 
@@ -807,7 +825,7 @@ begin{tabular}{c|cccc|c}
 
 \begin_layout Plain Layout
 
-& Kindergartens & First & Second & Secondary & Primary 
+& Kindergartens & First & Second & Secondary & First two 
 \backslash
 
 \backslash
@@ -816,7 +834,7 @@ begin{tabular}{c|cccc|c}
 
 \begin_layout Plain Layout
 
-& & degree & degree & &  
+& & degree & degree & grades &  
 \backslash
 
 \backslash
@@ -832,27 +850,27 @@ hline
 
 \begin_layout Plain Layout
 
-Observaions &	$42$&		$38$&		$34$&		$35$&		$33$
+Observaions &	$42$&		$23$&		$34$&		$35$&		$26$
 \backslash
 
 \backslash
-	 Opened &	$32$&		$22$&		$7$&		$9$&		$19$
+	 Opened &	$32$&		$7$&		$7$&		$9$&		$12$
 \backslash
 
 \backslash
 	 
 \backslash
-dots with masks &		$0$&		$20$&		$5$&		$7$&		$17$
+dots with masks &		$0$&		$5$&		$5$&		$7$&		$12$
 \backslash
 
 \backslash
  
 \backslash
-dots without masks &		$32$&		$2$&		$2$&		$2$&		$2$
+dots without masks &		$32$&		$2$&		$2$&		$2$&		$0$
 \backslash
 
 \backslash
- 
+  
 \backslash
 end{tabular}
 \end_layout
@@ -867,9 +885,9 @@ Results
 \end_layout
 
 \begin_layout Standard
-For all the cohorts with at least one observation including wearing masks,
+For all the cohorts with observations both with and without masks, masks,
  i.e.
- all the cohorts except for the kindergartens, we estimated 
+ for the primary school– and the secondary school cohorts estimated 
 \begin_inset Formula $\beta$
 \end_inset
 
@@ -892,7 +910,6 @@ noprefix "false"
 \end_inset
 
 ).
- The detailed results are listed in Appendix.
  In all the three cases, the coefficients came out 
 \begin_inset Quotes eld
 \end_inset
@@ -940,8 +957,9 @@ reasonably
 \end_layout
 
 \begin_layout Standard
-For kindergartens, where masks were never worn in classes, we subsequently
- estimated (
+For kindergartens, where masks were never worn in classes, and for the first
+ two classes, where masks were always worn when open, we subsequently estimated
+ (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:awls"
@@ -955,7 +973,7 @@ noprefix "false"
 \begin_inset Formula $\delta^{1}=0$
 \end_inset
 
-; again, the detailed results can be seen in Appendix.
+.
  In both the cases, the coefficient 
 \begin_inset Formula $\gamma$
 \end_inset
@@ -966,17 +984,7 @@ noprefix "false"
 
 \begin_layout Standard
 The results of estimation may be found in the following Table.
- In its sixth's column, the results of a (re)estimation of (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:awls"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-) for primary schools as a whole, are listed.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -992,7 +1000,9 @@ begin{tabular}{c|cccc|c}
 
 \begin_layout Plain Layout
 
-& Kindergartens & First degree & Second degree & Secondary & Elementary
+& Kindergartens & First degree & Second degree & Secondary & 1.
+ and 2.
+ 
 \backslash
 
 \backslash
@@ -1005,22 +1015,21 @@ hline
 
 $
 \backslash
-beta$	& $0.375^{***}(0.0592)$	& $0.555^{***}(0.0487)$	& $0.837^{***}(0.0403)$	&
- $0.575^{***}(0.0483)$	& $0.729^{***}(0.0514)$	
+beta$	& $0.369^{***}(0.0578)$	& $0.55^{***}(0.0405)$	& $0.83^{***}(0.0397)$	&
+ $0.57^{***}(0.048)$	& $0.503^{***}(0.0419)$		
 \backslash
 
 \backslash
  $
 \backslash
-gamma$	& $0.41^{***}(0.056)$	& $0.6^{*}(0.307)$	& $0.61^{***}(0.211)$	& $1.11^{***}(0.15
-5)$	& $0.52^{*}(0.051)$	
+gamma$	& $0.41^{***}(0.055)$	& $0.61^{**}(0.262)$	& $0.62^{***}(0.208)$	& $1.11^{***}(0.
+154)$	& $0.36^{***}(0.042)$		
 \backslash
 
 \backslash
  $
 \backslash
-delta$	&	& $-0.09^{}(0.312)$	& $-0.6^{**}(0.226)$	& $-0.85^{***}(0.178)$	& $-0.31^{}(0.2
-81)$ 	
+delta$	&	& $-0.49^{*}(0.251)$	& $-0.6^{**}(0.222)$	& $-0.85^{***}(0.177)$	&		
 \backslash
 
 \backslash
@@ -1042,39 +1051,21 @@ end{tabular}
 \end_layout
 
 \begin_layout Standard
-All the models, with– or without the influence of masks, exhibit relatively
- strong fit (minimum centered 
-\begin_inset Formula $R^{2}$
-\end_inset
-
- is 
-\begin_inset Formula $75\%$
-\end_inset
-
-).
- Moreover, yet there can be co-linearity between 
-\begin_inset Formula $U$
+The results strongly indicate the influence of opening corresponding school
+ categories and they also indicate that wearing masks reduces infections
+ significantly.
+ Unfortunately, due to small numbers of observations, the estimates of 
+\begin_inset Formula $\gamma$
 \end_inset
 
  and 
-\begin_inset Formula $V$
+\begin_inset Formula $\delta$
 \end_inset
 
- at the second degrees, 
-\begin_inset Formula $I$
-\end_inset
-
- is never co-linear with them (the Variance Inflation Factor of 
-\begin_inset Formula $I$
-\end_inset
-
- is always below 
-\begin_inset Formula $2$
-\end_inset
-
-), so the models should be capable to distinguish sharply the influence
- of the overall epidemic and of the schools.
- 
+ are rather unprecise.
+ The values of the variance inflation factors below 5 in each case, however,
+ suggest that the models do not suffer from colinearity, so they should
+ be capable to distinguish sharply the effect of wearing masks
 \end_layout
 
 \begin_layout Standard
@@ -1088,24 +1079,27 @@ When comparing the results of the individual cohorts, the values of
 \end_inset
 
  is again less.
- The comparison the the contributions of school attendance are difficult
- here as different models (with and without masks) are used.
-\end_layout
+ The values 
+\begin_inset Formula $\gamma$
+\end_inset
 
-\begin_layout Standard
-All in all we can conclude that opening all the types of schools contributes
- to the pandemics.
- Moreover, data indicate that (ordering of) masks in classrooms reduce this
- contribution, the more certain the older the students are; however, the
- uncertainty is too high to quantify this influence.
+ (the influence of school opening without masks) increase with age.
+ The estimated effect of wearing masks (coefficients 
+\begin_inset Formula $\delta$
+\end_inset
+
+) to increase with age, yet the effect of the attendance masks is for the
+ first two grades and in secondary schools.
+ All in all we can conclude that opening all the types of schools contributes
+ to the pandemics, but additional measures, such as wearing masks, can decrease
+ it.
  
 \end_layout
 
 \begin_layout Standard
-Due to the aforementioned uncertainty regarding the influence of masks,
- we further focused on the prevailing modus operandi of the individual school
- categories, namely not wearing masks in kindergartens and wearing masks
- elsewhere.
+Further we focused focused on the prevailing modus operandi of the individual
+ school categories, namely not wearing masks in kindergartens and wearing
+ masks elsewhere.
  To this end, we re-estimated (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1166,15 +1160,15 @@ hline
 
 $
 \backslash
-beta$	& $0.375^{***}(0.0592)$	& $0.552^{***}(0.0486)$	& $0.836^{***}(0.0425)$	&
- $0.575^{***}(0.0429)$	& $0.721^{***}(0.0524)$	
+beta$	& $0.369^{***}(0.0578)$	& $0.55^{***}(0.0429)$	& $0.829^{***}(0.0419)$	&
+ $0.57^{***}(0.0425)$	& $0.503^{***}(0.0419)$	
 \backslash
 
 \backslash
  $
 \backslash
-gamma$	& $0.41^{***}(0.056)$	& $0.55^{***}(0.116)$	& $0.11^{}(0.105)$	& $0.43^{***}(0.08
-1)$	& $0.28^{*}(0.137)$	
+gamma$	& $0.41^{***}(0.055)$	& $0.19^{}(0.133)$	& $0.12^{}(0.103)$	& $0.44^{***}(0.08)$	
+& $0.36^{***}(0.039)$	
 \backslash
 
 \backslash
@@ -1182,8 +1176,8 @@ gamma$	& $0.41^{***}(0.056)$	& $0.55^{***}(0.116)$	& $0.11^{}(0.105)$	& $0.43^{*
 \backslash
 hline $
 \backslash
-alpha$	& $0.012^{***}(0.0019)$	& $0.029^{***}(0.0026)$	& $0.035^{***}(0.0018)$	&
- $0.022^{***}(0.0017)$	& $0.069^{***}(0.005)$	
+alpha$	& $0.012^{***}(0.0018)$	& $0.029^{***}(0.0023)$	& $0.035^{***}(0.0017)$	&
+ $0.022^{***}(0.0016)$	& $0.011^{***}(0.0009)$	
 \backslash
 
 \backslash
@@ -1204,9 +1198,8 @@ The values and errors of
 \begin_inset Formula $\beta$
 \end_inset
 
- are identical for kindergartens (the same observations were used) are nearly
- identical with the previous, which by the way speaks for robustness of
- the model.
+ are identical for the kindergartens and the first grades (the same observations
+ were used) and are nearly identical in the remaining cases.
  The values of 
 \begin_inset Formula $\gamma$
 \end_inset
@@ -1220,13 +1213,16 @@ The values and errors of
 \end_inset
 
  measured the influence of not wearing masks, here of wearing masks).
- Contrary to the previous model, the values of 
-\begin_inset Formula $\gamma$
+ For the first and the second degrees, the values are insignificant, which
+ is non surprising, as their 
+\begin_inset Quotes eld
 \end_inset
 
- are comparable here; we see, that the contributions to the epidemic at
- the kindergartens is comparable with first degree, where, yet masks are
- ordered, they do not help much, as indicated by the previous results.
+true
+\begin_inset Quotes erd
+\end_inset
+
+ values are close to zero.
  The (insignificant) result at the second degree indicates less contribution
  than the first degree.
  In the secondary schools, the contribution is again higher.
@@ -1347,7 +1343,7 @@ The graphs show one-week predictions of
 \begin_inset Formula $M$
 \end_inset
 
- set according to the usual manner .
+ set according to the usual manner.
  In addition, actual (observed) numbers and the degree of opening schools
  one week before (values of 
 \begin_inset Formula $S_{t-1}^{i}$
@@ -1355,7 +1351,9 @@ The graphs show one-week predictions of
 
 ) are depicted.
  It can be seen that, according to the model, full opening of schools (in
- a usual manner) at least doubles the new cases in corresponding cohorts.
+ a usual manner) at least doubles the new cases in corresponding except
+ for the second degrees; however, it is important to keep in mind the insignific
+ance of results for the primary schools.
  
 \end_layout
 
@@ -1379,9 +1377,14 @@ Finally, we evaluated index
 \begin_inset Formula $\alpha$
 \end_inset
 
-) and the part dependent on the degree of opening of schools.
+) and the part dependent on the degree of opening of schools (indexed by
+ 
+\begin_inset Formula $\gamma)$
+\end_inset
+
+.
  The following graphs show the values of the index through time (with the
- the actual degree of opening)
+ the true degree of opening)
 \end_layout
 
 \begin_layout Standard
@@ -1465,6 +1468,78 @@ Finally, we evaluated index
 Here we see that, while the closure of all types of schools was necessary
  in Autumn, their closure (not opening at least in some restricted mode)
  in March seems strict.
+ However, these indicators speak only about the growth at a given time;
+ if the schools were open, however, the numbers of infected students would
+ rise, possibly amplifying the effect.
+ To examine this, we modeled the hypothetical situation in which all the
+ schools were all open (in a usual manner, i.e.
+ with masks wherever except for kindergartens), on March 1, when all the
+ schools had been closed.
+ In our model, we assumed the numbers of cases outside the examined cohorts
+ to be as in reality while the numbers in the cohorts were computed according
+ to the 
+\begin_inset Quotes eld
+\end_inset
+
+as usual
+\begin_inset Quotes erd
+\end_inset
+
+ model.
+ The results can be seen in the following charts.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename marchclosed.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename marchopened.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see in the chart, that the contribution of such opening is quite significant
+ and, yet it does not overturn decreasing trend of the epidemic, it probably
+ would, if the other areas of life would have been opened too.
+ The result however shows that, in the case that opening schools were politicall
+y prioritized, it would not make much harm if it was isolated.
 \end_layout
 
 \begin_layout Section*
@@ -1475,19 +1550,18 @@ Discussion
 In our honest opinion, our results convincingly prove the strong influence
  of in-class education over various types of schools and the influence of
  wearing masks in rooms.
- However, of course, our study has several limitations.
+ However, our study has several limitations.
  First of all it is a shortage of data.
- Most of the time we examine, the schools have been closes, and when they
+ Most of the weeks we examine, the schools have been closes, and when they
  were opened, mostly with masks, which clearly complicates quantification
- of these influences.
- Therefore, yet we present the uncertainty of these models, the quantitative
- results should be taken with slight caution.
+ of their influences.
+ Therefore, the quantitative results should be taken with slight caution.
 \end_layout
 
 \begin_layout Standard
-Further, there is possibly significant, determinant of children infections
- not taken into account in our analysis: encounters with teachers, which
- can be significant (TBD cite Neruda et al).
+Further, there is a determinant of children infections not taken into account
+ in our analysis: encounters with teachers, which can be significant (TBD
+ cite Neruda et al).
  This influence could be taken into account by adding another coefficient
  into (
 \begin_inset CommandInset ref
@@ -1504,10 +1578,11 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-In discussions on influence of schools, two arguments are often heard: that
- children, not going to schools, are infected more in other environments,
- and that this influence is amplified by more extensive testing of students
- when they attend school in person.
+Further, in discussions on influence of schools, two arguments are often
+ heard: that children, not going to schools, are infected more in other
+ environments, and that this influence of schools is spurious due to more
+ extensive testing of students when they attend school in person, yet, in
+ the examined period, no preventive testing in schools took place.
  In our model, the former hypothesis would mean that, in addition to fraction
  
 \begin_inset Formula $\alpha^{i}Q_{t},$
@@ -1522,9 +1597,7 @@ infected outside schools,
 \end_inset
 
  would be infected.
- As for the latter hypothesis, we can say that, in the examined period,
- no preventive testing in schools took place; however, the chance of testing
- can be higher anyway, which can be expressed as 
+ The latter hypothesis, on the other hand, could be expressed as 
 \begin_inset Formula $Y_{t}^{i}=(c+S_{t-1}^{i}d^{i})X_{t}^{i}$
 \end_inset
 
@@ -1603,22 +1676,22 @@ hline
 
 $
 \backslash
-beta$	& $0.548^{***}(0.0764)$	& $0.581^{***}(0.0439)$	& $0.853^{***}(0.0459)$	&
- $0.584^{***}(0.0488)$	& $0.728^{***}(0.0574)$		
+beta$	& $0.535^{***}(0.075)$	& $0.557^{***}(0.0385)$	& $0.846^{***}(0.0454)$	&
+ $0.578^{***}(0.0484)$	& $0.49^{***}(0.0466)$		
 \backslash
 
 \backslash
  $
 \backslash
-gamma$	& $0.49^{***}(0.059)$	& $0.99^{***}(0.167)$	& $-0.18^{}(0.344)$	& $0.41^{*}(0.222
-)$	& $0.75^{***}(0.057)$		
+gamma$	& $0.49^{***}(0.058)$	& $-0.74^{}(0.467)$	& $-0.17^{}(0.339)$	& $0.4^{*}(0.22)$	&
+ $0.35^{***}(0.047)$		
 \backslash
 
 \backslash
  $
 \backslash
-phi$	& $-0.3^{***}(0.1)$	& $-0.51^{***}(0.151)$	& $-0.25^{}(0.36)$	& $0.03^{}(0.308)$	&
- $-0.46^{}(0.303)$		
+phi$	& $-0.29^{***}(0.098)$	& $0.64^{**}(0.322)$	& $0.3^{}(0.357)$	& $0.04^{}(0.305)$	&
+ $0.04^{}(0.093)$		
 \backslash
 
 \backslash
@@ -1644,7 +1717,7 @@ We can see from the table, that, for the two oldest cohorts,
 \begin_inset Formula $\phi$
 \end_inset
 
- is insignificant, while, for the youngest cohorts, results support the
+ is insignificant, while, for the kindergarten cohort, results support the
  hypothesis 
 \begin_inset Quotes eld
 \end_inset
@@ -1653,7 +1726,29 @@ infected instead
 \begin_inset Quotes erd
 \end_inset
 
-.
+ while, for the first degree cohort, data suggest the 
+\begin_inset Quotes eld
+\end_inset
+
+over-tested
+\begin_inset Quotes erd
+\end_inset
+
+ hypothesis.
+ In the latter case, however, the result is unintuitive (
+\begin_inset Formula $\gamma<0)$
+\end_inset
+
+, which is probably due co-linearity (VIR is nearing 20).
+ Thus, only 
+\begin_inset Quotes eld
+\end_inset
+
+infected instead
+\begin_inset Quotes erd
+\end_inset
+
+ alternative in kindergartens should be taken into account.
  However, the results are comparable.
  The next charts show the 
 \begin_inset Quotes eld
@@ -1679,16 +1774,6 @@ safety criterion
 \end_inset
 
 
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename rhokpsi.eps
 	scale 30
@@ -1698,33 +1783,12 @@ safety criterion
 
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename rhofdpsi.eps
-	scale 30
-
-\end_inset
-
-
+\begin_layout Section*
+Questions/Ideas
 \end_layout
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
+\begin_layout Itemize
+Not split primary schools (and present degrees only as secondary results)?
 \end_layout
 
 \begin_layout Section*
@@ -1770,16 +1834,15 @@ multicolumn{2}{c}{Primary}
 \backslash
  
 \backslash
-hline																															
+hline																															 	&	$S^1$		&	$M^1$											&	$D^2$		&	$M^2
+$			&	$D^3$		&	$M^3$			&	$D^4$		&	$M^4$				&	$D^{2*}$	&	$M^{2*}$		
 \backslash
 
 \backslash
- 	&	$S^1$		&	$M^1$											&	$D^2$		&	$M^2$			&	$D^3$		&	$M^3$			&	$D^4$		&	$M
-^4$				&	$D^{2*}$	&	$M^{2*}$		
+ 
 \backslash
-
-\backslash
- 06-Apr-20	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					&	$0$	&			
+hline 06-Apr-20	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					&	$0$	&
+			
 \backslash
 
 \backslash
@@ -1942,37 +2005,46 @@ times$	&
 
 \backslash
  31-Aug-20	&	$0.8^{a}$		&	N											&	$0.8^{b}$		&	N			&	$0.8^{b}$		&	N			&	$0.8^{
-b}$		&	N				&	$0.8$	&		N	
+b}$		&	N				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
- 07-Sep-20	&	$1$		&	N											&	$1$		&	N			&	$1$		&	N			&	$1$		&	N				&	$1$	&	
-	N	
+ 07-Sep-20	&	$1$		&	N											&	$1$		&	N			&	$1$		&	N			&	$1$		&	N				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
- 14-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$1$	&	
-	Y	
+ 14-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
- 21-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$1$	&	
-	Y	
+ 21-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
  28-Sep-20	&	$0.8^{a}$		&	N											&	$0.8^{b}$		&	Y			&	$0.8^{b}$		&	Y			&	$0.8^{
-b}$		&	Y				&	$0.8$	&		Y	
+b}$		&	Y				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
- 05-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$1$	&	
-	Y	
+ 05-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
- 12-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$1$	&	
-	Y	
+ 12-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				&	$
+\backslash
+times$	&			
 \backslash
 
 \backslash
@@ -2000,38 +2072,49 @@ times$	&
 \backslash
 
 \backslash
- 16-Nov-20	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 16-Nov-20	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 23-Nov-20	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$
+ 23-Nov-20	&	$1$		&	N											&	$
 \backslash
-times^{d}$		&					&	$0.22$	&		Y	
+times^{c}$		&				&	$0$		&				&	$
 \backslash
-
-\backslash
- 30-Nov-20	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$
-\backslash
-times^{d}$		&					&	$0.22$	&		Y	
+times^{d}$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 07-Dec-20	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$
+ 30-Nov-20	&	$1$		&	N											&	$
 \backslash
-times^{d}$		&					&	$0.22$	&		Y	
+times^{c}$		&				&	$0$		&				&	$
+\backslash
+times^{d}$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 14-Dec-20	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$
+ 07-Dec-20	&	$1$		&	N											&	$
 \backslash
-times^{d}$		&					&	$0.22$	&		Y	
+times^{c}$		&				&	$0$		&				&	$
+\backslash
+times^{d}$		&					&	$1$	&		Y	
+\backslash
+
+\backslash
+ 14-Dec-20	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$
+\backslash
+times^{d}$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
  21-Dec-20	&	$
 \backslash
-times^{f}$		&												&	$0.4^{f}$		&	Y			&	$
+times^{f}$		&												&	$
+\backslash
+times^{f}$		&				&	$
 \backslash
 times^{f}$		&				&	$
 \backslash
@@ -2043,7 +2126,9 @@ times$	&
 \backslash
  28-Dec-20	&	$
 \backslash
-times^{f}$		&												&	$0.4^{f}$		&	Y			&	$
+times^{f}$		&												&	$
+\backslash
+times^{f}$		&				&	$
 \backslash
 times^{f}$		&				&	$
 \backslash
@@ -2055,7 +2140,9 @@ times$	&
 \backslash
  04-Jan-21	&	$
 \backslash
-times^{f}$		&												&	$0.4^{f}$		&	Y			&	$
+times^{f}$		&												&	$
+\backslash
+times^{f}$		&				&	$
 \backslash
 times^{f}$		&				&	$
 \backslash
@@ -2065,38 +2152,45 @@ times$	&
 \backslash
 
 \backslash
- 11-Jan-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 11-Jan-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 18-Jan-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 18-Jan-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 25-Jan-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 25-Jan-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 01-Feb-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 01-Feb-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 08-Feb-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 08-Feb-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 15-Feb-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 15-Feb-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
- 22-Feb-21	&	$1$		&	N											&	$0.4^{c}$		&	Y			&	$0$		&				&	$0$		&					&	$0.2
-2$	&		Y	
+ 22-Feb-21	&	$1$		&	N											&	$
+\backslash
+times^{c}$		&				&	$0$		&				&	$0$		&					&	$1$	&		Y	
 \backslash
 
 \backslash
@@ -2126,7 +2220,8 @@ times$	&
 \backslash
  
 \backslash
-end{tabular}																																 
+end{tabular}																																											 																
+ 
 \backslash
 caption{Notes: a -- only 15 pupils in the classroom (approx.
  half), b -- only 4 days from week, c -- only 1st and 2nd calsses are open,
@@ -2150,6 +2245,26 @@ end{center}
 
 \begin_layout Section*
 The Statistical Model
+\end_layout
+
+\begin_layout Standard
+TBD
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

@@ -1,7 +1,7 @@
 # Log started 2021-04-26 10:06
 # Record of session commands.  Please note that this will
 # likely require editing if it is to be run as a script.
-open /home/martin/Documents/s/covid/schools/data.ods --sheet=4
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=5
 setobs 52 2020-03-02 --time-series
 
 kindall <- ols P1n Qn U1n
@@ -103,10 +103,10 @@ scalar beta2p = $coeff(Qn)
 scalar beta2pstd = $stderr(Qn)
 scalar gamma2p = $coeff(U2pn)
 scalar gamma2pstd = $stderr(U2pn)
-scalar delta2p = $coeff(V2pn)
-scalar delta2pstd = $stderr(V2pn)
+# scalar delta2p = $coeff(V2pn)
+# scalar delta2pstd = $stderr(V2pn)
 
-smpl M2==1 || U2pn==0 --restrict
+# smpl M2==1 || U2pn==0 --restrict
 fdpusual <- ols P2pn Qn U2pn
 scalar ubeta2p = $coeff(Qn)
 scalar ubeta2pstd = $stderr(Qn)
@@ -119,14 +119,14 @@ scalar wgamma2p = $coeff(U2pn)
 scalar wgamma2pstd = $stderr(U2pn)
 scalar wphi2p = $coeff(W2pn)
 scalar wphi2pstd = $stderr(W2pn)
-smpl --full
+# smpl --full
 
 
 all <- ols Pn Qn
  
-print beta1 gamma1 beta2 gamma2 delta2 beta3 gamma3 delta3 beta4 gamma4 delta4 beta2p gamma2p delta2p
+print beta1 gamma1 beta2 gamma2 delta2 beta3 gamma3 delta3 beta4 gamma4 delta4 beta2p gamma2p 
 
-print beta1std gamma1std beta2std delta2std gamma2std beta3std gamma3std delta3std beta4std gamma4std delta4std beta2pstd gamma2pstd delta2pstd
+print beta1std gamma1std beta2std delta2std gamma2std beta3std gamma3std delta3std beta4std gamma4std delta4std beta2pstd gamma2pstd 
 
 print ubeta1 ugamma1 ubeta2 ugamma2 ubeta3 ugamma3 ubeta4 ugamma4 ubeta2p ugamma2p
 
