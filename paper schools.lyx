@@ -80,12 +80,27 @@ How Opening Schools Influence COVID Infections – Empirical Evidence from
  Czech Republic
 \end_layout
 
+\begin_layout Author
+Martin Šmíd, Milan Zajíček
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Institute of Information Theory and Automation of the CAS, BISOP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Main findings
 \end_layout
 
 \begin_layout Itemize
-Opening of schools strongly increases the infection numbers of students
+Opening of schools in the Czech Republic strongly increases the infection
+ numbers of students
 \end_layout
 
 \begin_layout Itemize
@@ -99,7 +114,7 @@ Data do not support the hypothesis that the increase of reported cases after
 \end_layout
 
 \begin_layout Itemize
-Neither, except for kindergartens, they support the hypothesis that, when
+Except for kindergartens, data do not support the hypothesis that, when
  being out of schools, children are infected elsewhere
 \end_layout
 
@@ -109,9 +124,9 @@ Simple indicator of safe opening schools can be constructed.
 \end_layout
 
 \begin_layout Itemize
-We show, that hypothetical opening of schools in the middle of the pandemics
- would not overturn the subsequent decreasing yet increasing the infections
- significantly.
+We show that hypothetical opening of schools in the middle of the pandemics
+ would not overturn the subsequent decreasing trend, yet it would increase
+ the infections significantly.
 \end_layout
 
 \begin_layout Section*
@@ -127,27 +142,25 @@ l issues.
  However, the price we pay for closing schools is high.
  Online education is not an equivalent substitute for the in-person one;
  moreover, the isolation of students leaves deficit in their necessary social
- contacts.
+ contacts [cit].
  Thus, for the society, decision whether and when to close school means
  a painful trade-off, making any decision political rather then scientific;
  science, however, has irreplaceable role in giving the best possible (quantitat
 ive) basis for these decisions.
- Obviously, the key question here is what effect on curbing the epidemic
- the school closures have.
  
 \end_layout
 
 \begin_layout Standard
 Unfortunately, it is difficult to evaluate the effect of closing schools
- on the present pandemic.
- The virus was completely unexplored as it came and its knowledge increases
- only gradually, so we only gradually get to know, whether and how different
+ during the present pandemic.
+ The virus was completely unexplored as it came and its knowledge increased
+ only gradually, so we only gradually get to know, whether and how differently
  the virus affects children in comparison with the rest of the population.
  To estimate the effect from running epidemic data is also problematic,
- mainly because the various measures are usually being introduced (and released)
- together, so it is difficult to distinguish their effects, and even in
- cases when the measures are applied in different times, still they can
- be assessed only in the context of the other measures applied.
+ mainly because the counter-epidemic measures are usually being introduced
+ (and released) together, so it is difficult to distinguish their effects,
+ and even in cases when the measures are applied in different times, still
+ they can be assessed only in the context of the other measures applied.
  [Kulweit 2020], for instance, regards school closure as a very effective
  means of curbing the present pandemics; however, it is necessary to take
  into account that school closures were usually the first measures applied,
@@ -172,28 +185,29 @@ gap
  (wearing masks, bans of gatherings) or are affecting different age cohorts
  (home office) so they can be expected not to obscure the effects of school
  closures.
- Later we show that actual data prove us right in both these assumptions - 
- the effects of closures are strongly statistically significant and the
+ Later we show that actual data prove us right in both these assumptions
+ -  the effects of closures are strongly statistically significant and the
  data do not exhibit co-linearity.
 \end_layout
 
 \begin_layout Standard
 In the Czech Republic, all kindergartens, primary and secondary schools
- had been closed on March 12, 2020, shortly after the beginning of the first
- cases.
+ had been closed on March 12, 2020, shortly after the first cases of COVID
+ infection appeared.
  While the kindergartens had been reopened without much restriction in the
  beginning of May, the primary and the secondary schools were opened during
- May in a very limited regime until the summer holiday, after which all
- the schools had been opened for two weeks nearly without any restriction.
- Next, as the overall incidences started to rise, wearing masks in classrooms
+ May only in a very limited regime until the summer vacation.
+ After the vacation, all the schools had been opened for two weeks nearly
+ without any restriction.
+ Next, after the overall incidences started to rise, wearing masks in classrooms
  had been imposed.
  In the end of October, after serious increases of new cases, all the schools
  had been closed until April 2021, except for kindergartens, which remained
- open until March 2021, the first two years of the elementary schools, which
- were opened from the half of November until February, and the final years
- of the secondary schools, which were opened one month before Christmas.
- In April 2021, kindergartens opened for the final year and the other schools
- gradually started to be opened under rotation schemes.
+ open until March 2021, the first two grades of the elementary schools,
+ which were opened from the half of November until February, and the final
+ grades of the secondary schools, which were opened one month before Christmas.
+ On April 12th, 2021, kindergartens opened for the final year and the other
+ schools gradually started to be opened under rotation schemes.
  See the following Table for the schedule.
 \end_layout
 
@@ -353,22 +367,32 @@ end{tabular}
 \begin_layout Standard
 To evaluate the effects of the closures, we used a simple epidemiological-like
  model, in which the infections in the children cohorts depend on the overall
- state of epidemic plus the effect of schools.
- The former is linearly dependent on the product of the current magnitude
- of the epidemic and the current reproduction number, the latter linearly
- depends on the the product the current school restrictions, number of infected
- in the cohort in question, and the current reproduction number up to current
- contact restriction.
+ state of epidemic plus the effect of schools, the former summand being
+ linearly dependent on the product of the current magnitude of the epidemic
+ and the current overall contact restriction, the latter being linearly
+ dependent on the the product the current school restrictions and the number
+ of infected in the cohort in question.
  We find the school closures as a whole as a significant inhibitor of the
- epidemic, with masks being provably efficient in the second degree and
- in secondary schools.
+ epidemic, with masks being provably efficient in the primary and secondary
+ schools.
+ 
 \end_layout
 
 \begin_layout Standard
-Within the Discussion, we also discuss possible alternative explanations
- of the data and we show, that the one considering the string effect of
- school closures is the only of the considered hypotheses giving significant
- results.
+Next we construct an indicator sub-unit value of which guarantees keeping
+ the infections in the cohort in question bounded or decreasing, if the
+ bound is exceeded; this indicator can serve for decisions on school restriction
+ degree during the epidemic.
+\end_layout
+
+\begin_layout Standard
+Within the Discussion, we also discuss possible alternative explanation
+ of the infection increases by more extensive testing in schools, and the
+ hypothesis, that during school closures, children are increasingly infected
+ elsewhere.
+ We find, that, except for the latter hypothesis and kindergartens, data
+ do not support these explanations.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -377,23 +401,25 @@ Methods
 
 \begin_layout Standard
 In the Czech Republic, each September first, children who completed their
- sixth year are obliged to enter the first year of elementary school.
+ sixth year are obliged to enter the first grade of an elementary school.
  When the parents wish, a child who is six as late as by the end of the
- year can enter the first class, some children, on the other hand, start
- their school later for various, mostly developmental, reasons.
- If we neglect these exceptions, we can conclude that the first year students
- are six or seven; consequently the first degree (first five years) students
+ year can enter the first class, too, some children, on the other hand,
+ start their school later for various, mostly developmental, reasons.
+ If we neglect these exceptions, we can conclude that the first year pupils
+ are six or seven; consequently the first degree (first five grades) pupils
  belong to the age cohort 
 \begin_inset Formula $6-11$
 \end_inset
 
-, the second degree (the sixth to the ninth year) students to the cohort
+.
+ The second degree (the sixth to the ninth year) students to the cohort
  
 \begin_inset Formula $11-15$
 \end_inset
 
- and the students of a secondary school, which typically takes four year
- in the Czech Republic, to the cohort 
+.
+ Finally, the students of secondary schools, which typically take four year
+ in the Czech Republic, belong to the cohort 
 \begin_inset Formula $15-19$
 \end_inset
 
@@ -404,14 +430,14 @@ In the Czech Republic, each September first, children who completed their
 \end_inset
 
 .
- For simplicity we assume that, of the frontier one-year cohorts, half of
- the children belong to each competing school category, and that infections
- happening in a frontier cohort split by two between each category.
- Thus, number of cases by pre-school children over week 
+ For simplicity we assume that the frontier one-year cohorts split by half
+ between the competing school categories, so the infections happening in
+ the cohort split by two between each category.
+ Thus the number of cases by pre-school children over week 
 \begin_inset Formula $t$
 \end_inset
 
- will then be 
+ will be 
 \begin_inset Formula $X_{t}^{1}=Z_{t}^{3}+Z_{t}^{4}+Z_{t}^{5}+\frac{1}{2}Z_{t}^{6}$
 \end_inset
 
@@ -423,7 +449,7 @@ In the Czech Republic, each September first, children who completed their
 \begin_inset Formula $X_{t}^{3}=\frac{1}{2}Z_{t}^{11}+Z_{t}^{12}+\dots+\frac{1}{2}Z_{t}^{15}$
 \end_inset
 
- and by the secondary schools 
+ and that by the secondary schools 
 \begin_inset Formula $X_{t}^{4}=\frac{1}{2}Z_{t}^{15}+Z_{t}^{16}+\dots+\frac{1}{2}Z_{t}^{19},$
 \end_inset
 
@@ -431,7 +457,7 @@ where
 \begin_inset Formula $Z_{t}^{j}$
 \end_inset
 
- is the number of cases by 
+ is the number of cases by the 
 \begin_inset Formula $j$
 \end_inset
 
@@ -441,7 +467,8 @@ where
 
 \begin_layout Standard
 In addition to these four cohorts, we studied the infections in the first
- two grades, which had been exclusively open during winter, taking 
+ two grades of primary schools, which had been exclusively open during winter,
+ taking 
 \begin_inset Formula $X_{t}^{2*}=\frac{1}{2}Z_{t}^{6}+Z_{t}^{7}+\frac{1}{2}Z_{t}^{8}$
 \end_inset
 
@@ -449,7 +476,7 @@ In addition to these four cohorts, we studied the infections in the first
 \end_layout
 
 \begin_layout Standard
-In line with the mainstream epidemiological modeling we assume that the
+In line with the mainstream epidemiological modeling, we assume that the
  number of overall infections 
 \begin_inset Formula $X_{t}$
 \end_inset
@@ -467,15 +494,20 @@ here,
 \begin_inset Formula $C_{t-1}$
 \end_inset
 
- is the overall risk contact reduction within the overall population, 
+ is the overall risk contact reduction within the overall population and
+ 
 \begin_inset Formula $r_{t}$
 \end_inset
 
  is the current growth rate given that no contact reduction takes place
  (including the effects of virus mutations, possible seasonal influences,
  natural immunization and vaccination).
- For the school children we assume that additional infections come from
- schools.
+ 
+\end_layout
+
+\begin_layout Standard
+For the school children we assume that their infection consists of a fraction
+ of the overall infections and additional infections coming from schools.
  In particular, for the 
 \begin_inset Formula $i$
 \end_inset
@@ -549,7 +581,7 @@ where
 \begin_inset Formula $Y_{t}^{i}\doteq cX_{t}^{i}$
 \end_inset
 
- is reported infections number in the 
+ is the reported infections number in the 
 \begin_inset Formula $i$
 \end_inset
 
@@ -605,7 +637,8 @@ noprefix "false"
 
 ) may serve for understanding of infection spread in schools and consequently
  for policy recommendations.
- Say that our goal is to keep new cases in the cohort less than some 
+ Assume that our goal is to keep new cases in the cohort less than some
+ 
 \begin_inset Formula $y_{0}$
 \end_inset
 
@@ -613,8 +646,8 @@ noprefix "false"
 \begin_inset Formula $50$
 \end_inset
 
- cases per 100 thousand) and, when the numbers are higher, to decrease it
- by a ratio 
+ cases per 100 thousand) and, if the number is higher, to decrease it by
+ a ratio 
 \begin_inset Formula $\rho_{0}$
 \end_inset
 
@@ -659,9 +692,9 @@ noprefix "false"
 
 \end_inset
 
-), on the other hand, allows comparisons between cohorts, as it sepak in
+), on the other hand, allows comparisons between cohorts, as it speaks in
  the language of infection probabilities: here the first/second summand
- evaluates probability of infection outside/inside the school.
+ evaluates the probability of infection outside/inside the school.
  
 \end_layout
 
@@ -708,7 +741,11 @@ Data
 \begin_layout Standard
 Our data came from public sources.
  The series values 
-\begin_inset Formula $Y^{1},\dots,Y^{5}$
+\begin_inset Formula $Y^{1},\dots,Y^{4},Y^{2*}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
 \end_inset
 
  are taken from the public dataset by the Czech Ministry of Health, namely
@@ -731,7 +768,7 @@ The growth rate
 \begin_inset Formula $\alpha=0.1,$
 \end_inset
 
-see the following chart.
+ as shown in the following chart.
  
 \end_layout
 
@@ -761,7 +798,7 @@ The values of
  Only weeks starting from April 6th, 2020 are taken into account, as we
  regard the previous epidemic data as noisy, unreliable and suffering from
  small sample properties.
- The last values correspond to the first week staring on April 5th, 2021.
+ The last values correspond to the week staring on April 5th, 2021.
  The values of 
 \begin_inset Formula $S$
 \end_inset
@@ -770,25 +807,26 @@ The values of
 \begin_inset Formula $1$
 \end_inset
 
- if the school was open without restrictions other than mask, and to 
+ if the school was open without any restrictions other than mask, and to
+ 
 \begin_inset Formula $0$
 \end_inset
 
- if it was closed.
- We estimated values of 
+ if they were closed.
+ In the other weeks, we estimated values of 
 \begin_inset Formula $S$
 \end_inset
 
- only from weeks, when we could relatively reliably estimate value of 
+ only when we could determine 
 \begin_inset Formula $S$
 \end_inset
 
-.
+ objectively.
  Thus, we excluded observations corresponding to holidays, weeks with no
  more than two possible school days, and the weeks with non-standard regime,
  such as rotations or limited numbers of students in a room.
- We also excluded the weeks where only first two classes had been open which
- we study separately.
+ We also excluded the weeks where only first two classes had been open,
+ which we study separately.
  
 \end_layout
 
@@ -801,13 +839,12 @@ The corresponding values of
 \begin_inset Formula $M$
 \end_inset
 
- are listed in the Table TBD (appendix) together with notes on how we determined
- fractional values 
+ are listed in the Table in Appendix together with the notes on how we determine
+d fractional values 
 \begin_inset Formula $S$
 \end_inset
 
  and reasons of observation exclusions.
- The additional column contains values for the first two degrees.
  The following table summarizes our data-set.
  
 \end_layout
@@ -885,9 +922,8 @@ Results
 \end_layout
 
 \begin_layout Standard
-For all the cohorts with observations both with and without masks, masks,
- i.e.
- for the primary school– and the secondary school cohorts estimated 
+For all the cohorts with observations both with and without masks, which
+ are both the primary ones and the secondary one, we estimated 
 \begin_inset Formula $\beta$
 \end_inset
 
@@ -931,34 +967,9 @@ reasonably
 \begin_inset Formula $0\leq-\delta\leq\gamma$
 \end_inset
 
- (masks reduce infection in schools); however, yet 
-\begin_inset Formula $\gamma$
-\end_inset
-
- is always significant, the estimate of 
-\begin_inset Formula $\delta$
-\end_inset
-
- (the influence of masks) is insignificant for the first degree and yet
- these estimates are significant for the second degree and strongly significant
- for the secondary schools, these results have to be interpreted with caution,
- as there are only two observations without masks in both cases; moreover,
- as it is indicated by the Variance Inflation factors, the first and second
- degree estimates possibly suffer from co-linearity of 
-\begin_inset Formula $U$
-\end_inset
-
- and 
-\begin_inset Formula $V$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-For kindergartens, where masks were never worn in classes, and for the first
- two classes, where masks were always worn when open, we subsequently estimated
+ (masks reduce infection in schools).
+ For the kindergartens, where masks were never worn in classes, and for
+ the first two classes, where masks were always worn, we subsequently estimated
  (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1062,7 +1073,7 @@ The results strongly indicate the influence of opening corresponding school
 \begin_inset Formula $\delta$
 \end_inset
 
- are rather unprecise.
+ are rather imprecise.
  The values of the variance inflation factors below 5 in each case, however,
  suggest that the models do not suffer from colinearity, so they should
  be capable to distinguish sharply the effect of wearing masks.
@@ -1073,12 +1084,8 @@ When comparing the results of the individual cohorts, the values of
 \begin_inset Formula $\beta$
 \end_inset
 
-, indicating the rate pf infection outside schools, interestingly increase
- with the age up to the secondary schools, where 
-\begin_inset Formula $\beta$
-\end_inset
-
- is again less.
+, indicating the rate of infection outside schools, increase with the age,
+ surprisingly dropping at the secondary schools.
  The values 
 \begin_inset Formula $\gamma$
 \end_inset
@@ -1088,11 +1095,7 @@ When comparing the results of the individual cohorts, the values of
 \begin_inset Formula $\delta$
 \end_inset
 
-) to increase with age, yet the effect of the attendance masks is for the
- first two grades and in secondary schools.
- All in all we can conclude that opening all the types of schools contributes
- to the pandemics, but additional measures, such as wearing masks, can decrease
- it.
+) increases with age.
  
 \end_layout
 
@@ -1115,8 +1118,8 @@ noprefix "false"
 \end_inset
 
  using only records where either schools were closed or the usual modus
- operandi took place (i.e.
- without masks in kindergartens, with masks otherwise).
+ operandi (i.e.
+ without masks in kindergartens, with masks otherwise) took place.
  The results are in the following table
 \end_layout
 
@@ -1212,9 +1215,10 @@ The values and errors of
 \begin_inset Formula $\gamma$
 \end_inset
 
- measured the influence of not wearing masks, here of wearing masks).
+ measures the influence of not wearing masks, while here it concerns to
+ usual modus operandi).
  For the first and the second degrees, the values are insignificant, which
- is non surprising, as their 
+ is non surprising, as, by the previous model, their 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1222,22 +1226,17 @@ true
 \begin_inset Quotes erd
 \end_inset
 
- values are close to zero.
+ values are evidently too close to zero to be significant with the present
+ limited dataset.
  The (insignificant) result at the second degree indicates less contribution
  than the first degree.
  In the secondary schools, the contribution is again higher.
- What is however little surprising is the (significantly) greater impact
- of school attendance in secondary schools than in the primary ones.
- A clue may be the previous model, where the same phenomenon appears, yet
- not so sharply; there, the values suggest that there is more risk contacts
- in the secondary schools, perhaps outside classes where the students do
- not protect themselves; however, this explanation is far from being unambiguous.
  
 \end_layout
 
 \begin_layout Standard
 To give the reader an idea about quantities in question, we further plotted
- predictions of the latter 
+ predictions of the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1465,17 +1464,21 @@ Finally, we evaluated index
 \end_layout
 
 \begin_layout Standard
-Here we see that, while the closure of all types of schools was necessary
- in Autumn, their closure (not opening at least in some restricted mode)
+Here we see that, while the closure of all types of schools may have helped
+ in Autumn, their closure, or not opening at least in some restricted mode,
  in March seems strict.
- However, these indicators speak only about the growth at a given time;
- if the schools were open, however, the numbers of infected students would
- rise, possibly amplifying the effect.
+ However, it should be stressed that the indicators 
+\begin_inset Formula $\rho_{t}$
+\end_inset
+
+ speaks only about the growth at a given time; if the schools were open,
+ however, the numbers of infected students would rise, possibly amplifying
+ the effect.
  To examine this, we modeled the hypothetical situation in which all the
  schools were all open (in a usual manner, i.e.
- with masks wherever except for kindergartens), on March 1, when all the
- schools had been closed.
- In our model, we assumed the numbers of cases outside the examined cohorts
+ with masks wherever except for kindergartens), on March 1, which was the
+ time when all the schools had been closed in reality.
+ In our forecast, we assumed the numbers of cases outside the examined cohorts
  to be as in reality while the numbers in the cohorts were computed according
  to the 
 \begin_inset Quotes eld
@@ -1485,7 +1488,9 @@ as usual
 \begin_inset Quotes erd
 \end_inset
 
- model.
+ model (i.e.
+ we neglect a possible increase outside schools due to additional infections
+ there).
  The results can be seen in the following charts.
 \end_layout
 
@@ -1536,10 +1541,11 @@ as usual
 
 \begin_layout Standard
 We see in the chart, that the contribution of such opening is quite significant
- and, yet it does not overturn decreasing trend of the epidemic, it probably
- would, if the other areas of life would have been opened too.
- The result however shows that, in the case that opening schools were politicall
-y prioritized, it would not make much harm if it was isolated.
+ and, yet it does not seem to overturn the decreasing trend of the epidemic,
+ it probably would, if other areas acted according the same logic and opened
+ too.
+ The result however shows that, if opening schools were politically prioritized,
+ it would not make much harm.
 \end_layout
 
 \begin_layout Section*
@@ -1548,11 +1554,11 @@ Discussion
 
 \begin_layout Standard
 In our honest opinion, our results convincingly prove the strong influence
- of in-class education over various types of schools and the influence of
- wearing masks in rooms.
- However, our study has several limitations.
- First of all it is a shortage of data.
- Most of the weeks we examine, the schools have been closed, and when they
+ of in-class education over various types of schools on the epidemic spread,
+ as well as its reduction by wearing masks in rooms.
+ However, our study has limitations.
+ First of all it is the shortage of data.
+ Most of the weeks we examine the schools have been closed, and when they
  were opened, mostly with masks, which clearly complicates quantification
  of their influences.
  Therefore, the quantitative results should be taken with slight caution.
@@ -1573,19 +1579,19 @@ noprefix "false"
 
 \end_inset
 
-); however, due to lack of data, there would be little chance for significant
- results.
+); however, due to the data shortage, there would be little chance for significa
+nt results.
 \end_layout
 
 \begin_layout Standard
-Further, in discussions on influence of schools, two arguments are often
- heard: that children, not going to schools, are infected more in other
- environments, and that this influence of schools is spurious due to more
- extensive testing of students when they attend school in person, yet, in
- the examined period, no preventive testing in schools took place.
+Further we discuss two arguments, often in discussions on schools: that
+ children, not going to schools, are infected anyway in other environments,
+ and that this influence of schools is spurious due to more extensive testing
+ of students attending schools in person, (yet, in the examined period,
+ no preventive testing in schools took place).
  In our model, the former hypothesis would mean that, in addition to fraction
  
-\begin_inset Formula $\alpha^{i}Q_{t},$
+\begin_inset Formula $\alpha^{i}Q_{t}$
 \end_inset
 
 infected outside schools, 
@@ -1623,12 +1629,12 @@ P_{t}^{i}\doteq\beta^{i}Q_{t}+\gamma^{i}U_{t}+\phi^{i}W_{t}^{i}+\eta_{t},\qquad 
 
 \end_inset
 
-values of 
+with values of 
 \begin_inset Formula $\phi^{i}<0$
 \end_inset
 
- then speak for the first hypothesis (children are infected anyway), the
- values 
+ speaking for the first hypothesis (children are infected anyway), the values
+ 
 \begin_inset Formula $\phi>0$
 \end_inset
 
@@ -1726,7 +1732,8 @@ infected instead
 \begin_inset Quotes erd
 \end_inset
 
- while, for the first degree cohort, data suggest the 
+.
+ For the first degree cohort, data suggest the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1734,12 +1741,16 @@ over-tested
 \begin_inset Quotes erd
 \end_inset
 
- hypothesis.
- In the latter case, however, the result is unintuitive (
+ hypothesis; here, however, the result is unintuitive (
 \begin_inset Formula $\gamma<0)$
 \end_inset
 
-, which is probably due co-linearity (VIR is nearing 20).
+, which is probably due co-linearity (VIR is nearing 20), invalidating the
+ estimate of 
+\begin_inset Formula $\phi$
+\end_inset
+
+, too.
  Thus, only 
 \begin_inset Quotes eld
 \end_inset
@@ -1749,8 +1760,8 @@ infected instead
 \end_inset
 
  alternative in kindergartens should be taken into account.
- However, the results are comparable.
- The next charts show the 
+ However, the results are comparable here: the following charts show the
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1834,8 +1845,8 @@ multicolumn{2}{c}{Primary}
 \backslash
  
 \backslash
-hline																															 	&	$S^1$		&	$M^1$											&	$D^2$		&	$M^2
-$			&	$D^3$		&	$M^3$			&	$D^4$		&	$M^4$				&	$D^{2*}$	&	$M^{2*}$		
+hline																															 	&	$S^1$		&	$M^1$											&	$S^2$		&	$M^2
+$			&	$S^3$		&	$M^3$			&	$S^4$		&	$M^4$				&	$S^{2*}$	&	$M^{2*}$		
 \backslash
 
 \backslash
