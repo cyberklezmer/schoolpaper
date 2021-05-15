@@ -124,7 +124,7 @@ l issues.
  According to epidemiological mainstream, schools are strong drivers of
  respiratory diseases [cit]; therefore, closing schools was one of the first
  governmental reactions to the outburst of the present pandemic.
- However, the price we pay for closing school is high.
+ However, the price we pay for closing schools is high.
  Online education is not an equivalent substitute for the in-person one;
  moreover, the isolation of students leaves deficit in their necessary social
  contacts.
@@ -141,7 +141,7 @@ ive) basis for these decisions.
 Unfortunately, it is difficult to evaluate the effect of closing schools
  on the present pandemic.
  The virus was completely unexplored as it came and its knowledge increases
- only gradually, so we only gradually get tot know, whether and how different
+ only gradually, so we only gradually get to know, whether and how different
  the virus affects children in comparison with the rest of the population.
  To estimate the effect from running epidemic data is also problematic,
  mainly because the various measures are usually being introduced (and released)
@@ -172,13 +172,13 @@ gap
  (wearing masks, bans of gatherings) or are affecting different age cohorts
  (home office) so they can be expected not to obscure the effects of school
  closures.
- Later we show that actual data prove us right in both these assumptions
- – the effects of closures are strongly statistically significant and the
+ Later we show that actual data prove us right in both these assumptions - 
+ the effects of closures are strongly statistically significant and the
  data do not exhibit co-linearity.
 \end_layout
 
 \begin_layout Standard
-In the Czech Republic, all kindergartens, primary– and secondary schools
+In the Czech Republic, all kindergartens, primary and secondary schools
  had been closed on March 12, 2020, shortly after the beginning of the first
  cases.
  While the kindergartens had been reopened without much restriction in the
@@ -361,7 +361,7 @@ To evaluate the effects of the closures, we used a simple epidemiological-like
  contact restriction.
  We find the school closures as a whole as a significant inhibitor of the
  epidemic, with masks being provably efficient in the second degree and
- in secondary schools
+ in secondary schools.
 \end_layout
 
 \begin_layout Standard
@@ -910,7 +910,7 @@ noprefix "false"
 \end_inset
 
 ).
- In all the three cases, the coefficients came out 
+ In all three cases, the coefficients came out 
 \begin_inset Quotes eld
 \end_inset
 
@@ -939,11 +939,11 @@ reasonably
 \begin_inset Formula $\delta$
 \end_inset
 
- (the influence of masks) is insignificant for the first degree ,and, yet
+ (the influence of masks) is insignificant for the first degree and yet
  these estimates are significant for the second degree and strongly significant
  for the secondary schools, these results have to be interpreted with caution,
  as there are only two observations without masks in both cases; moreover,
- as it is indicated by the Variance Inflation factors, the first– and second
+ as it is indicated by the Variance Inflation factors, the first and second
  degree estimates possibly suffer from co-linearity of 
 \begin_inset Formula $U$
 \end_inset
@@ -1065,7 +1065,7 @@ The results strongly indicate the influence of opening corresponding school
  are rather unprecise.
  The values of the variance inflation factors below 5 in each case, however,
  suggest that the models do not suffer from colinearity, so they should
- be capable to distinguish sharply the effect of wearing masks
+ be capable to distinguish sharply the effect of wearing masks.
 \end_layout
 
 \begin_layout Standard
@@ -1552,7 +1552,7 @@ In our honest opinion, our results convincingly prove the strong influence
  wearing masks in rooms.
  However, our study has several limitations.
  First of all it is a shortage of data.
- Most of the weeks we examine, the schools have been closes, and when they
+ Most of the weeks we examine, the schools have been closed, and when they
  were opened, mostly with masks, which clearly complicates quantification
  of their influences.
  Therefore, the quantitative results should be taken with slight caution.
