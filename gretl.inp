@@ -1,143 +1,92 @@
-# Log started 2021-04-26 10:06
-# Record of session commands.  Please note that this will
-# likely require editing if it is to be run as a script.
-open /home/martin/Documents/s/covid/schools/data.ods --sheet=5
-setobs 52 2020-03-02 --time-series
+#open /home/martin/Documents/s/covid/schools/data.ods --sheet=6
+#setobs District Week --panel-vars
 
-kindall <- ols P1n Qn U1n
-
-scalar beta1 = $coeff(Qn)
-scalar beta1std = $stderr(Qn)
-scalar gamma1 = $coeff(U1n)
-scalar gamma1std = $stderr(U1n)
-
-scalar ubeta1 = beta1
-scalar ubeta1std = beta1std
-scalar ugamma1 = gamma1
-scalar ugamma1std = gamma1std
-
-kindw  <- ols P1n Qn U1n W1n
-scalar wbeta1 = $coeff(Qn)
-scalar wbeta1std = $stderr(Qn)
-scalar wgamma1 = $coeff(U1n)
-scalar wgamma1std = $stderr(U1n)
-scalar wphi1 = $coeff(W1n)
-scalar wphi1std = $stderr(W1n)
-
-fdall <- ols P2n Qn U2n V2n
-
-scalar beta2 = $coeff(Qn)
-scalar beta2std = $stderr(Qn)
-scalar gamma2 = $coeff(U2n)
-scalar gamma2std = $stderr(U2n)
-scalar delta2 = $coeff(V2n)
-scalar delta2std = $stderr(V2n)
-
-smpl M2==1 || U2n==0 --restrict
-fdusual <- ols  P2n Qn U2n
-scalar ubeta2 = $coeff(Qn)
-scalar ubeta2std = $stderr(Qn)
-scalar ugamma2 = $coeff(U2n)
-scalar ugamma2std = $stderr(U2n)
-fdw <- ols P2n Qn U2n W2n
-scalar wbeta2 = $coeff(Qn)
-scalar wbeta2std = $stderr(Qn)
-scalar wgamma2 = $coeff(U2n)
-scalar wgamma2std = $stderr(U2n)
-scalar wphi2 = $coeff(W2n)
-scalar wphi2std = $stderr(W2n)
-smpl --full
-
-
-sdall <- ols P3n Qn U3n V3n
-scalar beta3 = $coeff(Qn)
-scalar beta3std = $stderr(Qn)
-scalar gamma3 = $coeff(U3n)
-scalar gamma3std = $stderr(U3n)
-scalar delta3 = $coeff(V3n)
-scalar delta3std = $stderr(V3n)
-
-smpl M3==1 || U3n==0 --restrict
-sdusual <- ols P3n Qn U3n 
-scalar ubeta3 = $coeff(Qn)
-scalar ubeta3std = $stderr(Qn)
-scalar ugamma3 = $coeff(U3n)
-scalar ugamma3std = $stderr(U3n)
-sdw <- ols P3n Qn U3n W3n
-scalar wbeta3 = $coeff(Qn)
-scalar wbeta3std = $stderr(Qn)
-scalar wgamma3 = $coeff(U3n)
-scalar wgamma3std = $stderr(U3n)
-scalar wphi3 = $coeff(W3n)
-scalar wphi3std = $stderr(W3n)
-smpl --full
-
-
-secall <- ols P4n Qn U4n V4n
-scalar beta4 = $coeff(Qn)
-scalar beta4std = $stderr(Qn)
-scalar gamma4 = $coeff(U4n)
-scalar gamma4std = $stderr(U4n)
-scalar delta4 = $coeff(V4n)
-scalar delta4std = $stderr(V4n)
-smpl M4==1 || U4n==0 --restrict
-secusual <- ols P4n Qn U4n 
-scalar ubeta4 = $coeff(Qn)
-scalar ubeta4std = $stderr(Qn)
-scalar ugamma4 = $coeff(U4n)
-scalar ugamma4std = $stderr(U4n)
-secw <- ols P4n Qn U4n W4n
-scalar wbeta4 = $coeff(Qn)
-scalar wbeta4std = $stderr(Qn)
-scalar wgamma4 = $coeff(U4n)
-scalar wgamma4std = $stderr(U4n)
-scalar wphi4 = $coeff(W4n)
-scalar wphi4std = $stderr(W4n)
-smpl --full
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=7
+setobs District Week --panel-vars
 
 
 
-fdpall <- ols P2pn Qn U2pn V2pn
+genr Y2exp = Y2tn - Y2cn
+genr U2exp = U2tn - U2cn
 
-scalar beta2p = $coeff(Qn)
-scalar beta2pstd = $stderr(Qn)
-scalar gamma2p = $coeff(U2pn)
-scalar gamma2pstd = $stderr(U2pn)
-# scalar delta2p = $coeff(V2pn)
-# scalar delta2pstd = $stderr(V2pn)
+ols Y2exp const U2exp RYDn RYn dummify(District) --cluster=District
 
-# smpl M2==1 || U2pn==0 --restrict
-fdpusual <- ols P2pn Qn U2pn
-scalar ubeta2p = $coeff(Qn)
-scalar ubeta2pstd = $stderr(Qn)
-scalar ugamma2p = $coeff(U2pn)
-scalar ugamma2pstd = $stderr(U2pn)
-fdpcw <- ols P2pn Qn U2pn W2pn
-scalar wbeta2p = $coeff(Qn)
-scalar wbeta2pstd = $stderr(Qn)
-scalar wgamma2p = $coeff(U2pn)
-scalar wgamma2pstd = $stderr(U2pn)
-scalar wphi2p = $coeff(W2pn)
-scalar wphi2pstd = $stderr(W2pn)
-# smpl --full
+genr Y3exp = Y3tn - Y3cn
+genr U3exp = U3tn - U3cn
+
+ols Y3exp const U3exp RYDn RYn dummify(District) --cluster=District
 
 
-all <- ols Pn Qn
- 
-print beta1 gamma1 beta2 gamma2 delta2 beta3 gamma3 delta3 beta4 gamma4 delta4 beta2p gamma2p 
+genr Y4exp = Y4tn - U4cn
+genr U4exp = U4tn - U4cn
 
-print beta1std gamma1std beta2std delta2std gamma2std beta3std gamma3std delta3std beta4std gamma4std delta4std beta2pstd gamma2pstd 
+ols Y4exp const U4exp RYDn RYn dummify(District) --cluster=District
 
-print ubeta1 ugamma1 ubeta2 ugamma2 ubeta3 ugamma3 ubeta4 ugamma4 ubeta2p ugamma2p
 
-print ubeta1std ugamma1std ubeta2std ugamma2std ubeta3std ugamma3std ubeta4std ugamma4std  ubeta2pstd ugamma2pstd
 
-print wbeta1 wgamma1 wphi1 wbeta2 wgamma2 wphi2 wbeta3 wgamma3 wphi3 wbeta4 wgamma4 wphi4 wbeta2p wgamma2p wphi2p
+ols Y1n RYn RYDn U1n 
+panel Y2n  RYn RYDn U2n V2n --pooled
+panel Y3n  RYn RYDn U3n V3n --pooled
+secall<-panel Y4n  RYn RYDn U4n V4n --pooled
 
-print wbeta1std wgamma1std wphi1std wbeta2std wgamma2std wphi2std wbeta3std wgamma3std wphi3std wbeta4std wgamma4std wphi4std wbeta2pstd wgamma2pstd wphi2pstd
+all <- ols YDn RYn RYDn
 
- 
-stophere
+ols Y1n RYn RYDn
+ols Y2n RYn RYDn
+ols Y3n RYn RYDn
+ols Y4n RYn RYDn
 
-# thrash
+ols C3n RYn RYDn 
+scalar beta3g = $coeff(RYn)
+scalar beta3d = $coeff(RYDn)
+ols C4n RYn RYDn 
+scalar beta4g = $coeff(RYn)
+scalar beta4d = $coeff(RYDn)
+ols C5n RYn RYDn 
+scalar beta5g = $coeff(RYn)
+scalar beta5d = $coeff(RYDn)
+ols C6n RYn RYDn 
+scalar beta6g = $coeff(RYn)
+scalar beta6d = $coeff(RYDn)
+ols C7n RYn RYDn 
+scalar beta7g = $coeff(RYn)
+scalar beta7d = $coeff(RYDn)
+ols C8n RYn RYDn 
+scalar beta8g = $coeff(RYn)
+scalar beta8d = $coeff(RYDn)
+ols C9n RYn RYDn 
+scalar beta9g = $coeff(RYn)
+scalar beta9d = $coeff(RYDn)
+ols C10n RYn RYDn 
+scalar beta10g = $coeff(RYn)
+scalar beta10d = $coeff(RYDn)
+ols C11n RYn RYDn 
+scalar beta11g = $coeff(RYn)
+scalar beta11d = $coeff(RYDn)
+ols C12n RYn RYDn 
+scalar beta12g = $coeff(RYn)
+scalar beta12d = $coeff(RYDn)
+ols C13n RYn RYDn 
+scalar beta13g = $coeff(RYn)
+scalar beta13d = $coeff(RYDn)
+ols C14n RYn RYDn 
+scalar beta14g = $coeff(RYn)
+scalar beta14d = $coeff(RYDn)
+ols C15n RYn RYDn 
+scalar beta15g = $coeff(RYn)
+scalar beta15d = $coeff(RYDn)
+ols C16n RYn RYDn 
+scalar beta16g = $coeff(RYn)
+scalar beta16d = $coeff(RYDn)
+ols C17n RYn RYDn 
+scalar beta17g = $coeff(RYn)
+scalar beta17d = $coeff(RYDn)
+ols C18n RYn RYDn 
+scalar beta18g = $coeff(RYn)
+scalar beta18d = $coeff(RYDn)
+ols C19n RYn RYDn 
+scalar beta19g = $coeff(RYn)
+scalar beta19d = $coeff(RYDn)
 
+print beta3g beta4g beta5g beta6g beta7g beta8g beta9g beta10g beta11g beta12g beta13g beta14g beta15g beta16g beta17g beta18g beta19g
+print beta3d beta4d beta5d beta6d beta7d beta8d beta9d beta10d beta11d beta12d beta13d beta14d beta15d beta16d beta17d beta18d beta19d

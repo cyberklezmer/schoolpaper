@@ -1,0 +1,362 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.14)  21 MAY 2021 21:40
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"paper schools.tex"
+(./paper schools.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen135
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks17
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks18
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/02/14 3.40 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count187
+\U@D=\dimen146
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count188
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 108.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count189
+\l__pdf_internal_box=\box47
+)
+(./paper schools.aux)
+\openout1 = `"paper schools.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count190
+\scratchdimen=\dimen147
+\scratchbox=\box48
+\nofMPsegments=\count191
+\nofMParguments=\count192
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count193
+\MPscratchDim=\dimen148
+\MPnumerator=\count194
+\makeMPintoPDFobject=\count195
+\everyMPtoPDFconversion=\toks23
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (58.00331pt too wide) in paragraph at lines 102--120
+[][] 
+ []
+
+[2] [3] [4]
+Overfull \hbox (32.45262pt too wide) detected at line 228
+\OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n/1
+0 + \OML/cmm/m/it/10 ^^Z[] < ^^Z[];  ^^Z[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 
+[]r[]C[][];  ^^Z[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^M[]r[]S[] [] []
+ []
+
+
+Overfull \hbox (1.58055pt too wide) detected at line 239
+ []$[]\OML/cmm/m/it/10 Q[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 R[]P[];  U[] \OT1
+/cmr/m/n/10 = \OML/cmm/m/it/10 r[]D[]P[];  V[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/
+10 r[]D[]M[]P[];  ^^N[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 
+^^V^^M[]:$ []  
+ []
+
+<r.pdf, id=29, 455.7025pt x 255.95625pt>
+File: r.pdf Graphic file (type pdf)
+<use r.pdf>
+Package pdftex.def Info: r.pdf  used on input line 255.
+(pdftex.def)             Requested size: 182.27776pt x 102.38068pt.
+[5 <./r.pdf>]
+Overfull \hbox (23.82016pt too wide) in paragraph at lines 279--284
+[][] 
+ []
+
+
+Overfull \hbox (91.58784pt too wide) in paragraph at lines 301--305
+[][] 
+ []
+
+[6]
+Overfull \hbox (104.06012pt too wide) in paragraph at lines 329--334
+[][] 
+ []
+
+<k.pdf, id=42, 455.7025pt x 255.95625pt>
+File: k.pdf Graphic file (type pdf)
+<use k.pdf>
+Package pdftex.def Info: k.pdf  used on input line 354.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<fg.pdf, id=43, 455.7025pt x 255.95625pt>
+File: fg.pdf Graphic file (type pdf)
+<use fg.pdf>
+Package pdftex.def Info: fg.pdf  used on input line 354.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<sg.pdf, id=44, 455.7025pt x 255.95625pt>
+File: sg.pdf Graphic file (type pdf)
+<use sg.pdf>
+Package pdftex.def Info: sg.pdf  used on input line 357.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<sec.pdf, id=45, 455.7025pt x 255.95625pt>
+File: sec.pdf Graphic file (type pdf)
+<use sec.pdf>
+Package pdftex.def Info: sec.pdf  used on input line 357.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+[7 <./k.pdf> <./fg.pdf> <./sg.pdf> <./sec.pdf>]
+<rhokreal.pdf, id=58, 455.7025pt x 255.95625pt>
+File: rhokreal.pdf Graphic file (type pdf)
+<use rhokreal.pdf>
+Package pdftex.def Info: rhokreal.pdf  used on input line 382.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<rhofdreal.pdf, id=59, 455.7025pt x 255.95625pt>
+File: rhofdreal.pdf Graphic file (type pdf)
+<use rhofdreal.pdf>
+Package pdftex.def Info: rhofdreal.pdf  used on input line 382.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<rhosdreal.pdf, id=60, 455.7025pt x 255.95625pt>
+File: rhosdreal.pdf Graphic file (type pdf)
+<use rhosdreal.pdf>
+Package pdftex.def Info: rhosdreal.pdf  used on input line 385.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<rhosecreal.pdf, id=61, 455.7025pt x 255.95625pt>
+File: rhosecreal.pdf Graphic file (type pdf)
+<use rhosecreal.pdf>
+Package pdftex.def Info: rhosecreal.pdf  used on input line 385.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<marchclosed.pdf, id=62, 455.7025pt x 255.95625pt>
+File: marchclosed.pdf Graphic file (type pdf)
+<use marchclosed.pdf>
+Package pdftex.def Info: marchclosed.pdf  used on input line 406.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+<marchopened.pdf, id=63, 455.7025pt x 255.95625pt>
+File: marchopened.pdf Graphic file (type pdf)
+<use marchopened.pdf>
+Package pdftex.def Info: marchopened.pdf  used on input line 406.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+ [8 <./rhokreal.pdf> <./rhofdreal.pdf> <./rhosdreal.pdf> <./rhosecreal.pdf> <./
+marchclosed.pdf> <./marchopened.pdf>]
+Overfull \hbox (96.58786pt too wide) in paragraph at lines 453--459
+[][] 
+ []
+
+[9]
+Overfull \hbox (5.63857pt too wide) detected at line 473
+\OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n/1
+0 + \OML/cmm/m/it/10 ^^Z[] < ^^Z[];  ^^Z[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 r
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []C[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10  
+[]S[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ;   [] \OT1/cmr/m/n/10 = []\OML/cmm/m/
+it/10 ^^^[]
+ []
+
+<rhokpsi.pdf, id=82, 455.7025pt x 255.95625pt>
+File: rhokpsi.pdf Graphic file (type pdf)
+<use rhokpsi.pdf>
+Package pdftex.def Info: rhokpsi.pdf  used on input line 474.
+(pdftex.def)             Requested size: 136.71179pt x 76.78746pt.
+
+Overfull \hbox (44.83122pt too wide) in paragraph at lines 485--491
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 115.44073pt on input line 491.
+
+[10 <./rhokpsi.pdf>] [11] (./paper schools.aux) ) 
+Here is how much of TeX's memory you used:
+ 3200 strings out of 482295
+ 41094 string characters out of 5940336
+ 309363 words of memory out of 5000000
+ 18267 multiletter control sequences out of 15000+600000
+ 545062 words of font info for 60 fonts, out of 8000000 for 9000
+ 473 hyphenation exceptions out of 8191
+ 30i,11n,31p,3676b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/martin/.texlive2019/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/martin/.texlive2019/
+texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0600.600pk> </home/martin/.texlive201
+9/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/martin/.texlive2
+019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/martin/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/martin/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/martin/.te
+xlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/martin/.
+texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on "paper schools.pdf" (11 pages, 504492 bytes).
+PDF statistics:
+ 338 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+
