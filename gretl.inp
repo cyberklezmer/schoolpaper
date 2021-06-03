@@ -1,39 +1,188 @@
 #open /home/martin/Documents/s/covid/schools/data.ods --sheet=6
 #setobs District Week --panel-vars
 
-open /home/martin/Documents/s/covid/schools/data.ods --sheet=7
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=8
 setobs District Week --panel-vars
+
+dummify District
+genr Q_0 = DDistrict_0 * RYDn
+genr Q_1 = DDistrict_1 * RYDn
+genr Q_2 = DDistrict_2 * RYDn
+genr Q_3 = DDistrict_3 * RYDn
+genr Q_4 = DDistrict_4 * RYDn
+genr Q_5 = DDistrict_5 * RYDn
+genr Q_6 = DDistrict_6 * RYDn
+genr Q_7 = DDistrict_7 * RYDn
+genr Q_8 = DDistrict_8 * RYDn
+genr Q_9 = DDistrict_9 * RYDn
+genr Q_10 = DDistrict_10 * RYDn
+genr Q_11 = DDistrict_11 * RYDn
+genr Q_12 = DDistrict_12 * RYDn
+genr Q_13 = DDistrict_13 * RYDn
+genr Q_14 = DDistrict_14 * RYDn
+genr Q_15 = DDistrict_15 * RYDn
+genr Q_16 = DDistrict_16 * RYDn
+genr Q_17 = DDistrict_17 * RYDn
+genr Q_18 = DDistrict_18 * RYDn
+genr Q_19 = DDistrict_19 * RYDn
+genr Q_20 = DDistrict_20 * RYDn
+genr Q_21 = DDistrict_21 * RYDn
+genr Q_22 = DDistrict_22 * RYDn
+genr Q_23 = DDistrict_23 * RYDn
+genr Q_24 = DDistrict_24 * RYDn
+genr Q_25 = DDistrict_25 * RYDn
+genr Q_26 = DDistrict_26 * RYDn
+genr Q_27 = DDistrict_27 * RYDn
+genr Q_28 = DDistrict_28 * RYDn
+genr Q_29 = DDistrict_29 * RYDn
+genr Q_30 = DDistrict_30 * RYDn
+genr Q_31 = DDistrict_31 * RYDn
+genr Q_32 = DDistrict_32 * RYDn
+genr Q_33 = DDistrict_33 * RYDn
+genr Q_34 = DDistrict_34 * RYDn
+genr Q_35 = DDistrict_35 * RYDn
+genr Q_36 = DDistrict_36 * RYDn
+genr Q_37 = DDistrict_37 * RYDn
+genr Q_38 = DDistrict_38 * RYDn
+genr Q_39 = DDistrict_39 * RYDn
+genr Q_40 = DDistrict_40 * RYDn
+genr Q_41 = DDistrict_41 * RYDn
+genr Q_42 = DDistrict_42 * RYDn
+genr Q_43 = DDistrict_43 * RYDn
+genr Q_44 = DDistrict_44 * RYDn
+genr Q_45 = DDistrict_45 * RYDn
+genr Q_46 = DDistrict_46 * RYDn
+genr Q_47 = DDistrict_47 * RYDn
+genr Q_48 = DDistrict_48 * RYDn
+genr Q_49 = DDistrict_49 * RYDn
+genr Q_50 = DDistrict_50 * RYDn
+genr Q_51 = DDistrict_51 * RYDn
+genr Q_52 = DDistrict_52 * RYDn
+genr Q_53 = DDistrict_53 * RYDn
+genr Q_54 = DDistrict_54 * RYDn
+genr Q_55 = DDistrict_55 * RYDn
+genr Q_56 = DDistrict_56 * RYDn
+genr Q_57 = DDistrict_57 * RYDn
+genr Q_58 = DDistrict_58 * RYDn
+genr Q_59 = DDistrict_59 * RYDn
+genr Q_60 = DDistrict_60 * RYDn
+genr Q_61 = DDistrict_61 * RYDn
+genr Q_62 = DDistrict_62 * RYDn
+genr Q_63 = DDistrict_63 * RYDn
+genr Q_64 = DDistrict_64 * RYDn
+genr Q_65 = DDistrict_65 * RYDn
+genr Q_66 = DDistrict_66 * RYDn
+genr Q_67 = DDistrict_67 * RYDn
+genr Q_68 = DDistrict_68 * RYDn
+genr Q_69 = DDistrict_69 * RYDn
+genr Q_70 = DDistrict_70 * RYDn
+genr Q_71 = DDistrict_71 * RYDn
+genr Q_72 = DDistrict_72 * RYDn
+genr Q_73 = DDistrict_73 * RYDn
+genr Q_74 = DDistrict_74 * RYDn
+genr Q_75 = DDistrict_75 * RYDn
+genr Q_76 = DDistrict_76 * RYDn
+
+scalar c1=31.7429294848201
+scalar c2=18.7459708378764
+scalar c3=23.9766621937179
+scalar c4=25.7611097527338
+
+
+#kindergartens
+
+kindall <- ols Y1n RYn RYDn U1n 
+
+scalar alpha1 = c1* $coeff(RYn)
+scalar alpha1std = c1* $stderr(RYn)
+scalar beta1 = c1*$coeff(RYDn)
+scalar beta1std = c1*$stderr(RYDn)
+scalar gamma1 = c1*$coeff(U1n)
+scalar gamma1std = c1*$stderr(U1n)
+
+
+
 
 genr Y2exp = Y2tn - Y2cn
 genr U2exp = U2tn - U2cn
 
-ols Y2exp const U2exp RYDn RYn dummify(District) --cluster=District
+ols Y2exp U2exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+ols Y2exp U2exp RYn RYDn
+ols Y2n  RYn RYDn U2n V2n 
+ols Y2n RYn RYDn
+
+
+# dummify(District) --cluster=District
 
 genr Y3exp = Y3tn - Y3cn
 genr U3exp = U3tn - U3cn
+genr V3exp = V3tn - V3cn
+ols Y3exp U3exp V3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+ols Y3exp U3exp V3exp dummify(Week) RYDn
+ols Y3exp U3exp V3exp  RYn RYDn
 
-ols Y3exp const U3exp RYDn RYn dummify(District) --cluster=District
+smpl S3t == 0 || M3t==0 --restrict
+ols Y3exp U3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+ols Y3exp U3exp RYn RYDn
+smpl --full
+
+smpl S3t == 0 || M3t>0 --restrict
+ols Y3exp U3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+ols Y3exp U3exp RYn RYDn
+smpl --full
 
 
-genr Y4exp = Y4tn - U4cn
+
+ols Y3n RYn RYDn U3n V3n 
+ols Y3n RYn RYDn
+
+
+#ols Y3exp U3exp RYn RYDn 
+#smpl --full
+
+#smpl M3t>0 --restrict
+#ols Y3exp U3exp RYn RYDn 
+# dummify(District) --cluster=District
+#smpl --full
+
+genr Y4exp = Y4tn - Y4cn
 genr U4exp = U4tn - U4cn
+#genr V4exp = V4tn - V4cn
+ols Y4exp U4exp
 
-ols Y4exp const U4exp RYDn RYn dummify(District) --cluster=District
+ols Y4exp U4exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+ols Y4exp U4exp RYn RYDn 
 
+secall<-ols Y4n  RYn RYDn U4n V4n 
+ols Y4n RYn RYDn
+
+#ols Y4exp U4exp RYDn RYn 
+# dummify(District) --cluster=District
+
+#smpl M4t>0 --restrict
+#ols Y4exp U4exp RYDn RYn 
+# dummify(District) --cluster=District
+#smpl --full
+
+smpl Week>5 --restrict
+global<-ols YDn RYn RYDn --vcv
+scalar se = sqrt($stderr(RYn)^2 + $stderr(RYDn)^2 + 2* $vcv[1,2])
+scalar ab = $coeff(RYn) + $coeff(RYDn)
+scalar lo = ab - se * 1.96
+scalar hi = ab + se * 1.96
+simple <- ols YDn RYn
+smpl --full
 
 
 ols Y1n RYn RYDn U1n 
-panel Y2n  RYn RYDn U2n V2n --pooled
-panel Y3n  RYn RYDn U3n V3n --pooled
-secall<-panel Y4n  RYn RYDn U4n V4n --pooled
+ols Y1n RYn RYDn
 
 all <- ols YDn RYn RYDn
 
-ols Y1n RYn RYDn
-ols Y2n RYn RYDn
-ols Y3n RYn RYDn
-ols Y4n RYn RYDn
 
+stop here
+
+smpl Week>=31 --restrict
 ols C3n RYn RYDn 
 scalar beta3g = $coeff(RYn)
 scalar beta3d = $coeff(RYDn)
@@ -85,6 +234,7 @@ scalar beta18d = $coeff(RYDn)
 ols C19n RYn RYDn 
 scalar beta19g = $coeff(RYn)
 scalar beta19d = $coeff(RYDn)
+smpl --full
 
 print beta3g beta4g beta5g beta6g beta7g beta8g beta9g beta10g beta11g beta12g beta13g beta14g beta15g beta16g beta17g beta18g beta19g
 print beta3d beta4d beta5d beta6d beta7d beta8d beta9d beta10d beta11d beta12d beta13d beta14d beta15d beta16d beta17d beta18d beta19d
