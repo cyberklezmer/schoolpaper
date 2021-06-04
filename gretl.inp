@@ -97,41 +97,118 @@ scalar alpha1 = c1* $coeff(RYn)
 scalar alpha1std = c1* $stderr(RYn)
 scalar beta1 = c1*$coeff(RYDn)
 scalar beta1std = c1*$stderr(RYDn)
-scalar gamma1 = c1*$coeff(U1n)
-scalar gamma1std = c1*$stderr(U1n)
+scalar gamma1 = $coeff(U1n)
+scalar gamma1std = $stderr(U1n)
 
-
+kindns <- ols Y1n RYn RYDn 
+scalar alpha1n = c1* $coeff(RYn)
+scalar alpha1nstd = c1* $stderr(RYn)
+scalar beta1n = c1*$coeff(RYDn)
+scalar beta1nstd = c1*$stderr(RYDn)
 
 
 genr Y2exp = Y2tn - Y2cn
-genr U2exp = U2tn - U2cn
+#genr U2exp = U2tn - U2cn
+genr V2exp = V2tn - V2cn
 
-ols Y2exp U2exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
-ols Y2exp U2exp RYn RYDn
+fdnl <- ols Y2exp V2exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+
+scalar d2 = $coeff(V2exp)
+scalar d2std = $stderr(V2exp)
+
+fdall <- ols Y2n RYn RYDn U2n V2n
+
+scalar alpha2 = c2* $coeff(RYn)
+scalar alpha2std = c2* $stderr(RYn)
+scalar beta2 = c2*$coeff(RYDn)
+scalar beta2std = c2*$stderr(RYDn)
+scalar gamma2 = $coeff(U2n)
+scalar gamma2std = $stderr(U2n)
+scalar delta2 = $coeff(V2n)
+scalar delta2std = $stderr(V2n)
+
+fdns <- ols Y2n RYn RYDn
+
+scalar alpha2n = c2* $coeff(RYn)
+scalar alpha2nstd = c2* $stderr(RYn)
+scalar beta2n = c2*$coeff(RYDn)
+scalar beta2nstd = c2*$stderr(RYDn)
+
+
+genr Y3exp = Y3tn - Y3cn
+#genr U3exp = U3tn - U3cn
+genr V3exp = V3tn - V3cn
+
+sdnl <- ols Y3exp V3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+
+#scalar g3 = $coeff(U3exp)
+#scalar g3std = $stderr(U3exp)
+scalar d3 = $coeff(V3exp)
+scalar d3std = $stderr(V3exp)
+
+sdall <- ols Y3n RYn RYDn U3n V3n
+
+scalar alpha3 = c3* $coeff(RYn)
+scalar alpha3std = c3* $stderr(RYn)
+scalar beta3 = c3*$coeff(RYDn)
+scalar beta3std = c3*$stderr(RYDn)
+scalar gamma3 = $coeff(U3n)
+scalar gamma3std = $stderr(U3n)
+scalar delta3 = $coeff(V3n)
+scalar delta3std = $stderr(V3n)
+
+sdns <- ols Y3n RYn RYDn 
+
+scalar alpha3n = c3* $coeff(RYn)
+scalar alpha3nstd = c3* $stderr(RYn)
+scalar beta3n = c3*$coeff(RYDn)
+scalar beta3nstd = c3*$stderr(RYDn)
+
+
+genr Y4exp = Y4tn - Y4cn
+#genr U4exp = U4tn - U4cn
+genr V4exp = V4tn - V4cn
+secnl <- ols Y4exp V4exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+
+scalar d4 = $coeff(V4exp)
+scalar d4std = $stderr(V4exp)
+
+secall<-ols Y4n RYn RYDn U4n V4n 
+
+scalar alpha4 = c4* $coeff(RYn)
+scalar alpha4std = c4* $stderr(RYn)
+scalar beta4 = c4*$coeff(RYDn)
+scalar beta4std = c4*$stderr(RYDn)
+scalar gamma4 = $coeff(U4n)
+scalar gamma4std = $stderr(U4n)
+scalar delta4 = $coeff(V4n)
+scalar delta4std = $stderr(V4n)
+
+secns<-ols Y4n RYn RYDn
+
+scalar alpha4n = c4* $coeff(RYn)
+scalar alpha4nstd = c4* $stderr(RYn)
+scalar beta4n = c4*$coeff(RYDn)
+scalar beta4nstd = c4*$stderr(RYDn)
+
+print alpha1 beta1 gamma1 d2 alpha2 beta2 gamma2 delta2 d3 alpha3 beta3 gamma3 delta3  d4 alpha4 beta4 gamma4 delta4 alpha1n beta1n alpha2n beta2n alpha3n beta3n alpha4n beta4n
+
+print alpha1std beta1std gamma1std d2std alpha2std beta2std gamma2std delta2std d3std alpha3std beta3std gamma3std delta3std d4std alpha4std  beta4std gamma4std delta4std alpha1nstd beta1nstd alpha2nstd beta2nstd alpha3nstd beta3nstd alpha4nstd beta4nstd
+
+
+stop
+
+ols Y2exp V2exp RYn RYDn
 ols Y2n  RYn RYDn U2n V2n 
 ols Y2n RYn RYDn
 
 
+
+
 # dummify(District) --cluster=District
 
-genr Y3exp = Y3tn - Y3cn
-genr U3exp = U3tn - U3cn
-genr V3exp = V3tn - V3cn
-ols Y3exp U3exp V3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 ols Y3exp U3exp V3exp dummify(Week) RYDn
-ols Y3exp U3exp V3exp  RYn RYDn
-
-smpl S3t == 0 || M3t==0 --restrict
-ols Y3exp U3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
-ols Y3exp U3exp RYn RYDn
-smpl --full
-
-smpl S3t == 0 || M3t>0 --restrict
-ols Y3exp U3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
-ols Y3exp U3exp RYn RYDn
-smpl --full
-
-
+ols Y3exp V3exp  RYn RYDn
 
 ols Y3n RYn RYDn U3n V3n 
 ols Y3n RYn RYDn
@@ -145,15 +222,6 @@ ols Y3n RYn RYDn
 # dummify(District) --cluster=District
 #smpl --full
 
-genr Y4exp = Y4tn - Y4cn
-genr U4exp = U4tn - U4cn
-#genr V4exp = V4tn - V4cn
-ols Y4exp U4exp
-
-ols Y4exp U4exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
-ols Y4exp U4exp RYn RYDn 
-
-secall<-ols Y4n  RYn RYDn U4n V4n 
 ols Y4n RYn RYDn
 
 #ols Y4exp U4exp RYDn RYn 

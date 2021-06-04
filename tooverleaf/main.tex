@@ -108,7 +108,7 @@ Mar-13	&	\multicolumn{4}{c}{closed}\\
 May-04	&	opened		&		&	&	\\
 May-11	& & & last year max. 15 & last year  \\
 May-25    &  & max. 15 voluntary & & last year max. 15 \\
-% Jun-01	& &  & \\
+Jun-08	& & max 15 & \\
 Jun-26	&	\multicolumn{4}{c}{end of the school year} \\
 Sep-01	&	\multicolumn{4}{c}{start of the school year, opened} \\
 Sep-17	&	  & \multicolumn{3}{c}{masks ordered in classrooms} \\
@@ -187,17 +187,16 @@ X^j_{t} = \underbrace{(\alpha^j +\beta^j)}_{= \omega^j} Q_t
 \end{equation}
 Equation (\ref{eq:xss}) may serve for understanding
 of infection spread in schools and consequently for policy recommendations.
-Assume that our goal is to keep new cases in the cohort less than
-some $x_{0}$ (for instance, corresponding to $50$ cases per $100$
-thousand) and, if the number is higher, to decrease it by a ratio
-$\rho_{0}$. 
+Assume that our goal is to decrease the number of infected in the cohort by a ratio
+$\rho_{0}$, i.e 
 \[
-\omega^{j}Q_{t}+\gamma^{j}S_{t-1}^{i}X_{t-1}^{j}\leq\max(\rho_{0}X_{t-1}^{j},x_{0})
+\omega^{j}Q_{t}+\gamma^{j}S_{t-1}^{i}X_{t-1}^{j}\leq\rho_{0}X_{t-1}^{j}
 \]
-which happens if\footnote{Not if and only if, TBD explain} 
+which happens if
 \[
-\rho_{t}:=\rho_{t}^{\omega}+\rho_{t}^{\gamma}<\rho_{0},\qquad\rho_{t}^{\alpha}=\omega^{j}\frac{Q_{t}}{\max(X_{t-1}^{j},x_{0})},\qquad\rho_{t}^{\gamma}=\gamma^{i}S_{t}^{j}\min\left(1,\frac{X_{t-1}^{j}}{x_{0}}\right)
-\]
+\rho_{t}:=\rho_{t}^{\omega}+\rho_{t}^{\gamma}<\rho_{0},
+\qquad
+\rho_{t}^{\alpha}=\omega^{j}\frac{Q_{t}}{X_{t-1}^{j}},\qquad\rho_{t}^{\gamma}=\gamma^{j}S_{t}^{j}\]
 
 For the purpose of estimation, we may impose for $S_{t}^{j}$ in
 (\ref{eq:xss}) to get a linear model 
@@ -311,9 +310,16 @@ with $\delta^{1}=0$. In both the cases, the coefficient $\gamma$
 
 The results of estimation may be found in the following Table. 
 
-\begin{tabular}{c|cccc|c}
-& Kindergartens & First degree & Second degree & Secondary & 1. and 2. \\ \hline
-$\beta$	& $0.369^{***}(0.0578)$	& $0.55^{***}(0.0405)$	& $0.83^{***}(0.0397)$	& $0.57^{***}(0.048)$	& $0.503^{***}(0.0419)$		\\ $\gamma$	& $0.41^{***}(0.055)$	& $0.61^{**}(0.262)$	& $0.62^{***}(0.208)$	& $1.11^{***}(0.154)$	& $0.36^{***}(0.042)$		\\ $\delta$	&	& $-0.49^{*}(0.251)$	& $-0.6^{**}(0.222)$	& $-0.85^{***}(0.177)$	&		\\ \hline 
+\begin{tabular}{cc|cccc}
+\multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline
+General &	$\gamma$	&	&	&	&	\\
+&	$\delta$	&	& $0.249^{***}(0.026)$	& $0.191^{**}(0.0899)$	& $0.192^{**}(0.0801)$	\\ \hline
+Linear &	$\alpha$	& $0.159^{***}(0.0218)$	& $0.063^{**}(0.0309)$	& $0.033^{}(0.0346)$	& $0.121^{***}(0.022)$	\\
+&	$\beta$	& $0.319^{***}(0.0132)$	& $0.608^{***}(0.0297)$	& $0.749^{***}(0.0349)$	& $0.479^{***}(0.0137)$	\\
+&	$\gamma$	& $0.236^{***}(0.0147)$	& $0.248^{***}(0.0476)$	& $0.545^{***}(0.0351)$	& $0.886^{***}(0.0246)$	\\ 
+&	$\delta$	&	& $0.189^{***}(0.0276)$	& $0.046^{**}(0.0207)$	& $0.136^{***}(0.0272)$	\\ \hline
+No schools&	$\gamma$	& $0.261^{***}(0.0165)$	& $0.233^{***}(0.0184)$	& $0.376^{***}(0.0184)$	& $0.454^{***}(0.0242)$	\\ 
+&	$\delta$	& $0.297^{***}(0.0086)$	& $0.417^{***}(0.0096)$	& $0.273^{***}(0.0095)$	& $0.285^{***}(0.0125)$	
 \end{tabular}
 
 The results strongly indicate the influence of opening corresponding
