@@ -1,7 +1,7 @@
 #open /home/martin/Documents/s/covid/schools/data.ods --sheet=6
 #setobs District Week --panel-vars
 
-open /home/martin/Documents/s/covid/schools/data.ods --sheet=8
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=9
 setobs District Week --panel-vars
 
 dummify District
@@ -91,16 +91,21 @@ scalar c4=25.7611097527338
 
 #kindergartens
 
-kindall <- ols Y1n RYn RYDn U1n 
+genr Y1exp = Y1tn - Y1cn
+
+kindnl <- ols Y1exp UdN1n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+
+
+kindall <- ols Y1n RYn RYDn UN1n 
 
 scalar alpha1 = c1* $coeff(RYn)
 scalar alpha1std = c1* $stderr(RYn)
 scalar beta1 = c1*$coeff(RYDn)
 scalar beta1std = c1*$stderr(RYDn)
-scalar gamma1 = $coeff(U1n)
-scalar gamma1std = $stderr(U1n)
+scalar gamma1 = $coeff(UN1n)
+scalar gamma1std = $stderr(UN1n)
 
-kindphi <- ols Y1n RYn RYDn U1n W1n
+# kindphi <- ols Y1n RYn RYDn U1n W1n
 
 
 kindns <- ols Y1n RYn RYDn 
@@ -109,28 +114,26 @@ scalar alpha1nstd = c1* $stderr(RYn)
 scalar beta1n = c1*$coeff(RYDn)
 scalar beta1nstd = c1*$stderr(RYDn)
 
-
 genr Y2exp = Y2tn - Y2cn
-#genr U2exp = U2tn - U2cn
-genr V2exp = V2tn - V2cn
 
-fdnl <- ols Y2exp V2exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 
-scalar d2 = $coeff(V2exp)
-scalar d2std = $stderr(V2exp)
+fdnl <- ols Y2exp UdM2n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 
-fdall <- ols Y2n RYn RYDn U2n V2n 
+scalar d2 = $coeff(UdM2n)
+scalar d2std = $stderr(UdM2n)
+
+fdall <- ols Y2n RYn RYDn UN2n UM2n UR2n UMT2n 
 
 scalar alpha2 = c2* $coeff(RYn)
 scalar alpha2std = c2* $stderr(RYn)
 scalar beta2 = c2*$coeff(RYDn)
 scalar beta2std = c2*$stderr(RYDn)
-scalar gamma2 = $coeff(U2n)
-scalar gamma2std = $stderr(U2n)
-scalar delta2 = $coeff(V2n)
-scalar delta2std = $stderr(V2n)
+scalar gamma2 = $coeff(UM2n)
+scalar gamma2std = $stderr(UM2n)
+scalar delta2 = $coeff(UN2n)
+scalar delta2std = $stderr(UN2n)
 
-fdphi <- ols Y2n RYn RYDn U2n V2n W2n
+# fdphi <- ols Y2n RYn RYDn U2n V2n W2n
 
 
 fdns <- ols Y2n RYn RYDn
@@ -142,17 +145,15 @@ scalar beta2nstd = c2*$stderr(RYDn)
 
 
 genr Y3exp = Y3tn - Y3cn
-genr U3exp = U3tn - U3cn
-genr V3exp = V3tn - V3cn
 
-sdnl <- ols Y3exp U3exp V3exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+sdnl <- ols Y3exp UdR3n UdN3n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 
-scalar g3 = $coeff(U3exp)
-scalar g3std = $stderr(U3exp)
-scalar d3 = $coeff(V3exp)
-scalar d3std = $stderr(V3exp)
+scalar g3 = $coeff(UdR3n)
+scalar g3std = $stderr(UdR3n)
+scalar d3 = $coeff(UdN3n)
+scalar d3std = $stderr(UdN3n)
 
-sdall <- ols Y3n RYn RYDn U3n V3n 
+sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n UMT3n
 
 scalar alpha3 = c3* $coeff(RYn)
 scalar alpha3std = c3* $stderr(RYn)
@@ -163,7 +164,7 @@ scalar gamma3std = $stderr(U3n)
 scalar delta3 = $coeff(V3n)
 scalar delta3std = $stderr(V3n)
 
-sdphi <- ols Y3n RYn RYDn U3n V3n W3n
+# sdphi <- ols Y3n RYn RYDn U3n V3n W3n
 
 sdns <- ols Y3n RYn RYDn 
 
@@ -174,14 +175,12 @@ scalar beta3nstd = c3*$stderr(RYDn)
 
 
 genr Y4exp = Y4tn - Y4cn
-#genr U4exp = U4tn - U4cn
-genr V4exp = V4tn - V4cn
-secnl <- ols Y4exp V4exp dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+secnl <- ols Y4exp UdN4n UdM4n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 
 scalar d4 = $coeff(V4exp)
 scalar d4std = $stderr(V4exp)
 
-secall<-ols Y4n RYn RYDn U4n V4n 
+secall<-ols Y4n RYn RYDn US4n UM4n UMT4n
 
 
 scalar alpha4 = c4* $coeff(RYn)
@@ -193,7 +192,7 @@ scalar gamma4std = $stderr(U4n)
 scalar delta4 = $coeff(V4n)
 scalar delta4std = $stderr(V4n)
 
-secphi<-ols Y4n RYn RYDn U4n V4n W4n
+#secphi<-ols Y4n RYn RYDn U4n V4n W4n
 
 secns<-ols Y4n RYn RYDn
 

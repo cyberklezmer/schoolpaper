@@ -1,7 +1,6 @@
 %% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[english]{article}
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -104,8 +103,8 @@ Table for the schedule.
 \begin{tabular}{l|c|c|c|c}
 Date	&	Kindergartens		&	First degree	&	Second degree	&	Secondary \\
 \hline
-Mar-13	&	\multicolumn{4}{c}{closed}\\
-May-04	&	opened		&		&	&	\\
+Mar-13	& volantury	& \multicolumn{3}{c}{closed}\\
+May-04	&			&		&	&	\\
 May-11	& & & last year max. 15 & last year  \\
 May-25    &  & max. 15 voluntary & & last year max. 15 \\
 Jun-08	& & max 15 & \\
@@ -118,7 +117,16 @@ Nov-18	&  &  $1^{st}$ $2^{nd}$ open &  &  \\
 Nov-25	&  &  & & last year open \\
 Nov-30  & & open & rotations, last yr. open & \\
 Jan-04	&  & $1^{st}$ $2^{nd}$ open &  closed & closed \\
-Feb-27	&    \multicolumn{3}{c}{closed}|\\
+Feb-27	&    \multicolumn{2}{c}{closed}  & \, & \\
+Apr-12  & last years & rotations & &  \\
+Apr-26  &  selected open & & &  \\
+May-03  &  & & selected rotations &  \\
+May-10  & open & & rotations & \\
+May-17  & & open with testing & selected open w. t. & \\
+May-24 & & & open with testing & open with testing \\
+Jun-08 &  & \multicolumn{3}{c}{masks not required in all but 3 regions} \\
+Jun-15 &  & \multicolumn{3}{c}{masks not required} \\
+June-30 & \multicolumn{4}{c}{end of school year}
 \end{tabular}
 
 TBD: viceleta gymnazia: (complication for grammar schools, where equivalents of grades 6-9 in rotations) (these were open from Nov 30)
@@ -146,45 +154,63 @@ and kindergartens, data do not support these explanations.
 
 \section*{Methods}
 
-
-In line with the mainstream epidemiological modelling, we assume that
-the number of infections depends on the number of previous risk contacts, degree of protection which does not affect risk contacts and the physical properties of the virus (basic repreduction number) and the number of infected individuals in population. In particular
+To determine the influence of attending schools of a given kind, we examine the number of infections $X_{i,t}$ in the corresponding age cohort for each district $i$. We assume that these infections depend on the previous infection in the population, the previous infections within the district and the previous infections within the cohort, the latter in dependence on the degree of school opening. We assume general dependence on the overall infection, linear district-specific dependence on the infections in the district, and the district-independent linear dependence on the infections in the cohort:
 \begin{equation}
-X_t = Q_t + e_t,\qquad Q_t = r_t C_{t-1} X_{t-1}
+X_{i,t} = f_t(r_t,C_{t-1},d_i Y_{t-1}) + \beta_i Q_{i,t}
++ \gamma U_{i,t} + \delta V_{i,t} + e_{i,t}
 \label{eq:x}
 \end{equation}
-For the purposes of the present study, we use more detailed model: for each cohort $j$ and district $i$, we assume
+$$
+Q_{i,t}=r_tC_{t-1}Y_{i,t-1} , \qquad U_{i,t}=r_t N_t X_{i,t-1}
+\qquad V_{i,t}=r_t M_t X_{i,t-1}
+$$
+Here, $Y_t$ is the number of overall infections, $d_i$ is the fraction of population livint in the $i$-th district, $C_t$ is the degree of contact reduction according to \cite{paqcovid}, $r_t$ is the (predicted) trend of infectiousness, $Y_{i,t}$ is the number of infections within the $i$-th district, $N_t$ is the degree of school opening with masks (zero means all classes closed, one means all classes opened without wearing masks in classrooms), $M_t$ is the degree of school opening with masks, and $e_{i,t}$ is the error term. 
+
+We estimate the impact of schools two ways: comparing two sub-cohorts within model (\ref{eq:x}), and by estimating parameters of a less general linear model.
+The first method can be used only in the lucky case in which two sub-cohorts of the examined age cohorts received different "treatment", for instance some grades were open while another were simultaneously closed. 
+We assume both the sub-cohorts follow (\ref{eq:x}) with sub-cohort specific $f_t$ and $\beta_i$, but with the same rates of infection at schools $\gamma$ and $\delta$:
+$$
+X^j_{i,t} = f^j_t(r_t,C_t, d_iY_{t-1}) + \beta_i^j Q_{i,t}
++ \gamma c_j r_t N^j_t X_{i,t-1} + \delta  c_j r_t M^j_t X_{i,t-1}+e_{i,j,t}.
+$$
+Here, $c_j$ is the relative size of the $j$-th sub-cohort with respect to whole cohort. By subtracting, we get 
+$$
+\frac{X^{1}_{i,t}}{c_{1}} - \frac{X^{2}_{i,t}}{c_{2}} = \psi_t + \vartheta_i Q_{i,t} 
++ \gamma \Delta N_{t}r_t X_{i,t-1} + \delta \Delta M_t r_t X_{i,t-1} + e'_{i,j,t}
+$$
+from which we can estimate $\gamma$ and $\delta$, having reduced the number of the remaining parameters by two in comparison with estimating both the equations. Another advantage of this approach is that the results depends less on the choice of covariates $N$ and $M$, which have to be  set arbitrary to certain degree sometimes, for instance when the schools are opened with another additional restrictions; here, $M$'s and $N$'s cancel out when the treatment is the same for both the sub-cohorts.
+
+For the second way of estimation, we use a (less general) linear model
 \begin{equation}
-X^j_{i,t} = \alpha^j g_{i,j} Q_t + \beta^j h_{i,j} Q_{i,t}  + e_{i,j,t},\qquad Q_{i,t} = r_t C_{t-1} X_{i,t-1}
-\label{eq:z}
+X_{i,t} = \alpha_i Q_t + \beta_i Q_{i,t} + \gamma U_{i,t} + \delta V_{i,t} + \epsilon_t,
+\label{eq:linear}
 \end{equation}
-where $g_{i,j}$ is the fraction of the overall population belonging to cohort $j$ and living in the $i$-th district and $h_{i,j}$ is the fraction of the $i$-th district's population belonging to cohort $j$; the reason for which the normalization constants $g$ and $h$ is that the constants are comparable after normalization and, by dividing the equation by the cohort size, we get 
+$$
+Q_{t}=r_tC_{t-1}Y_{t-1},\qquad \alpha_i = \alpha h d_i, \qquad  \beta_i = \beta h_i
+$$
+Here, $h$ is the relative size of the cohort with respect to the whole population, and $\alpha$ and $\beta$ are estimated constants. This may also be interpreted, with a certain licence, as
 \begin{multline*}
-\P[\text{infection in cohort $j$, district $i$ at $t$}| \text{history up to $t-1$}]
+\P[\text{infection in cohort in district $i$ at $t$}]
 \\
-=\alpha^j r_t C_{t-1} [\text{ratio of infected at $t-1$}]
-\\
-+\beta^j r_t C_{t-1}
-[\text{ratio of infected in district $i$ at $t-1$}]
+=\alpha r_t C_{t-1} \P[\text{infection at $t-1$}]
++\beta r_t C_{t-1}
+\P[\text{infection in $i$ at $t-1$}] \\
+\underbrace{(\gamma N_{t-1} + \delta M_{t-1}) r_t}_{S_{t-1}} \P[\text{infection in cohort in $i$ at $t-1$}]
 \end{multline*}
 
-To estimate the impact of schools, we generalize model (\ref{eq:z}) to: 
+By summing (\ref{eq:linear}) over $i$, we get 
 \begin{equation}
-X^j_{i,t} = \alpha^j g_{i,j}Q_t  + \beta^j h_{i,j} Q_{i,t}
-+ \gamma^j S^j_t X^j_{i,t} + \epsilon_{i,j,t},\qquad S^j_t = r_{t}D_{t-1}^{j}(1-\mu^{j}M_{t-1}^{j}), \label{eq:xs}
-\end{equation}
-where $\gamma^{j}$ are constants, $D_{\tau}^{j}$
-is the contact restriction at the school, $M_{\tau}^{j}$ is the indicator
-of wearing masks in classrooms and $\mu^{i}$ is the (unknown) efficiency
-of masks,  i.e. we assume that the infections in a district depend both on the overall incidence and on the incidence in the district and opening of schools. 
-
-
-Summing (\ref{eq:xs}) over $i$ we get that, 
-\begin{equation}
-X^j_{t} = \underbrace{(\alpha^j +\beta^j)}_{= \omega^j} Q_t
-+ \gamma^j S^j_t X^j_{t-1} + \epsilon_{j,t},
+X_{t} = \underbrace{(\alpha +\beta)}_{= \omega} Q_t
++ S_{t-1}X^j_{t-1} + \epsilon_{j,t},
 \label{eq:xss}
 \end{equation}
+or
+\begin{multline*}
+\P[\text{infection in cohort at $t$}]
+\\
+=\omega r_t C_{t-1} \P[\text{infection at $t-1$}] + S_{t-1} \P[\text{infection in cohort at $t-1$}]
+\end{multline*}
+Summing (\ref{eq:xss}) over $i$ we get that, 
 Equation (\ref{eq:xss}) may serve for understanding
 of infection spread in schools and consequently for policy recommendations.
 Assume that our goal is to decrease the number of infected in the cohort by a ratio
@@ -196,29 +222,7 @@ which happens if
 \[
 \rho_{t}:=\rho_{t}^{\omega}+\rho_{t}^{\gamma}<\rho_{0},
 \qquad
-\rho_{t}^{\alpha}=\omega^{j}\frac{Q_{t}}{X_{t-1}^{j}},\qquad\rho_{t}^{\gamma}=\gamma^{j}S_{t}^{j}\]
-
-For the purpose of estimation, we may impose for $S_{t}^{j}$ in
-(\ref{eq:xss}) to get a linear model 
-\begin{multline}
-X_{i,t}^{j}=\alpha^{j}g_{i,j}Q_{t}+\beta^j h_{i,j}Q_{i,t}+\gamma^{j}U^j_{t}+\delta^{j}V^j_{t}+\eta_{i,j,t},\\
-U^j_{t}=r_{t}D_{t-1}^{j}X_{t-1}^{j},\qquad V^j_{t}=r_{t}D^j_{t-1}M^j_{t-1}X_{t-1},\qquad\delta^{k}=-\mu\gamma^{j}.\label{eq:awls}
-\end{multline}
-Here, $\epsilon_{t}$ is centered error term for which we assume $\mathrm{var}(\epsilon_{t})\sim X_{t-1}^{2}$--
-see Appendix for further details and more rigorous treatment. 
-
-To avoid possible spurious results stemming from model misspecification, we exploited several situations in which two sub-cohorts of comparable size of a given cohort were subject to a different regime, in particular assuming
-\begin{equation}
-X^{j,k}_{i,t} = f^{j,k} (Q_t) + \theta_i^{j,k} Q_{i,t}
-+ \gamma^{j} d_{j,k} S^{j,k}_t X^{j}_{i,t} + \epsilon_{i,j,k,t},\qquad S^{j,k}_t = r_{t}D_{t-1}^{j,k}(1-\mu^{j}M_{t-1}^{j}), \label{eq:xs}
-\end{equation}
-where $D$ and $M$ are analogies of corresponding whole-cohort variables and $d_{j,k}$ is the fraction of the sub-cohort $k$ within cohort $j$.
-i.e. we assume that each sub-cohort, yet infected possibly at a different rate from outside (the constants $\alpha$ and $\beta$ depend on $k$, see Section \ref{sec:results} for the corresponding evidence), is infected at the same rate at schools ($\gamma^j$ and $\mu^j$ do not depend on $k$). Clearly, once sub-cohorts exhaust the cohort $j$, $f^{j,k}$ is linear and $\theta_1^{j,k}=\dots=\theta_n^{j,k}$, we get (TBD) by summing over $k$ with the same $\gamma^j$ and $\delta^j$
-Subtracting the equations and replacing the first term by dummies, we get
-$$
-\frac{X^{j,1}_{i,t}}{d_{j,1}} - \frac{X^{j,2}_{i,t}}{d_{j,2}} = \psi^j_t + \vartheta^j_i Q_{i,t} 
-+ \gamma^{j} (U^{j,1}_t-U^{j,2}_t) + \delta^j (V^{j,1}_t -V^{j,2}_t) + \epsilon'_{i,j,t}
-$$
+\rho_{t}^{\omega}=\omega^{j}\frac{Q_{t}}{X_{t-1}^{j}},\qquad\rho_{t}^{\gamma}=\gamma^{j}S_{t}^{j}\]
 
 
 \section*{Data}
@@ -246,123 +250,66 @@ the number by the first degree $X_{i,t}^{2}=\frac{1}{2}Z_{i,t}^{6}+Z_{i,t}^{7}+\
 by the second degree $X_{i,t}^{3}=\frac{1}{2}Z_{i,t}^{11}+Z_{i,t}^{12}+\dots+\frac{1}{2}Z_{i,t}^{15}$
 and that by the secondary schools $X_{i,t}^{4}=\frac{1}{2}Z_{i,t}^{15}+Z_{i,t}^{16}+\dots+\frac{1}{2}Z_{i,t}^{19},$where
 $Z_{i,t}^{j}$ is the number of cases by the $j$-year old individuals
-in the $i$-th district. 
-
-
-Our data came from public sources. The series values $Y^{1},\dots,Y^{4},Y^{2*}$
-and $Y$ are taken from the public dataset by the Czech Ministry of
+in the $i$-th district. The values $Z^j_{i,t}$ from the public dataset by the Czech Ministry of
 Health, namely the anonymized person-level list of reported infections
 (cit osoby.htm) including, among other things, the date of reporting
-the infection and the age. 
+the infection and the age. The series $Y_t$ and $Y_{i,t}$ are computed by aggregation.
 
-The growth rate $r_{t}$ is computed by exponential smoothing of series
-$\frac{Y_{t}/Y_{t-1}}{C_{t-1}}$ with parameter $\alpha=0.1,$ as
-shown in the following chart. 
+The values of contact reduction $C_t$ were taken from the longitudinal sociological survey \cite{paqcovid}. The trend $r_{t}$ is computed by double exponential smoothing of series
+$\frac{Y_{t}/Y_{t-1}}{C_{t-1}}$ with parameter $\alpha=0.2,\gamma=0.5$.  
 
-\includegraphics[scale=0.4]{r}
-
-The values of $S$ and $M$ are estimated from publicly available
+The values of $N$ and $M$ are estimated from publicly available
 sources, mostly from resolutions of the Czech government concerning
 school attendance, which have been put into effect through decrees
-of the Ministry of Education (see the electronic supplement TBD for
-details). Only weeks starting from April 6th, 2020 are taken into
+of the Ministry of Education (see the electronic supplement for
+details). Yet first cases appeared in teh beginning of March, 2020, 
+only weeks starting from April 6th, 2020 are taken into
 account, as we regard the previous epidemic data as noisy, unreliable
 and suffering from small sample properties. The last values correspond
-to the week staring on April 5th, 2021. The values of $S$ were set
-to $1$ if the school was open without any restrictions other than
-mask, and to $0$ if they were closed. In the other weeks, we estimated
-values of $S$ only when we could determine $S$ objectively. Thus,
-we excluded observations corresponding to holidays, weeks with no
-more than two possible school days, and the weeks with non-standard
-regime, such as rotations or limited numbers of students in a room.
-We also excluded the weeks where only first two classes had been open,
-which we study separately. 
-
-The corresponding values of $D$ and $M$ are listed in the Table
+to the week staring on April 5th, 2021. The values of $N$ were set
+to $1$ if the school was open without any restrictions, and to $0$ if they were closed or masks were ordered. Similarly, the values of $M$ were put to $1$ if the school was fully open with masks in classroom and to $0$ if they were closed or open with masks. If the school type was open only partially, we either set $N$ (or $M$) to a fractional value if a reasonable way to determine the value existed, otherwise the observation was excluded. We also 
+excluded observations corresponding to holidays and the weeks with no
+more than two possible school days. The list of values $N$ and $M$ finds itself in the Table
 in Appendix together with the notes on how we determined fractional
-values $S$ and reasons of observation exclusions. The following table
+values and reasons of observation exclusions. The following table
 summarizes our data-set. 
 
-\begin{tabular}{c|cccc}
-& Kindergartens & First & Second & Secondary \\
-& & degree & degree & grades   \\
-\hline
-Observaions &	$41$&		$25$&		$30$&		$36$\\	
-Opened &	$31$&		$9$&		$6$&		$10$\\	
-\dots with masks &		$0$&		$7$&		$4$&		$8$\\
-\dots without masks &		$31$&		$2$&		$2$&		$2$\\
+We identified three opportunities for sub-cohort comparison. The first was opening only the first two grades of primary schools from January 4th until February 24th, 2021 while the first of the primary schools were closed. Here we compared cohorts $X_{i,t}^{2,1}=\frac{1}{2}Z_{i,t}^{6}+Z_{i,t}^{7}+\frac{1}{2}Z_{i,t}^{8}$, corresponding to the first two grades, with  $X_{i,t}^{2,2}=\frac{1}{2}Z_{i,t}^{9}+Z_{i,t}^{10}+\frac{1}{2}Z_{i,t}^{11}$. As the masks were ordered, we put $M^{1}=1$, $M^{2}=0$, $N^1=N^2=0$ during the mentioned weeks, while, for the rest of the observations, $M^{1}=M^{2}$, $N^1=N^2$ as the conditions were identical for both the cohorts. As there was no difference of the $N$'s, we could estimate only $\delta$ but not $\gamma$. 
 
-\end{tabular}
+In the second case we compared the cohort corresponding to the last years of the primary schools (half of 14 year plus the half of the 15 year) with the closest corresponding not overlapping cohort (half of 12's plus the half of 13's). The last years were opened on May 11th, 2020, on voluntary basis for groups of at most 15 students, while the rest of the second degree remained closed until May 25, so there were two weeks for comparison.  Further, on November 30. 2020. the last years were opened while the rest went to school on the rotational basis; this state took place until Christmas (three weeks). Here we put $M^1=0.4$, $M^2=0$ for the spring three weeks (masks were not ordered) and $N^1=1$, $N^2=0.5$ for the autumn three weeks (otherwise the conditions were identical), so we could estimated both $\gamma$ and $\delta$.
+
+Finally, we compared the cohort corresponding to the last years of secondary schools with the closest cohort from secondary schools for the three weeks starting from November 30, when the last years were open while the rest of secondary schools were closed. As masks were ordered, we put $M^1=1$, $M^2=0$ during this weeks with the $N$'s and the rest of $M$'s identical, being able to estimate only $\delta$.
+
+
+
 
 \section*{Results }
 
-For all the cohorts with observations both with and without masks,
-which are both the primary ones and the secondary one, we estimated
-$\beta$,$\gamma$ and $\delta$ in (\ref{eq:awls}). In all three
-cases, the coefficients came out ``reasonably'': $\beta$ came out
-undoubtedly significant (overall epidemics influences the infections),
-$\gamma>0$ (schools add the infections) and $0\leq-\delta\leq\gamma$
-(masks reduce infection in schools). For the kindergartens, where
-masks were never worn in classes, and for the first two classes, where
-masks were always worn, we subsequently estimated (\ref{eq:awls})
-with $\delta^{1}=0$. In both the cases, the coefficient $\gamma$
-(the influence of opening) came out undoubtedly significant. 
-
-The results of estimation may be found in the following Table. 
+The following Table shows results of estimation of (\ref{eq:x}) and (\ref{eq:linear}) as well as that of (\ref{eq:linear}) with forced $\gamma=\delta=0$ and using all the observations (recall that we excluded some observations due to unclarity concerning schools status). For kindergartens, masks were never worn, so we do not estimate $\delta$. 
 
 \begin{tabular}{cc|cccc}
 \multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline
-General &	$\gamma$	&	&	&	&	\\
-&	$\delta$	&	& $0.249^{***}(0.026)$	& $0.191^{**}(0.0899)$	& $0.192^{**}(0.0801)$	\\ \hline
-Linear &	$\alpha$	& $0.159^{***}(0.0218)$	& $0.063^{**}(0.0309)$	& $0.033^{}(0.0346)$	& $0.121^{***}(0.022)$	\\
-&	$\beta$	& $0.319^{***}(0.0132)$	& $0.608^{***}(0.0297)$	& $0.749^{***}(0.0349)$	& $0.479^{***}(0.0137)$	\\
-&	$\gamma$	& $0.236^{***}(0.0147)$	& $0.248^{***}(0.0476)$	& $0.545^{***}(0.0351)$	& $0.886^{***}(0.0246)$	\\ 
-&	$\delta$	&	& $0.189^{***}(0.0276)$	& $0.046^{**}(0.0207)$	& $0.136^{***}(0.0272)$	\\ \hline
-No schools&	$\gamma$	& $0.261^{***}(0.0165)$	& $0.233^{***}(0.0184)$	& $0.376^{***}(0.0184)$	& $0.454^{***}(0.0242)$	\\ 
-&	$\delta$	& $0.297^{***}(0.0086)$	& $0.417^{***}(0.0096)$	& $0.273^{***}(0.0095)$	& $0.285^{***}(0.0125)$	
+General &	$\gamma$	&	&	& $0.272^{*}(0.145)$	&	\\
+&	$\delta$	&	& $0.28^{***}(0.0354)$	& $0.368^{}(0.2638)$	& $0.192^{**}(0.0801)$	\\ \hline
+Linear &	$\alpha$	& $0.159^{***}(0.0218)$	& $0.176^{***}(0.0203)$	& $0.203^{***}(0.0187)$	& $0.109^{***}(0.0232)$	\\
+&	$\beta$	& $0.319^{***}(0.0132)$	& $0.455^{***}(0.0121)$	& $0.53^{***}(0.012)$	& $0.479^{***}(0.0141)$	\\
+&	$\gamma$	& $0.236^{***}(0.0147)$	& $0.393^{***}(0.0473)$	& $0.693^{***}(0.0359)$	& $0.892^{***}(0.0265)$	\\ 
+&	$\delta$	&	& $0.23^{***}(0.0292)$	& $0.083^{***}(0.0232)$	& $0.14^{***}(0.0293)$	\\ \hline
+No schools&	$\alpha$	& $0.261^{***}(0.0165)$	& $0.233^{***}(0.0184)$	& $0.376^{***}(0.0184)$	& $0.454^{***}(0.0242)$	\\ 
+&	$\beta$	& $0.297^{***}(0.0086)$	& $0.417^{***}(0.0096)$	& $0.273^{***}(0.0095)$	& $0.285^{***}(0.0125)$	
 \end{tabular}
 
 The results strongly indicate the influence of opening corresponding
 school categories and they also indicate that wearing masks reduces
-infections significantly. Unfortunately, due to small numbers of observations,
-the estimates of $\gamma$ and $\delta$ are rather imprecise. The
-values of the variance inflation factors below 5 in each case, however,
-suggest that the models do not suffer from colinearity, so they should
-be capable to distinguish sharply the effect of wearing masks.
+infections significantly.
+These results are further illustrated by the following charts.
 
-When comparing the results of the individual cohorts, the values of
-$\beta$, indicating the rate of infection outside schools, increase
-with the age, surprisingly dropping at the secondary schools. The
-values $\gamma$ (the influence of school opening without masks) increase
-with age. The estimated effect of wearing masks (coefficients $\delta$)
-increases with age. 
+\includegraphics[width=5cm]{nomasks.eps} \includegraphics[width=5cm]{withmasks.eps}
 
-Further we focused focused on the prevailing modus operandi of the
-individual school categories, namely not wearing masks in kindergartens
-and wearing masks elsewhere. To this end, we re-estimated (\ref{eq:awls})
-with $\delta=0$ using only records where either schools were closed
-or the usual modus operandi (i.e. without masks in kindergartens,
-with masks otherwise) took place. The results are in the following
-table
+\includegraphics[width=5cm]{general.eps}
 
-\begin{tabular}{c|cccc|c}
-& Kindergartens  & First degree & Second degree & Secondary & Primary \\ 
-& no masks & masks & masks & masks & masks\\
-\hline
-$\beta$	& $0.369^{***}(0.0578)$	& $0.55^{***}(0.0429)$	& $0.829^{***}(0.0419)$	& $0.57^{***}(0.0425)$	& $0.503^{***}(0.0419)$	\\ $\gamma$	& $0.41^{***}(0.055)$	& $0.19^{}(0.133)$	& $0.12^{}(0.103)$	& $0.44^{***}(0.08)$	& $0.36^{***}(0.039)$	\\ \hline $\alpha$	& $0.012^{***}(0.0018)$	& $0.029^{***}(0.0023)$	& $0.035^{***}(0.0017)$	& $0.022^{***}(0.0016)$	& $0.011^{***}(0.0009)$	\\ \hline  \end{tabular}
+In a hypothetical situation when the probability of contagion is the same all in the districts and cohorts, the heights columns and their sections are comparable across charts, up to a constant, the probability of contagion in the corresponding cohorts, the sections of the columns displaying the contributions of the individual sources (overall situation, own district and school, when open).
 
-The values and errors of $\beta$ are identical for the kindergartens
-and the first grades (the same observations were used) and are nearly
-identical in the remaining cases. The values of $\gamma$ are consistent
-with the previous results, roughly corresponding to $\gamma-\delta$
-of the previous model (in the previous model, $\gamma$ measures the
-influence of not wearing masks, while here it concerns to usual modus
-operandi). For the first and the second degrees, the values are insignificant,
-which is non surprising, as, by the previous model, their ``true''
-values are evidently too close to zero to be significant with the
-present limited dataset. The (insignificant) result at the second
-degree indicates less contribution than the first degree. In the secondary
-schools, the contribution is again higher. 
 
 To give the reader an idea about quantities in question, we further
 plotted predictions of the ``as usual'' model for all the cohorts,
@@ -501,22 +448,22 @@ is now changed to
 
 \begin{center}
 \begin{table}
-
+\small
 \begin{tabular}{c|cccccccc}																																						
-Date	&	\multicolumn{2}{c}{Kindergartens}		&	\multicolumn{2}{c}{First degree}	&	\multicolumn{2}{c}{Second degree}	&	\multicolumn{2}{c}{Secondary}	\\ \hline																										
-	&	$S^1$		&	$M^1$											&	$S^2$		&	$M^2$			&	$S^3$		&	$M^3$			&	$S^4$		&	$M^4$				\\ \hline
-06-Apr-20	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-13-Apr-20	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-20-Apr-20	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-27-Apr-20	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-04-May-20	&	$1$		&	N											&	$0$		&				&	$0$		&				&	$0$		&					\\
-11-May-20	&	$1$		&	N											&	$0$		&				&	$\times^{ad}$		&				&	$0.25^{d}$		&	Y				\\
-18-May-20	&	$1$		&	N											&	$0$		&				&	$\times^{ad}$		&				&	$0.25^{d}$		&	Y				\\
-25-May-20	&	$1$		&	N											&	$\times^{a}$		&				&	$\times^{ad}$		&				&	$\times^{ad}$		&					\\
-01-Jun-20	&	$1$		&	N											&	$\times^{a}$		&				&	$\times^{ad}$		&				&	$\times^{ad}$		&					\\
-08-Jun-20	&	$1$		&	N											&	$\times^{a}$		&				&	$\times^{ad}$		&				&	$0$		&					\\
-15-Jun-20	&	$1$		&	N											&	$\times^{a}$		&				&	$\times^{ad}$		&				&	$0$		&					\\
-22-Jun-20	&	$1$		&	N											&	$\times^{a}$		&				&	$\times^{ad}$		&				&	$0$		&					\\
+Date	&	\multicolumn{2}{c}{Kindergartens}		&	\multicolumn{2}{c}{First degree}	&	\multicolumn{2}{c}{Second degree}	&	\multicolumn{2}{c}{Secondary}			\\ \hline																										
+	&	$N^1$		&	$M^1$											&	$N^2$		&	$M^2$			&	$N^3$		&	$M^3$			&	$N^4$		&	$M^4$				\\ \hline
+06-Apr-20	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+13-Apr-20	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+20-Apr-20	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+27-Apr-20	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+04-May-20	&	$1$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+11-May-20	&	$1$		&	$0$											&	$0$		&	$0$			&	$0^{ad}$		&	$0.1$			&	$0^{d}$		&	$0.25$				\\
+18-May-20	&	$1$		&	$0$											&	$0$		&	$0$			&	$0^{ad}$		&	$0.1$			&	$0^{d}$		&	$0.25$				\\
+25-May-20	&	$1$		&	$0$											&	$0^{a}$		&	$0.4$			&	$0^{ad}$		&	$0.1$			&	$0^{ad}$		&	$0.1$				\\
+01-Jun-20	&	$1$		&	$0$											&	$0^{a}$		&	$0.4$			&	$0^{ad}$		&	$0.1$			&	$0^{ad}$		&	$0.1$				\\
+08-Jun-20	&	$1$		&	$0$											&	$0^{a}$		&	$0.4$			&	$0^{a}$		&	$0.4$			&	$0$		&	$0$				\\
+15-Jun-20	&	$1$		&	$0$											&	$0^{a}$		&	$0.4$			&	$0^{a}$		&	$0.4$			&	$0$		&	$0$				\\
+22-Jun-20	&	$1$		&	$0$											&	$0^{a}$		&	$0.4$			&	$0^{a}$		&	$0.4$			&	$0$		&	$0$				\\
 29-Jun-20	&	$\times^{e}$		&												&	$\times^{e}$		&				&	$\times^{e}$		&				&	$\times^{e}$		&					\\
 	&	$\vdots$		&												&	$\vdots$		&				&	$\vdots$		&				&	$\vdots$		&					\\
 																																						
@@ -526,41 +473,42 @@ Date	&	\multicolumn{2}{c}{Kindergartens}		&	\multicolumn{2}{c}{First degree}	&	\
 																																						
 																																						
 24-Aug-20	&	$\times^{e}$		&												&	$\times^{e}$		&				&	$\times^{e}$		&				&	$\times^{e}$		&					\\
-31-Aug-20	&	$0.8^{a}$		&	N											&	$0.8^{b}$		&	N			&	$0.8^{b}$		&	N			&	$0.8^{b}$		&	N				\\
-07-Sep-20	&	$1$		&	N											&	$1$		&	N			&	$1$		&	N			&	$1$		&	N				\\
-14-Sep-20	&	$1$		&	N											&	$1^{I}$		&	N			&	$1^{I}$		&	N			&	$1^{I}$		&	N				\\
-21-Sep-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$1$		&	Y				\\
-28-Sep-20	&	$0.8^{a}$		&	N											&	$0.8^{b}$		&	Y			&	$0.8^{b}$		&	Y			&	$0.8^{b}$		&	Y				\\
-05-Oct-20	&	$1$		&	N											&	$1$		&	Y			&	$1$		&	Y			&	$\times^{j}$		&					\\
-12-Oct-20	&	$1$		&	N											&	$\times^{h}$		&				&	$\times^{h}$		&				&	$\times^{h}$		&					\\
-19-Oct-20	&	$1$		&	N											&	$0$		&				&	$0$		&				&	$0$		&					\\
-26-Oct-20	&	$1$		&	N											&	$\times^{g}$		&				&	$\times^{g}$		&				&	$\times^{g}$		&					\\
-02-Nov-20	&	$1$		&	N											&	$0$		&				&	$0$		&				&	$0$		&					\\
-09-Nov-20	&	$1$		&	N											&	$0$		&				&	$0$		&				&	$0$		&					\\
-16-Nov-20	&	$1$		&	N											&	$\times^{k}$		&				&	$0$		&				&	$0$		&					\\
-23-Nov-20	&	$1$		&	N											&	$\times^{k}$		&				&	$0$		&				&	$\times^{k}$		&					\\
-30-Nov-20	&	$1$		&	N											&	$1^{c}$		&	Y			&	$\times^{l}$		&				&	$0.25^{d}$		&	Y				\\
-07-Dec-20	&	$1$		&	N											&	$1^{c}$		&	Y			&	$\times^{l}$		&				&	$0.25^{d}$		&	Y				\\
-14-Dec-20	&	$1$		&	N											&	$1^{c}$		&	Y			&	$\times^{l}$		&				&	$0.25^{d}$		&	Y				\\
+31-Aug-20	&	$0.8^{a}$		&	$0$											&	$0.8^{b}$		&	$0$			&	$0.8^{b}$		&	$0$			&	$0.8^{b}$		&	$0$				\\
+07-Sep-20	&	$1$		&	$0$											&	$1$		&	$0$			&	$1$		&	$0$			&	$1$		&	$0$				\\
+14-Sep-20	&	$1$		&	$0$											&	$0.6^{I}$		&	$0.4$			&	$0.6^{I}$		&	$0.4$			&	$0.6^{I}$		&	$0.4$				\\
+21-Sep-20	&	$1$		&	$0$											&	$0$		&	$1$			&	$0$		&	$1$			&	$0$		&	$1$				\\
+28-Sep-20	&	$0.8^{a}$		&	$0$											&	$0^{b}$		&	$0.8$			&	$0^{b}$		&	$0.8$			&	$0^{b}$		&	$0.8$				\\
+05-Oct-20	&	$1$		&	$0$											&	$0$		&	$1$			&	$0$		&	$1$			&	$\times^{j}$		&					\\
+12-Oct-20	&	$1$		&	$0$											&	$\times^{h}$		&				&	$\times^{h}$		&				&	$\times^{h}$		&					\\
+19-Oct-20	&	$1$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+26-Oct-20	&	$1$		&	$0$											&	$\times^{g}$		&				&	$\times^{g}$		&				&	$\times^{g}$		&					\\
+02-Nov-20	&	$1$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+09-Nov-20	&	$1$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+16-Nov-20	&	$1$		&	$0$											&	$\times^{k}$		&				&	$0$		&	$0$			&	$0$		&	$0$				\\
+23-Nov-20	&	$1$		&	$0$											&	$\times^{k}$		&				&	$0$		&	$0$			&	$\times^{k}$		&					\\
+30-Nov-20	&	$1$		&	$0$											&	$0$		&	$1$			&	$0^{l}$		&	$0.625$			&	$0^{d}$		&	$0.25$				\\
+07-Dec-20	&	$1$		&	$0$											&	$0$		&	$1$			&	$0^{l}$		&	$0.625$			&	$0^{d}$		&	$0.25$				\\
+14-Dec-20	&	$1$		&	$0$											&	$0$		&	$1$			&	$0^{l}$		&	$0.625$			&	$0^{d}$		&	$0.25$				\\
 21-Dec-20	&	$\times^{f}$		&												&	$\times^{f}$		&				&	$\times^{f}$		&				&	$\times^{f}$		&					\\
 28-Dec-20	&	$\times^{f}$		&												&	$\times^{f}$		&				&	$\times^{f}$		&				&	$\times^{f}$		&					\\
 04-Jan-21	&	$\times^{f}$		&												&	$\times^{f}$		&				&	$\times^{f}$		&				&	$\times^{f}$		&					\\
-11-Jan-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-18-Jan-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-25-Jan-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-01-Feb-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-08-Feb-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-15-Feb-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-22-Feb-21	&	$1$		&	N											&	$\times^{c}$		&				&	$0$		&				&	$0$		&					\\
-01-Mar-21	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-08-Mar-21	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-15-Mar-21	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-22-Mar-21	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-29-Mar-21	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
-05-Apr-21	&	$0$		&												&	$0$		&				&	$0$		&				&	$0$		&					\\
+11-Jan-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+18-Jan-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+25-Jan-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+01-Feb-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+08-Feb-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+15-Feb-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+22-Feb-21	&	$1$		&	$0$											&	$0^{c}$		&	$0.4$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+01-Mar-21	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+08-Mar-21	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+15-Mar-21	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+22-Mar-21	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+29-Mar-21	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
+05-Apr-21	&	$0$		&	$0$											&	$0$		&	$0$			&	$0$		&	$0$			&	$0$		&	$0$				\\
 \end{tabular}																																						
+																																				
 																		
-																						 	\caption{Notes: a -- voluntary, only 15 pupils in the classroom (approx. half), b -- only 4 days from week, c -- only 1st and 2nd classes are open, d -- only the last year open, e -- summer vacation, f -- Christmas vacation, g -- autumn vacation,  h -- closed on Wednesday, i -- masks ordered from , j -- closed in more affected regions, k -- regime change on Wednesday, l -- last year fully open, the rest rotations }										\end{table}															
+																						 	\caption{Notes: a -- voluntary, only 15 pupils in a classroom (approx. half), b -- only 4 days from week, c -- only 1st and 2nd classes open, d -- only the last year open, e -- summer vacation, f -- Christmas vacation, g -- autumn vacation,  h -- closed on Wednesday, i -- masks ordered from, j -- different regime among regions according to epidemiological situation, k -- regime change during a week, l -- last year fully open, the rest rotations, m -- starting from Tuesday, valid in all but 3 regions on Monday, n -- open up to decision of directors }										\end{table}															
 \end{center}																	 
 
 \section*{The Statistical Model}
