@@ -5,6 +5,8 @@ open /home/martin/Documents/s/covid/schools/data.ods --sheet=9
 setobs District Week --panel-vars
 
 dummify District
+dummify Week
+
 genr Q_0 = DDistrict_0 * RYDn
 genr Q_1 = DDistrict_1 * RYDn
 genr Q_2 = DDistrict_2 * RYDn
@@ -83,123 +85,457 @@ genr Q_74 = DDistrict_74 * RYDn
 genr Q_75 = DDistrict_75 * RYDn
 genr Q_76 = DDistrict_76 * RYDn
 
-scalar c1=31.7429294848201
+genr QG_0 = DDistrict_0 * RYn
+genr QG_1 = DDistrict_1 * RYn
+genr QG_2 = DDistrict_2 * RYn
+genr QG_3 = DDistrict_3 * RYn
+genr QG_4 = DDistrict_4 * RYn
+genr QG_5 = DDistrict_5 * RYn
+genr QG_6 = DDistrict_6 * RYn
+genr QG_7 = DDistrict_7 * RYn
+genr QG_8 = DDistrict_8 * RYn
+genr QG_9 = DDistrict_9 * RYn
+genr QG_10 = DDistrict_10 * RYn
+genr QG_11 = DDistrict_11 * RYn
+genr QG_12 = DDistrict_12 * RYn
+genr QG_13 = DDistrict_13 * RYn
+genr QG_14 = DDistrict_14 * RYn
+genr QG_15 = DDistrict_15 * RYn
+genr QG_16 = DDistrict_16 * RYn
+genr QG_17 = DDistrict_17 * RYn
+genr QG_18 = DDistrict_18 * RYn
+genr QG_19 = DDistrict_19 * RYn
+genr QG_20 = DDistrict_20 * RYn
+genr QG_21 = DDistrict_21 * RYn
+genr QG_22 = DDistrict_22 * RYn
+genr QG_23 = DDistrict_23 * RYn
+genr QG_24 = DDistrict_24 * RYn
+genr QG_25 = DDistrict_25 * RYn
+genr QG_26 = DDistrict_26 * RYn
+genr QG_27 = DDistrict_27 * RYn
+genr QG_28 = DDistrict_28 * RYn
+genr QG_29 = DDistrict_29 * RYn
+genr QG_30 = DDistrict_30 * RYn
+genr QG_31 = DDistrict_31 * RYn
+genr QG_32 = DDistrict_32 * RYn
+genr QG_33 = DDistrict_33 * RYn
+genr QG_34 = DDistrict_34 * RYn
+genr QG_35 = DDistrict_35 * RYn
+genr QG_36 = DDistrict_36 * RYn
+genr QG_37 = DDistrict_37 * RYn
+genr QG_38 = DDistrict_38 * RYn
+genr QG_39 = DDistrict_39 * RYn
+genr QG_40 = DDistrict_40 * RYn
+genr QG_41 = DDistrict_41 * RYn
+genr QG_42 = DDistrict_42 * RYn
+genr QG_43 = DDistrict_43 * RYn
+genr QG_44 = DDistrict_44 * RYn
+genr QG_45 = DDistrict_45 * RYn
+genr QG_46 = DDistrict_46 * RYn
+genr QG_47 = DDistrict_47 * RYn
+genr QG_48 = DDistrict_48 * RYn
+genr QG_49 = DDistrict_49 * RYn
+genr QG_50 = DDistrict_50 * RYn
+genr QG_51 = DDistrict_51 * RYn
+genr QG_52 = DDistrict_52 * RYn
+genr QG_53 = DDistrict_53 * RYn
+genr QG_54 = DDistrict_54 * RYn
+genr QG_55 = DDistrict_55 * RYn
+genr QG_56 = DDistrict_56 * RYn
+genr QG_57 = DDistrict_57 * RYn
+genr QG_58 = DDistrict_58 * RYn
+genr QG_59 = DDistrict_59 * RYn
+genr QG_60 = DDistrict_60 * RYn
+genr QG_61 = DDistrict_61 * RYn
+genr QG_62 = DDistrict_62 * RYn
+genr QG_63 = DDistrict_63 * RYn
+genr QG_64 = DDistrict_64 * RYn
+genr QG_65 = DDistrict_65 * RYn
+genr QG_66 = DDistrict_66 * RYn
+genr QG_67 = DDistrict_67 * RYn
+genr QG_68 = DDistrict_68 * RYn
+genr QG_69 = DDistrict_69 * RYn
+genr QG_70 = DDistrict_70 * RYn
+genr QG_71 = DDistrict_71 * RYn
+genr QG_72 = DDistrict_72 * RYn
+genr QG_73 = DDistrict_73 * RYn
+genr QG_74 = DDistrict_74 * RYn
+genr QG_75 = DDistrict_75 * RYn
+genr QG_76 = DDistrict_76 * RYn
+
+genr TQ_1 = DWeek_1 * RYDn
+genr TQ_2 = DWeek_2 * RYDn
+genr TQ_3 = DWeek_3 * RYDn
+genr TQ_4 = DWeek_4 * RYDn
+genr TQ_5 = DWeek_5 * RYDn
+genr TQ_6 = DWeek_6 * RYDn
+genr TQ_7 = DWeek_7 * RYDn
+genr TQ_8 = DWeek_8 * RYDn
+genr TQ_9 = DWeek_9 * RYDn
+genr TQ_10 = DWeek_10 * RYDn
+genr TQ_11 = DWeek_11 * RYDn
+genr TQ_12 = DWeek_12 * RYDn
+genr TQ_13 = DWeek_13 * RYDn
+genr TQ_14 = DWeek_14 * RYDn
+genr TQ_15 = DWeek_15 * RYDn
+genr TQ_16 = DWeek_16 * RYDn
+genr TQ_17 = DWeek_17 * RYDn
+genr TQ_18 = DWeek_18 * RYDn
+genr TQ_19 = DWeek_19 * RYDn
+genr TQ_20 = DWeek_20 * RYDn
+genr TQ_21 = DWeek_21 * RYDn
+genr TQ_22 = DWeek_22 * RYDn
+genr TQ_23 = DWeek_23 * RYDn
+genr TQ_24 = DWeek_24 * RYDn
+genr TQ_25 = DWeek_25 * RYDn
+genr TQ_26 = DWeek_26 * RYDn
+genr TQ_27 = DWeek_27 * RYDn
+genr TQ_28 = DWeek_28 * RYDn
+genr TQ_29 = DWeek_29 * RYDn
+genr TQ_30 = DWeek_30 * RYDn
+genr TQ_31 = DWeek_31 * RYDn
+genr TQ_32 = DWeek_32 * RYDn
+genr TQ_33 = DWeek_33 * RYDn
+genr TQ_34 = DWeek_34 * RYDn
+genr TQ_35 = DWeek_35 * RYDn
+genr TQ_36 = DWeek_36 * RYDn
+genr TQ_37 = DWeek_37 * RYDn
+genr TQ_38 = DWeek_38 * RYDn
+genr TQ_39 = DWeek_39 * RYDn
+genr TQ_40 = DWeek_40 * RYDn
+genr TQ_41 = DWeek_41 * RYDn
+genr TQ_42 = DWeek_42 * RYDn
+genr TQ_43 = DWeek_43 * RYDn
+genr TQ_44 = DWeek_44 * RYDn
+genr TQ_45 = DWeek_45 * RYDn
+genr TQ_46 = DWeek_46 * RYDn
+genr TQ_47 = DWeek_47 * RYDn
+genr TQ_48 = DWeek_48 * RYDn
+genr TQ_49 = DWeek_49 * RYDn
+genr TQ_50 = DWeek_50 * RYDn
+genr TQ_51 = DWeek_51 * RYDn
+genr TQ_52 = DWeek_52 * RYDn
+genr TQ_53 = DWeek_53 * RYDn
+genr TQ_54 = DWeek_54 * RYDn
+genr TQ_55 = DWeek_55 * RYDn
+genr TQ_56 = DWeek_56 * RYDn
+genr TQ_57 = DWeek_57 * RYDn
+genr TQ_58 = DWeek_58 * RYDn
+genr TQ_59 = DWeek_59 * RYDn
+genr TQ_60 = DWeek_60 * RYDn
+genr TQ_61 = DWeek_61 * RYDn
+genr TQ_62 = DWeek_62 * RYDn
+genr TQ_63 = DWeek_63 * RYDn
+genr TQ_64 = DWeek_64 * RYDn
+genr TQ_65 = DWeek_65 * RYDn
+genr TQ_66 = DWeek_66 * RYDn
+genr TQ_67 = DWeek_67 * RYDn
+genr TQ_68 = DWeek_68 * RYDn
+genr TQ_69 = DWeek_69 * RYDn
+genr TQ_70 = DWeek_70 * RYDn
+genr TQ_71 = DWeek_71 * RYDn
+genr TQ_72 = DWeek_72 * RYDn
+
+
+scalar c1=31.7681541301955
 scalar c2=18.7459708378764
 scalar c3=23.9766621937179
 scalar c4=25.7611097527338
+
+list qs = Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 QG_0	QG_1	QG_2	QG_3	QG_4	QG_5	QG_6	QG_7	QG_8	QG_9	QG_10	QG_11	QG_12	QG_13	QG_14	QG_15	QG_16	QG_17	QG_18	QG_19	QG_20	QG_21	QG_22	QG_23	QG_24	QG_25	QG_26	QG_27	QG_28	QG_29	QG_30	QG_31	QG_32	QG_33	QG_34	QG_35	QG_36	QG_37	QG_38	QG_39	QG_40	QG_41	QG_42	QG_43	QG_44	QG_45	QG_46	QG_47	QG_48	QG_49	QG_50	QG_51	QG_52	QG_53	QG_54	QG_55	QG_56	QG_57	QG_58	QG_59	QG_60	QG_61	QG_62	QG_63	QG_64	QG_65	QG_66	QG_67	QG_68	QG_69	QG_70	QG_71	QG_72	QG_73	QG_74	QG_75	QG_76
+list tq = Q_0	Q_1	Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 TQ_1	TQ_2	TQ_3	TQ_4	TQ_5	TQ_6	TQ_7	TQ_8	TQ_9	TQ_10	TQ_11	TQ_12	TQ_13	TQ_14	TQ_15	TQ_16	TQ_17	TQ_18	TQ_19	TQ_20	TQ_21	TQ_22	TQ_23	TQ_24	TQ_25	TQ_26	TQ_27	TQ_28	TQ_29	TQ_30	TQ_31	TQ_32	TQ_33	TQ_34	TQ_35	TQ_36	TQ_37	TQ_38	TQ_39	TQ_40	TQ_41	TQ_42	TQ_43	TQ_44	TQ_45	TQ_46	TQ_47	TQ_48	TQ_49	TQ_50	TQ_51	TQ_52	TQ_53	TQ_54	TQ_55	TQ_56	TQ_57	TQ_58	TQ_59	TQ_60	TQ_61	TQ_62	TQ_63	TQ_64	TQ_65	TQ_66	TQ_67	TQ_68	TQ_69	TQ_70	TQ_71	TQ_72
 
 
 #kindergartens
 
 genr Y1exp = Y1tn - Y1cn
 
-kindnl <- ols Y1exp UdN1n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+
+kindnldif <- ols Y1exp UN1tn UN1cn Q1n qs
 
 
-kindall <- ols Y1n RYn RYDn UN1n 
+scalar nu1exp1 = $coeff(UN1tn)
+scalar nu1exp1std = $stderr(UN1tn)
+scalar nu2exp1 = $coeff(UN1cn)
+scalar nu2exp1std = $stderr(UN1cn)
+
+
+#scalar nuexp1 = $coeff(UdN1n)
+#scalar nuexp1std = $stderr(UdN1n)
+
+#kindnlb <- ols Y1exp UdN1n dummify(Week)
+#scalar nuexpb1 = $coeff(UdN1n)
+#scalar nuexpb1std = $stderr(UdN1n)
+
+#kindnlc <- ols Y1exp UdN1n 
+#scalar nuexpc1 = $coeff(UdN1n)
+#scalar nuexpc1std = $stderr(UdN1n)
+
+
+kindallg <- ols Y11n Q11n UN1tn qs
+scalar nug1 = $coeff(UN1tn)
+scalar nug1std = $stderr(UN1tn)
+scalar gammag1 = $coeff(Q11n)
+scalar gammag1std = $stderr(Q11n)
+
+kindall <- ols Y11n Q11n RYn RYDn UN1tn 
+
 
 scalar alpha1 = c1* $coeff(RYn)
 scalar alpha1std = c1* $stderr(RYn)
 scalar beta1 = c1*$coeff(RYDn)
 scalar beta1std = c1*$stderr(RYDn)
-scalar gamma1 = $coeff(UN1n)
-scalar gamma1std = $stderr(UN1n)
+scalar gamma1 = $coeff(Q11n)
+scalar gamma1std = $stderr(Q11n)
+scalar nu1 = $coeff(UN1tn)
+scalar nu1std = $stderr(UN1tn)
 
 # kindphi <- ols Y1n RYn RYDn U1n W1n
 
 
-kindns <- ols Y1n RYn RYDn 
-scalar alpha1n = c1* $coeff(RYn)
-scalar alpha1nstd = c1* $stderr(RYn)
-scalar beta1n = c1*$coeff(RYDn)
-scalar beta1nstd = c1*$stderr(RYDn)
+kindns <- ols Y1n RYn RYDn Q1n
+scalar alphan1 = c1* $coeff(RYn)
+scalar alphan1std = c1* $stderr(RYn)
+scalar betan1 = c1*$coeff(RYDn)
+scalar betan1std = c1*$stderr(RYDn)
+scalar gamman1 = $coeff(Q1n)
+scalar gamman1std = $stderr(Q1n)
+
 
 genr Y2exp = Y2tn - Y2cn
 
+#ols Y2exp Q2n UM2tn UM2cn  tq
 
-fdnl <- ols Y2exp UdM2n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+fdnldif <- ols Y2exp Q2n UM2tn UM2cn  qs
 
-scalar d2 = $coeff(UdM2n)
-scalar d2std = $stderr(UdM2n)
+scalar mu1exp2 = $coeff(UM2tn)
+scalar mu1exp2std = $stderr(UM2tn)
+scalar mu2exp2 = $coeff(UM2cn)
+scalar mu2exp2std = $stderr(UM2cn)
 
-fdall <- ols Y2n RYn RYDn UN2n UM2n UR2n UMT2n 
+
+ 
+fdnl <- ols Y2exp Q2n UdM2n qs
+
+scalar muexp2 = $coeff(UdM2n)
+scalar muexp2std = $stderr(UdM2n)
+
+#fdnlb <- ols Y2exp UdM2n RYDn Q2n dummify(Week) 
+#
+#scalar muexpb2 = $coeff(UdM2n)
+#scalar muexpb2std = $stderr(UdM2n)
+
+#fdnlc <- ols Y2exp UdM2n RYDn Q2n
+
+#scalar muexpc2 = $coeff(UdM2n)
+#scalar muexpc2std = $stderr(UdM2n)
+
+
+fdallg <- ols Y2n UN2n UM2n UR2n UMT2n UNT2n Q2n qs
+
+scalar mug2 = $coeff(UM2n)
+scalar mug2std = $stderr(UM2n)
+scalar nug2 = $coeff(UN2n)
+scalar nug2std = $stderr(UN2n)
+scalar mutg2 = $coeff(UMT2n)
+scalar mutg2std = $stderr(UMT2n)
+scalar nutg2 = $coeff(UNT2n)
+scalar nutg2std = $stderr(UNT2n)
+scalar rhog2 = $coeff(UR2n)
+scalar rhog2std = $stderr(UR2n)
+scalar gammag2 = $coeff(Q2n)
+scalar gammag2std = $stderr(Q2n)
+
+
+
+fdall <- ols Y2n RYn RYDn UN2n UM2n UR2n UMT2n UNT2n Q2n
 
 scalar alpha2 = c2* $coeff(RYn)
 scalar alpha2std = c2* $stderr(RYn)
 scalar beta2 = c2*$coeff(RYDn)
 scalar beta2std = c2*$stderr(RYDn)
-scalar gamma2 = $coeff(UM2n)
-scalar gamma2std = $stderr(UM2n)
-scalar delta2 = $coeff(UN2n)
-scalar delta2std = $stderr(UN2n)
+scalar gamma2 = $coeff(Q2n)
+scalar gamma2std = $stderr(Q2n)
+scalar mu2 = $coeff(UM2n)
+scalar mu2std = $stderr(UM2n)
+scalar nu2 = $coeff(UN2n)
+scalar nu2std = $stderr(UN2n)
+scalar mut2 = $coeff(UMT2n)
+scalar mut2std = $stderr(UMT2n)
+scalar nut2 = $coeff(UNT2n)
+scalar nut2std = $stderr(UNT2n)
+scalar rho2 = $coeff(UR2n)
+scalar rho2std = $stderr(UR2n)
+
+
 
 # fdphi <- ols Y2n RYn RYDn U2n V2n W2n
 
 
-fdns <- ols Y2n RYn RYDn
+fdns <- ols Y2n RYn RYDn Q2n
 
-scalar alpha2n = c2* $coeff(RYn)
-scalar alpha2nstd = c2* $stderr(RYn)
-scalar beta2n = c2*$coeff(RYDn)
-scalar beta2nstd = c2*$stderr(RYDn)
+scalar alphan2 = c2* $coeff(RYn)
+scalar alphan2std = c2* $stderr(RYn)
+scalar betan2 = c2*$coeff(RYDn)
+scalar betan2std = c2*$stderr(RYDn)
+scalar gamman2 = $coeff(Q2n)
+scalar gamman2std = $stderr(Q2n)
 
 
 genr Y3exp = Y3tn - Y3cn
 
-sdnl <- ols Y3exp UdR3n UdN3n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
+sdnldif <- ols Y3exp UM3tn UR3cn  Q3n qs
 
-scalar g3 = $coeff(UdR3n)
-scalar g3std = $stderr(UdR3n)
-scalar d3 = $coeff(UdN3n)
-scalar d3std = $stderr(UdN3n)
+scalar rho2exp3 = $coeff(UR3cn)
+scalar rho2exp3std = $stderr(UR3cn)
+scalar mu1exp3 = $coeff(UM3tn)
+scalar mu1exp3std = $stderr(UM3tn)
 
-sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n UMT3n
+
+sdnl <- ols Y3exp UdR3n Q3n qs
+
+scalar rhoexp3 = $coeff(UdR3n)
+scalar rhoexp3std = $stderr(UdR3n)
+#scalar nuexp3 = $coeff(UdN3n)
+#scalar nuexp3std = $stderr(UdN3n)
+
+#sdnlb <- ols Y3exp Q3n UdR3n UdN3n dummify(Week)
+
+#scalar rhoexpb3 = $coeff(UdR3n)
+#scalar rhoexpb3std = $stderr(UdR3n)
+#scalar nuexpb3 = $coeff(UdN3n)
+#scalar nuexpb3std = $stderr(UdN3n)
+
+#sdnlc <- ols Y3exp UdR3n UdN3n RYDn
+
+#scalar rhoexpc3 = $coeff(UdR3n)
+#scalar rhoexpc3std = $stderr(UdR3n)
+#scalar nuexpc3 = $coeff(UdN3n)
+#scalar nuexpc3std = $stderr(UdN3n)
+
+
+sdallg <- ols Y3n UM3n UN3n UR3n UMT3n UNT3n  Q3n qs
+scalar nug3 = $coeff(UN3n)
+scalar nug3std = $stderr(UN3n)
+scalar mug3 = $coeff(UM3n)
+scalar mug3std = $stderr(UM3n)
+scalar mutg3 = $coeff(UMT3n)
+scalar mutg3std = $stderr(UMT3n)
+scalar nutg3 = $coeff(UNT3n)
+scalar nutg3std = $stderr(UNT3n)
+scalar rhog3 = $coeff(UR3n)
+scalar rhog3std = $stderr(UR3n)
+scalar gammag3 = $coeff(Q3n)
+scalar gammag3std = $stderr(Q3n)
+
+
+sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n UMT3n UNT3n Q3n
 
 scalar alpha3 = c3* $coeff(RYn)
 scalar alpha3std = c3* $stderr(RYn)
 scalar beta3 = c3*$coeff(RYDn)
 scalar beta3std = c3*$stderr(RYDn)
-scalar gamma3 = $coeff(U3n)
-scalar gamma3std = $stderr(U3n)
-scalar delta3 = $coeff(V3n)
-scalar delta3std = $stderr(V3n)
+scalar gamma3 = $coeff(Q3n)
+scalar gamma3std = $stderr(Q3n)
+scalar nu3 = $coeff(UN3n)
+scalar nu3std = $stderr(UN3n)
+scalar mu3 = $coeff(UM3n)
+scalar mu3std = $stderr(UM3n)
+scalar mut3 = $coeff(UMT3n)
+scalar mut3std = $stderr(UMT3n)
+scalar nut3 = $coeff(UNT3n)
+scalar nut3std = $stderr(UNT3n)
+scalar rho3 = $coeff(UR3n)
+scalar rho3std = $stderr(UR3n)
 
 # sdphi <- ols Y3n RYn RYDn U3n V3n W3n
 
-sdns <- ols Y3n RYn RYDn 
+sdns <- ols Y3n RYn RYDn Q3n
 
-scalar alpha3n = c3* $coeff(RYn)
-scalar alpha3nstd = c3* $stderr(RYn)
-scalar beta3n = c3*$coeff(RYDn)
-scalar beta3nstd = c3*$stderr(RYDn)
+scalar alphan3 = c3* $coeff(RYn)
+scalar alphan3std = c3* $stderr(RYn)
+scalar betan3 = c3*$coeff(RYDn)
+scalar betan3std = c3*$stderr(RYDn)
+scalar gamman3 = $coeff(Q3n)
+scalar gamman3std = $stderr(Q3n)
 
 
 genr Y4exp = Y4tn - Y4cn
-secnl <- ols Y4exp UdN4n UdM4n dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 
-scalar d4 = $coeff(V4exp)
-scalar d4std = $stderr(V4exp)
+secnldif <- ols Y4exp UM4tn UM4cn  Q4n Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 QG_0	QG_1	QG_2	QG_3	QG_4	QG_5	QG_6	QG_7	QG_8	QG_9	QG_10	QG_11	QG_12	QG_13	QG_14	QG_15	QG_16	QG_17	QG_18	QG_19	QG_20	QG_21	QG_22	QG_23	QG_24	QG_25	QG_26	QG_27	QG_28	QG_29	QG_30	QG_31	QG_32	QG_33	QG_34	QG_35	QG_36	QG_37	QG_38	QG_39	QG_40	QG_41	QG_42	QG_43	QG_44	QG_45	QG_46	QG_47	QG_48	QG_49	QG_50	QG_51	QG_52	QG_53	QG_54	QG_55	QG_56	QG_57	QG_58	QG_59	QG_60	QG_61	QG_62	QG_63	QG_64	QG_65	QG_66	QG_67	QG_68	QG_69	QG_70	QG_71	QG_72	QG_73	QG_74	QG_75	QG_76
 
-secall<-ols Y4n RYn RYDn US4n UM4n UMT4n
+scalar mu1exp4 = $coeff(UM4tn)
+scalar mu1exp4std = $stderr(UM4tn)
+scalar mu2exp4 = $coeff(UM4cn)
+scalar mu2exp4std = $stderr(UM4cn)
+
+
+secnl <- ols Y4exp UdM4n Q4n Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 QG_0	QG_1	QG_2	QG_3	QG_4	QG_5	QG_6	QG_7	QG_8	QG_9	QG_10	QG_11	QG_12	QG_13	QG_14	QG_15	QG_16	QG_17	QG_18	QG_19	QG_20	QG_21	QG_22	QG_23	QG_24	QG_25	QG_26	QG_27	QG_28	QG_29	QG_30	QG_31	QG_32	QG_33	QG_34	QG_35	QG_36	QG_37	QG_38	QG_39	QG_40	QG_41	QG_42	QG_43	QG_44	QG_45	QG_46	QG_47	QG_48	QG_49	QG_50	QG_51	QG_52	QG_53	QG_54	QG_55	QG_56	QG_57	QG_58	QG_59	QG_60	QG_61	QG_62	QG_63	QG_64	QG_65	QG_66	QG_67	QG_68	QG_69	QG_70	QG_71	QG_72	QG_73	QG_74	QG_75	QG_76
+
+scalar muexp4 = $coeff(UdM4n)
+scalar muexp4std = $stderr(UdM4n)
+
+#secnlb <- ols Y4exp  UdN4n UdM4n Q4n dummify(Week)
+
+#scalar muexpb4 = $coeff(UdM4n)
+#scalar muexpb4std = $stderr(UdM4n)
+#scalar nuexpb4 = $coeff(UdN4n)
+#scalar nuexpb4std = $stderr(UdN4n)
+
+
+#secnlc <- ols Y4exp UdN4n UdM4n
+
+# Q4n RYDn
+
+#scalar muexpc4 = $coeff(UdM4n)
+#scalar muexpc4std = $stderr(UdM4n)
+#scalar nuexpc4 = $coeff(UdN4n)
+#scalar nuexpc4std = $stderr(UdN4n)
+
+
+secallg<-ols Y4n UN4n UM4n UMT4n UNT4n Q4n qs
+scalar nug4 = $coeff(UN4n)
+scalar nug4std = $stderr(UN4n)
+scalar mug4 = $coeff(UM4n)
+scalar mug4std = $stderr(UM4n)
+scalar mutg4 = $coeff(UMT4n)
+scalar mutg4std = $stderr(UMT4n)
+scalar nutg4 = $coeff(UNT4n)
+scalar nutg4std = $stderr(UNT4n)
+scalar gammag4 = $coeff(Q4n)
+scalar gammag4std = $stderr(Q4n)
+
+
+secall<-ols Y4n RYn RYDn UN4n UM4n UMT4n UNT4n Q4n
 
 
 scalar alpha4 = c4* $coeff(RYn)
 scalar alpha4std = c4* $stderr(RYn)
 scalar beta4 = c4*$coeff(RYDn)
 scalar beta4std = c4*$stderr(RYDn)
-scalar gamma4 = $coeff(U4n)
-scalar gamma4std = $stderr(U4n)
-scalar delta4 = $coeff(V4n)
-scalar delta4std = $stderr(V4n)
+scalar gamma4 = $coeff(Q4n)
+scalar gamma4std = $stderr(Q4n)
+scalar nu4 = $coeff(UN4n)
+scalar nu4std = $stderr(UN4n)
+scalar mu4 = $coeff(UM4n)
+scalar mu4std = $stderr(UM4n)
+scalar mut4 = $coeff(UMT4n)
+scalar mut4std = $stderr(UMT4n)
+scalar nut4 = $coeff(UNT4n)
+scalar nut4std = $stderr(UNT4n)
 
 #secphi<-ols Y4n RYn RYDn U4n V4n W4n
 
-secns<-ols Y4n RYn RYDn
+secns<-ols Y4n RYn RYDn Q4n
 
-scalar alpha4n = c4* $coeff(RYn)
-scalar alpha4nstd = c4* $stderr(RYn)
-scalar beta4n = c4*$coeff(RYDn)
-scalar beta4nstd = c4*$stderr(RYDn)
+scalar alphan4 = c4* $coeff(RYn)
+scalar alphan4std = c4* $stderr(RYn)
+scalar betan4 = c4*$coeff(RYDn)
+scalar betan4std = c4*$stderr(RYDn)
+scalar gamman4 = $coeff(Q4n)
+scalar gamman4std = $stderr(Q4n)
+
+stop here
 
 ols Y3exp U3Rn dummify(Week) Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76
 ols Y3exp U3Rn dummify(Week) RYDn
@@ -210,50 +546,7 @@ print alpha1 beta1 gamma1 d2 alpha2 beta2 gamma2 delta2 g3 d3 alpha3 beta3 gamma
 print alpha1std beta1std gamma1std d2std alpha2std beta2std gamma2std delta2std g3std d3std alpha3std beta3std gamma3std delta3std d4std alpha4std  beta4std gamma4std delta4std alpha1nstd beta1nstd alpha2nstd beta2nstd alpha3nstd beta3nstd alpha4nstd beta4nstd
 
 
-stop
 
-ols Y2exp V2exp RYn RYDn
-ols Y2n  RYn RYDn U2n V2n 
-ols Y2n RYn RYDn
-
-
-
-
-# dummify(District) --cluster=District
-
-ols Y3exp U3exp V3exp dummify(Week) RYDn
-ols Y3exp V3exp  RYn RYDn
-
-ols Y3n RYn RYDn U3n V3n 
-ols Y3n RYn RYDn
-
-
-#ols Y3exp U3exp RYn RYDn 
-#smpl --full
-
-#smpl M3t>0 --restrict
-#ols Y3exp U3exp RYn RYDn 
-# dummify(District) --cluster=District
-#smpl --full
-
-ols Y4n RYn RYDn
-
-#ols Y4exp U4exp RYDn RYn 
-# dummify(District) --cluster=District
-
-#smpl M4t>0 --restrict
-#ols Y4exp U4exp RYDn RYn 
-# dummify(District) --cluster=District
-#smpl --full
-
-smpl Week>5 --restrict
-global<-ols YDn RYn RYDn --vcv
-scalar se = sqrt($stderr(RYn)^2 + $stderr(RYDn)^2 + 2* $vcv[1,2])
-scalar ab = $coeff(RYn) + $coeff(RYDn)
-scalar lo = ab - se * 1.96
-scalar hi = ab + se * 1.96
-simple <- ols YDn RYn
-smpl --full
 
 
 ols Y1n RYn RYDn U1n 
@@ -320,3 +613,12 @@ smpl --full
 
 print beta3g beta4g beta5g beta6g beta7g beta8g beta9g beta10g beta11g beta12g beta13g beta14g beta15g beta16g beta17g beta18g beta19g
 print beta3d beta4d beta5d beta6d beta7d beta8d beta9d beta10d beta11d beta12d beta13d beta14d beta15d beta16d beta17d beta18d beta19d
+
+smpl Week>5 --restrict
+global<-ols YDn RYn RYDn --vcv
+scalar se = sqrt($stderr(RYn)^2 + $stderr(RYDn)^2 + 2* $vcv[1,2])
+scalar ab = $coeff(RYn) + $coeff(RYDn)
+scalar lo = ab - se * 1.96
+scalar hi = ab + se * 1.96
+simple <- ols YDn RYn
+smpl --full

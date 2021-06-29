@@ -105,9 +105,9 @@ Date	&	Kindergartens		&	First degree	&	Second degree	&	Secondary \\
 \hline
 Mar-13	& volantury	& \multicolumn{3}{c}{closed}\\
 May-04	&			&		&	&	\\
-May-11	& & & last year max. 15 & last year  \\
-May-25    &  & max. 15 voluntary & & last year max. 15 \\
-Jun-08	& & max 15 & \\
+May-11	& & &  \multicolumn{2}{c}{last year max. 15 voluntary} \\
+May-25    &  & max. 15 voluntary & &  \\
+Jun-08	& &  & \\
 Jun-26	&	\multicolumn{4}{c}{end of the school year} \\
 Sep-01	&	\multicolumn{4}{c}{start of the school year, opened} \\
 Sep-17	&	  & \multicolumn{3}{c}{masks ordered in classrooms} \\
@@ -154,75 +154,89 @@ and kindergartens, data do not support these explanations.
 
 \section*{Methods}
 
-To determine the influence of attending schools of a given kind, we examine the number of infections $X_{i,t}$ in the corresponding age cohort for each district $i$. We assume that these infections depend on the previous infection in the population, the previous infections within the district and the previous infections within the cohort, the latter in dependence on the degree of school opening. We assume general dependence on the overall infection, linear district-specific dependence on the infections in the district, and the district-independent linear dependence on the infections in the cohort:
+To determine the influence of attending schools of a given kind, we examine the number of reported infections $X_{i,t}$ in the corresponding age cohort for each district $i$ at time $t$. Generally, we assume that these infections depend on the previous-week number of infections, the contact restriction reported two weeks earlier, and the current infectiousness. In addition to the total number of infections in population, we take into account the number of infections in the same district, and the number of infections in the same cohort within the district. See Appendix TBD for the justification of this general model. In addition, we consider the influence of school opening regime on the infection number in the cohort:
 \begin{equation}
-X_{i,t} = f_t(r_t,C_{t-1},d_i Y_{t-1}) + \beta_i Q_{i,t}
-+ \gamma U_{i,t} + \delta V_{i,t} + e_{i,t}
+X_{i,t} = \alpha_i R_t Y_{t-1} + \beta_i R_t Y_{i,t-1} + \gamma R_t X_{i,t-1}
++ S_t X_{i,t-1} + e_{i,t}
 \label{eq:x}
 \end{equation}
 $$
-Q_{i,t}=r_tC_{t-1}Y_{i,t-1} , \qquad U_{i,t}=r_t N_t X_{i,t-1}
-\qquad V_{i,t}=r_t M_t X_{i,t-1}
+R_t = r_t C_{t-2},\qquad
+S_t = r_t (\nu N_{t-1} + \mu M_{t-1} + \varrho T_{t-1} + \nu^\star N^\star_{t-1}
++ \mu^\star M^{\star}_{t-1} + \varrho^\star T^\star_{t-1} 
+)
 $$
-Here, $Y_t$ is the number of overall infections, $d_i$ is the fraction of population livint in the $i$-th district, $C_t$ is the degree of contact reduction according to \cite{paqcovid}, $r_t$ is the (predicted) trend of infectiousness, $Y_{i,t}$ is the number of infections within the $i$-th district, $N_t$ is the degree of school opening with masks (zero means all classes closed, one means all classes opened without wearing masks in classrooms), $M_t$ is the degree of school opening with masks, and $e_{i,t}$ is the error term. 
+for each $i$ and $t$. Here, $Y_t$ is the number of overall infections within the population at $t$, $Y_{i,t}$ is the number of infections within the $i$-th district at $t$, $N_t$, $M_t$, $T_t$ evaluate the degree of school opening without masks, with masks, with weekly rotations (with masks on), respectively (zero means all classes closed, one means all classes opened), $N^\star_t$, $M^\star_t$, $T^\star_t$ stand for for degree of opening without--, with masks, with rotations , respectively, with the addition that students are regularly tested at schools,  and $e_{i,t}$ is the error term. Finally $r_t$ is the (predicted) degree of infectiousness and $C_t$ is the contact restriction at $t$, see  Appendix TBD for details.
 
-We estimate the impact of schools two ways: comparing two sub-cohorts within model (\ref{eq:x}), and by estimating parameters of a less general linear model.
-The first method can be used only in the lucky case in which two sub-cohorts of the examined age cohorts received different "treatment", for instance some grades were open while another were simultaneously closed. 
-We assume both the sub-cohorts follow (\ref{eq:x}) with sub-cohort specific $f_t$ and $\beta_i$, but with the same rates of infection at schools $\gamma$ and $\delta$:
-$$
-X^j_{i,t} = f^j_t(r_t,C_t, d_iY_{t-1}) + \beta_i^j Q_{i,t}
-+ \gamma c_j r_t N^j_t X_{i,t-1} + \delta  c_j r_t M^j_t X_{i,t-1}+e_{i,j,t}.
-$$
-Here, $c_j$ is the relative size of the $j$-th sub-cohort with respect to whole cohort. By subtracting, we get 
-$$
-\frac{X^{1}_{i,t}}{c_{1}} - \frac{X^{2}_{i,t}}{c_{2}} = \psi_t + \vartheta_i Q_{i,t} 
-+ \gamma \Delta N_{t}r_t X_{i,t-1} + \delta \Delta M_t r_t X_{i,t-1} + e'_{i,j,t}
-$$
-from which we can estimate $\gamma$ and $\delta$, having reduced the number of the remaining parameters by two in comparison with estimating both the equations. Another advantage of this approach is that the results depends less on the choice of covariates $N$ and $M$, which have to be  set arbitrary to certain degree sometimes, for instance when the schools are opened with another additional restrictions; here, $M$'s and $N$'s cancel out when the treatment is the same for both the sub-cohorts.
+We estimate the impact of schools four ways: by comparing two sub-cohorts of the examined cohort assuming them to follow (\ref{eq:x}) either with the same or with different school regime coefficients $\nu,\mu,\dots,\varrho^\star$, by estimating parameters from (\ref{eq:x}) applied to the whole cohort and, finally, by estimating the parameters from  (\ref{eq:x}) with homogeneous impact of districts.
 
-For the second way of estimation, we use a (less general) linear model
+{\em Comparison of two sub-cohorts with different regime parameters.} Here we consider two sub-cohorts of comparable size, the $j$-th one following its own version of (\ref{eq:x}):
+$$
+X^j_{i,t} = \alpha^j_i R_t Y_{t-1} + \beta^j_i R_t Y_{i,t-1} + \gamma^j c_j R_t X_{i,t-1}
++ S^j_t c_j X_{i,t-1} + e^j_{i,t}
+$$
+$$
+S^j_t = r_t [\nu^j N^j_{t-1} + \mu^j M^j_{t-1} + \varrho^j R^j_{t-1} + \mu^{\star j} M^{\star  j}_{t-1} + \nu^{\star j} N^{\star j}_{t-1} +  \varrho^{\star j} R^{\star j}_{t-1} ],
+$$
+where $c_j$ is the relative size of the $j$-th sub-cohort with respect to whole cohort. By subtracting, we get 
 \begin{equation}
-X_{i,t} = \alpha_i Q_t + \beta_i Q_{i,t} + \gamma U_{i,t} + \delta V_{i,t} + \epsilon_t,
+\frac{X^{1}_{i,t}}{c_{1}} - \frac{X^{2}_{i,t}}{c_{2}} = \alpha'_i R_t Y_{t-1} + \beta'_i R_t Y_{i,t-1} 
++ \gamma R_t X_{i,t-1} + D_t X_{i,t-1} + e'_{i,j,t}, \qquad D_t = S^1_t - S^2_t
+\label{eq:dif}
+\end{equation}
+Clearly, for (\ref{eq:dif}) to be estimable, at least one pair of variables $(N^1,N^2),\dots,(T^{\star 1},T^{\star 2})$ has to differ sufficiently. For instance, this was the case for kindergartens, where the only regimes having occurred were opening without masks ($N^1_t = N^2_t = 1$), opening only for the last years ($N^1_t=1,N^2_t=0$) and closure ($N^1_t = N^2_t = 0$), so both $\nu^1$ and $\nu^2$ are estimable from
+$
+D_t=r_t (\nu^1 N^1_{t-1} - \nu^2 N^2_{t-1})  
+$.
+Note that the results of this estimation can also be used to test the null hypothesis that the corresponding regime has no influence on infections, which will be rejected by significant values of either $\nu^{1}$ or $\nu^2$.\footnote{The significance level has to be corrected here.}
+
+{\em Comparison of two sub-cohorts with the same regime parameters.} If we decrease the generality of the model (\ref{eq:dif}) by assuming that $\nu^1 = \nu^2 = \nu$, $\dots$, $\varrho^{\star 1} = \varrho^{\star 2} = \varrho^{\star}$, we get
+$$
+D_t = r_t [\nu (N^1_{t-1}-N^2_{t-1}) + \dots + \varrho^\star (R^{\star 1}_{t-1}-R^{\star 2}_{t-1})  ] 
+$$
+from which we can estimate $\nu, \dots, \varrho^\star$ with the advantage that the variables and coefficients for which the regime is the same, cancel out, so our estimate is independent both of these parameters and on the choice of corresponding regime covariates, which we have are set subjectively sometimes, for instance when the schools are opened with another additional restrictions. Clearly, only the coefficients for which the corresponding covariates differ at least for some time can be estimated this way. Again, the estimation may serve for proof that the opening in the particular regime influences infections.
+
+{\em Estimation of (\ref{eq:x}) for the whole cohort.} For the coefficients corresponding to regimes, which had never differed between the sub-cohorts, there is nothing to do but to estimate them directly from (\ref{eq:x}). 
+
+Finally, to get global results rather than the district-level ones, we  decrease the generality of (\ref{eq:x}) and assume a {\em homogeneous model}:
+\begin{equation}
+X_{i,t} = \alpha h d_i R_t Y_{t-1} + \beta h R_t Y_{i,t-1} + \gamma R_t X_{i,t-1}
++ S_t X_{i,t-1} + \epsilon_{i,t},
 \label{eq:linear}
 \end{equation}
-$$
-Q_{t}=r_tC_{t-1}Y_{t-1},\qquad \alpha_i = \alpha h d_i, \qquad  \beta_i = \beta h_i
-$$
-Here, $h$ is the relative size of the cohort with respect to the whole population, and $\alpha$ and $\beta$ are estimated constants. This may also be interpreted, with a certain licence, as
-\begin{multline*}
-\P[\text{infection in cohort in district $i$ at $t$}]
-\\
-=\alpha r_t C_{t-1} \P[\text{infection at $t-1$}]
-+\beta r_t C_{t-1}
-\P[\text{infection in $i$ at $t-1$}] \\
-\underbrace{(\gamma N_{t-1} + \delta M_{t-1}) r_t}_{S_{t-1}} \P[\text{infection in cohort in $i$ at $t-1$}]
-\end{multline*}
-
+Here, $h$ is the relative size of the examined cohort with respect to the rest of the population and $d_i$ is the relative size of the $i$-th district's population.
 By summing (\ref{eq:linear}) over $i$, we get 
 \begin{equation}
-X_{t} = \underbrace{(\alpha +\beta)}_{= \omega} Q_t
-+ S_{t-1}X^j_{t-1} + \epsilon_{j,t},
+X_{t} =  \omega h R_t Y_{t-i}
++ (\gamma R_t +  S_{t})X_{t-1} + \epsilon_{t}, \qquad \omega = \alpha +\beta,
 \label{eq:xss}
 \end{equation}
-or
+where $X_t$ is number the overall cohort infections. The equation (\ref{eq:xss}) may be alternatively interpreted as
 \begin{multline*}
 \P[\text{infection in cohort at $t$}]
 \\
-=\omega r_t C_{t-1} \P[\text{infection at $t-1$}] + S_{t-1} \P[\text{infection in cohort at $t-1$}]
+\doteq \omega R_t  \P[\text{overall infection at $t-1$}] + (\gamma R_t +  S_{t}) \P[\text{infection in cohort at $t-1$}]
 \end{multline*}
-Summing (\ref{eq:xss}) over $i$ we get that, 
-Equation (\ref{eq:xss}) may serve for understanding
-of infection spread in schools and consequently for policy recommendations.
-Assume that our goal is to decrease the number of infected in the cohort by a ratio
-$\rho_{0}$, i.e 
-\[
-\omega^{j}Q_{t}+\gamma^{j}S_{t-1}^{i}X_{t-1}^{j}\leq\rho_{0}X_{t-1}^{j}
-\]
-which happens if
-\[
-\rho_{t}:=\rho_{t}^{\omega}+\rho_{t}^{\gamma}<\rho_{0},
-\qquad
-\rho_{t}^{\omega}=\omega^{j}\frac{Q_{t}}{X_{t-1}^{j}},\qquad\rho_{t}^{\gamma}=\gamma^{j}S_{t}^{j}\]
+(to see it, divide (\ref{eq:xss}) by the cohort size).\footnote{Similarly, we can interpret 
+(\ref{eq:linear}) as
+\begin{multline*}
+\P[\text{infection in cohort in district $i$ at $t$}]
+\\
+\doteq \alpha R_t \P[\text{overall infection at $t-1$}]
++\beta R_t \P[\text{infection in district $i$ at $t-1$}] \\
++(\gamma R_t + S_{t}) \P[\text{infection in cohort in $i$ at $t-1$}]
+\end{multline*}
+where $h_i$ is the relative size of the cohort within district $i$ and $s_i$ is the relative size of the $i$-th district population, both with respect to the whole population (to see it, it suffices to divide (\ref{eq:linear}) by the cohort size).} 
+\def\defined{\stackrel{\text{def}}{=}}
+
+Finally, if we divide (\ref{eq:xss}) by $X_{t-1}$, we get the relative growth of infections within the cohort:
+$$
+\rho_t \defined \frac{X_{t}}{X_{t-1}}=G_t + S_t+ \eta_t
+\qquad G_t = R_t \left[\omega \frac{h Y_{t-1}}{X_{t-1}}+\gamma \right(],\qquad
+\eta_t=\frac{\epsilon_t}{X_{t-1}}
+$$
+from which we can distinguish the part of the growth caused by school opening (quantified by $S_t$) from that originated outside schools ($G_t$).
+
 
 
 \section*{Data}
@@ -285,19 +299,72 @@ Finally, we compared the cohort corresponding to the last years of secondary sch
 
 \section*{Results }
 
-The following Table shows results of estimation of (\ref{eq:x}) and (\ref{eq:linear}) as well as that of (\ref{eq:linear}) with forced $\gamma=\delta=0$ and using all the observations (recall that we excluded some observations due to unclarity concerning schools status). For kindergartens, masks were never worn, so we do not estimate $\delta$. 
+The following Table shows results of estimation of (\ref{eq:dif}) (differences of sub-cohorts) with different and identical regime parameters, of (\ref{eq:x}) (single model for the subcohort) and of (\ref{eq:linear}) (homogenous model).
 
-\begin{tabular}{cc|cccc}
-\multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline
-General &	$\gamma$	&	&	& $0.272^{*}(0.145)$	&	\\
-&	$\delta$	&	& $0.28^{***}(0.0354)$	& $0.368^{}(0.2638)$	& $0.192^{**}(0.0801)$	\\ \hline
-Linear &	$\alpha$	& $0.159^{***}(0.0218)$	& $0.176^{***}(0.0203)$	& $0.203^{***}(0.0187)$	& $0.109^{***}(0.0232)$	\\
-&	$\beta$	& $0.319^{***}(0.0132)$	& $0.455^{***}(0.0121)$	& $0.53^{***}(0.012)$	& $0.479^{***}(0.0141)$	\\
-&	$\gamma$	& $0.236^{***}(0.0147)$	& $0.393^{***}(0.0473)$	& $0.693^{***}(0.0359)$	& $0.892^{***}(0.0265)$	\\ 
-&	$\delta$	&	& $0.23^{***}(0.0292)$	& $0.083^{***}(0.0232)$	& $0.14^{***}(0.0293)$	\\ \hline
-No schools&	$\alpha$	& $0.261^{***}(0.0165)$	& $0.233^{***}(0.0184)$	& $0.376^{***}(0.0184)$	& $0.454^{***}(0.0242)$	\\ 
-&	$\beta$	& $0.297^{***}(0.0086)$	& $0.417^{***}(0.0096)$	& $0.273^{***}(0.0095)$	& $0.285^{***}(0.0125)$	
+\begin{tabular}{cc|cccc} \multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline Sub-cohort & 1 & last year & 1st and 2nd yr. & 9th year & 4th year \\  & 2 & 5 year old & 4th and 5th yr. & 7th year  & 2nd year \\ \hline 
+Comparison &$\nu^1$& $0^{}(0.04)$&&&\\
+different &$\nu^2$& $-0.01^{}(0.03)$&&&\\
+($w=20\%$) &$\mu^1$&& $0.19^{***}(0.02)$& $0.2^{***}(0.04)$& $0.16^{**}(0.06)$\\
+&$\mu^2$&& $0.33^{***}(0.04)$&& $0.38^{***}(0.08)$\\ 
+&$\rho^2$&&& $0.14^{**}(0.06)$&\\ \hline
+Comparison &$\mu$&& $0.23^{***}(0.02)$&& $0.2^{***}(0.07)$\\
+same ($w=40\%$) &$\mu-\rho$&&& $0.03^{}(0.06)$&\\ \hline
+Whole &$\nu$& $0^{}(0)$& $0.18^{***}(0.04)$& $0.58^{***}(0.04)$& $0.86^{***}(0.05)$\\
+cohort &$\mu$&& $0.2^{***}(0.03)$& $0.07^{**}(0.03)$& $0.25^{***}(0.04)$\\
+($w=25\%$) &$\rho^\star$&& $0.15^{***}(0.02)$& $0.08^{**}(0.04)$&\\
+&$\mu^\star$&& $0.15^{***}(0.02)$& $0.17^{***}(0.02)$& $0.32^{***}(0.03)$\\
+&$\nu^\star$&& $0.02^{}(0.05)$& $0.2^{***}(0.04)$& $0.47^{***}(0.06)$\\
+&$\gamma$& $0.16^{***}(0.02)$& $-0.12^{***}(0.03)$& $-0.1^{***}(0.03)$& $-0.26^{***}(0.04)$\\ \hline
+Homogenous &$\nu$& $-0.01^{**}(0)$& $0.17^{***}(0.04)$& $0.54^{***}(0.04)$& $0.91^{***}(0.04)$\\ 
+($w=15\%$) &$\mu$&& $0.2^{***}(0.03)$& $0.05^{}(0.03)$& $0.26^{***}(0.04)$\\ 
+&$\rho^\star$&& $0.12^{***}(0.02)$& $0.05^{}(0.04)$&\\ 
+&$\mu^\star$&& $0.1^{***}(0.02)$& $0.16^{***}(0.02)$& $0.27^{***}(0.03)$\\ 
+&$\nu^\star$&& $-0.06^{}(0.05)$& $0.15^{***}(0.04)$& $0.46^{***}(0.05)$\\ 
+&$\alpha$& $0.01^{}(0.01)$& $0.1^{***}(0.02)$& $0.13^{***}(0.03)$& $0.26^{***}(0.03)$\\
+&$\beta$& $0.15^{***}(0.01)$& $0.54^{***}(0.03)$& $0.71^{***}(0.04)$& $0.54^{***}(0.04)$\\
+&$\gamma$& $0.24^{***}(0.02)$& $0.02^{}(0.03)$& $-0.01^{}(0.03)$& $-0.19^{***}(0.04)$\\ 
 \end{tabular}
+\begin{tabular}{l|ccc} Parameter & First degree & Second degree & Secondary \\ \hline 
+$\nu$& $0.18(0.04)$& $0.56(0.04)$& $0.88(0.04)$\\
+$\mu$& $0.22(0.03)$& $0.09(0.03)$& $0.24(0.06)$\\
+$\rho^\star$& $0.14(0.02)$& $0.08(0.04)$&\\
+$\mu^\star$& $0.13(0.02)$& $0.16(0.02)$& $0.3(0.03)$\\
+$\nu^\star$& $-0.01(0.05)$& $0.18(0.04)$& $0.47(0.05)$\\
+$\gamma$& $0.02(0.03)$& $-0.01(0.03)$& $-0.19(0.04)$\\
+$\omega$& $0.64(0.05)$& $0.84(0.07)$& $0.8(0.07)$\\
+\end{tabular}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Further, we aggregated the parameters by an average weighted by values shown in the first column and with upper estimates of standard errors.
+
+\begin{tabular}{l|ccc}
+Parameter & First degree & Second degree & Secondary \\ \hline
+$\nu$	& $0.11(0.05)$	& $0.5(0.04)$	& $0.86(0.05)$	\\
+$\mu$	& $0.22(0.03)$	& $0.04(0.04)$	& $0.22(0.06)$	\\
+$\rho^\star$	& $0.24(0.02)$	& $0.18(0.05)$	&	\\
+$\mu^\star$	& $0.29(0.03)$	& $0.34(0.03)$	& $0.51(0.05)$	\\
+$\nu^\star$	& $0.09(0.08)$	& $0.39(0.07)$	& $0.89(0.09)$	\\
+$\gamma$	& $0.05(0.03)$	& $0.02(0.03)$	& $-0.2(0.05)$	\\
+$\omega$	& $0.67(0.05)$	& $0.88(0.08)$	& $0.88(0.08)$	\\
+\end{tabular}
+
+
+
 
 The results strongly indicate the influence of opening corresponding
 school categories and they also indicate that wearing masks reduces
@@ -609,3 +676,15 @@ X_{i,t} = (\alpha+\beta) Q_t + e_{i,t}
 \end{equation}
 which, by summing over all $i$, gives (\ref{eq:x}) provided that $\alpha + \beta = 1$.
 
+
+\begin{equation}
+X_{i,t} = f_t(d_i Y_{t-1}) + \beta_i Q_{i,t}
++ \gamma U_{i,t} + \delta V_{i,t} + e_{i,t}
+\label{eq:x}
+\end{equation}
+$$
+Q_{i,t}=r_tC_{t-1}Y_{i,t-1} , \qquad U_{i,t}=r_t N_t X_{i,t-1}
+\qquad V_{i,t}=r_t M_t X_{i,t-1}
+$$
+
+ $d_i$ is the fraction of population living in the $i$-th district
