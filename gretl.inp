@@ -306,6 +306,7 @@ genr Y2exp = Y2tn - Y2cn
 
 #ols Y2exp Q2n UM2tn UM2cn  tq
 
+
 fdnldif <- ols Y2exp Q2n UM2tn UM2cn  qs
 
 scalar mu1exp2 = $coeff(UM2tn)
@@ -341,8 +342,8 @@ scalar mutg2 = $coeff(UMT2n)
 scalar mutg2std = $stderr(UMT2n)
 scalar nutg2 = $coeff(UNT2n)
 scalar nutg2std = $stderr(UNT2n)
-scalar rhog2 = $coeff(UR2n)
-scalar rhog2std = $stderr(UR2n)
+scalar rhotg2 = $coeff(UR2n)
+scalar rhotg2std = $stderr(UR2n)
 scalar gammag2 = $coeff(Q2n)
 scalar gammag2std = $stderr(Q2n)
 
@@ -364,8 +365,8 @@ scalar mut2 = $coeff(UMT2n)
 scalar mut2std = $stderr(UMT2n)
 scalar nut2 = $coeff(UNT2n)
 scalar nut2std = $stderr(UNT2n)
-scalar rho2 = $coeff(UR2n)
-scalar rho2std = $stderr(UR2n)
+scalar rhot2 = $coeff(UR2n)
+scalar rhot2std = $stderr(UR2n)
 
 
 
@@ -414,7 +415,7 @@ scalar rhoexp3std = $stderr(UdR3n)
 #scalar nuexpc3std = $stderr(UdN3n)
 
 
-sdallg <- ols Y3n UM3n UN3n UR3n UMT3n UNT3n  Q3n qs
+sdallg <- ols Y3n UM3n UN3n URT3n UMT3n UNT3n  Q3n qs
 scalar nug3 = $coeff(UN3n)
 scalar nug3std = $stderr(UN3n)
 scalar mug3 = $coeff(UM3n)
@@ -423,13 +424,13 @@ scalar mutg3 = $coeff(UMT3n)
 scalar mutg3std = $stderr(UMT3n)
 scalar nutg3 = $coeff(UNT3n)
 scalar nutg3std = $stderr(UNT3n)
-scalar rhog3 = $coeff(UR3n)
-scalar rhog3std = $stderr(UR3n)
+scalar rhotg3 = $coeff(URT3n)
+scalar rhotg3std = $stderr(URT3n)
 scalar gammag3 = $coeff(Q3n)
 scalar gammag3std = $stderr(Q3n)
 
 
-sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n UMT3n UNT3n Q3n
+sdall <- ols Y3n RYn RYDn UM3n UN3n URT3n UMT3n UNT3n Q3n
 
 scalar alpha3 = c3* $coeff(RYn)
 scalar alpha3std = c3* $stderr(RYn)
@@ -445,8 +446,8 @@ scalar mut3 = $coeff(UMT3n)
 scalar mut3std = $stderr(UMT3n)
 scalar nut3 = $coeff(UNT3n)
 scalar nut3std = $stderr(UNT3n)
-scalar rho3 = $coeff(UR3n)
-scalar rho3std = $stderr(UR3n)
+scalar rhot3 = $coeff(URT3n)
+scalar rhot3std = $stderr(URT3n)
 
 # sdphi <- ols Y3n RYn RYDn U3n V3n W3n
 

@@ -181,7 +181,7 @@ $$
 where $c_j$ is the relative size of the $j$-th sub-cohort with respect to whole cohort. By subtracting, we get 
 \begin{equation}
 \frac{X^{1}_{i,t}}{c_{1}} - \frac{X^{2}_{i,t}}{c_{2}} = \alpha'_i R_t Y_{t-1} + \beta'_i R_t Y_{i,t-1} 
-+ \gamma R_t X_{i,t-1} + D_t X_{i,t-1} + e'_{i,j,t}, \qquad D_t = S^1_t - S^2_t
++ \gamma' R_t X_{i,t-1} + D_t X_{i,t-1} + e'_{i,j,t}, \qquad D_t = S^1_t - S^2_t
 \label{eq:dif}
 \end{equation}
 Clearly, for (\ref{eq:dif}) to be estimable, at least one pair of variables $(N^1,N^2),\dots,(T^{\star 1},T^{\star 2})$ has to differ sufficiently. For instance, this was the case for kindergartens, where the only regimes having occurred were opening without masks ($N^1_t = N^2_t = 1$), opening only for the last years ($N^1_t=1,N^2_t=0$) and closure ($N^1_t = N^2_t = 0$), so both $\nu^1$ and $\nu^2$ are estimable from
@@ -232,7 +232,7 @@ where $h_i$ is the relative size of the cohort within district $i$ and $s_i$ is 
 Finally, if we divide (\ref{eq:xss}) by $X_{t-1}$, we get the relative growth of infections within the cohort:
 $$
 \rho_t \defined \frac{X_{t}}{X_{t-1}}=G_t + S_t+ \eta_t
-\qquad G_t = R_t \left[\omega \frac{h Y_{t-1}}{X_{t-1}}+\gamma \right(],\qquad
+\qquad G_t = R_t \left[\omega \frac{h Y_{t-1}}{X_{t-1}}+\gamma \right],\qquad
 \eta_t=\frac{\epsilon_t}{X_{t-1}}
 $$
 from which we can distinguish the part of the growth caused by school opening (quantified by $S_t$) from that originated outside schools ($G_t$).
@@ -302,66 +302,50 @@ Finally, we compared the cohort corresponding to the last years of secondary sch
 The following Table shows results of estimation of (\ref{eq:dif}) (differences of sub-cohorts) with different and identical regime parameters, of (\ref{eq:x}) (single model for the subcohort) and of (\ref{eq:linear}) (homogenous model).
 
 \begin{tabular}{cc|cccc} \multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline Sub-cohort & 1 & last year & 1st and 2nd yr. & 9th year & 4th year \\  & 2 & 5 year old & 4th and 5th yr. & 7th year  & 2nd year \\ \hline 
-Comparison &$\nu^1$& $0^{}(0.04)$&&&\\
+Comparison &$\nu^1$& $0^{}(0.03)$&&&\\
 different &$\nu^2$& $-0.01^{}(0.03)$&&&\\
-($w=20\%$) &$\mu^1$&& $0.19^{***}(0.02)$& $0.2^{***}(0.04)$& $0.16^{**}(0.06)$\\
-&$\mu^2$&& $0.33^{***}(0.04)$&& $0.38^{***}(0.08)$\\ 
-&$\rho^2$&&& $0.14^{**}(0.06)$&\\ \hline
-Comparison &$\mu$&& $0.23^{***}(0.02)$&& $0.2^{***}(0.07)$\\
-same ($w=40\%$) &$\mu-\rho$&&& $0.03^{}(0.06)$&\\ \hline
-Whole &$\nu$& $0^{}(0)$& $0.18^{***}(0.04)$& $0.58^{***}(0.04)$& $0.86^{***}(0.05)$\\
-cohort &$\mu$&& $0.2^{***}(0.03)$& $0.07^{**}(0.03)$& $0.25^{***}(0.04)$\\
-($w=25\%$) &$\rho^\star$&& $0.15^{***}(0.02)$& $0.08^{**}(0.04)$&\\
-&$\mu^\star$&& $0.15^{***}(0.02)$& $0.17^{***}(0.02)$& $0.32^{***}(0.03)$\\
-&$\nu^\star$&& $0.02^{}(0.05)$& $0.2^{***}(0.04)$& $0.47^{***}(0.06)$\\
-&$\gamma$& $0.16^{***}(0.02)$& $-0.12^{***}(0.03)$& $-0.1^{***}(0.03)$& $-0.26^{***}(0.04)$\\ \hline
-Homogenous &$\nu$& $-0.01^{**}(0)$& $0.17^{***}(0.04)$& $0.54^{***}(0.04)$& $0.91^{***}(0.04)$\\ 
-($w=15\%$) &$\mu$&& $0.2^{***}(0.03)$& $0.05^{}(0.03)$& $0.26^{***}(0.04)$\\ 
-&$\rho^\star$&& $0.12^{***}(0.02)$& $0.05^{}(0.04)$&\\ 
-&$\mu^\star$&& $0.1^{***}(0.02)$& $0.16^{***}(0.02)$& $0.27^{***}(0.03)$\\ 
-&$\nu^\star$&& $-0.06^{}(0.05)$& $0.15^{***}(0.04)$& $0.46^{***}(0.05)$\\ 
-&$\alpha$& $0.01^{}(0.01)$& $0.1^{***}(0.02)$& $0.13^{***}(0.03)$& $0.26^{***}(0.03)$\\
-&$\beta$& $0.15^{***}(0.01)$& $0.54^{***}(0.03)$& $0.71^{***}(0.04)$& $0.54^{***}(0.04)$\\
-&$\gamma$& $0.24^{***}(0.02)$& $0.02^{}(0.03)$& $-0.01^{}(0.03)$& $-0.19^{***}(0.04)$\\ 
+($w=30\%$) &$\mu^1$&& $0.15^{***}(0.01)$& $0.19^{***}(0.04)$& $0.16^{***}(0.06)$\\
+&$\mu^2$&& $0.29^{***}(0.04)$&& $0.32^{***}(0.08)$\\ 
+&$\rho^2$&&& $0.13^{**}(0.06)$&\\ \hline
+Comparison &$\mu$&& $0.18^{***}(0.02)$&& $0.19^{***}(0.06)$\\
+same ($w=55\%$) &$\mu-\rho$&&& $0.04^{}(0.05)$&\\ \hline
+Whole &$\nu$& $0^{}(0)$& $0.33^{***}(0.04)$& $0.68^{***}(0.04)$& $0.91^{***}(0.04)$\\
+cohort &$\mu$&& $0.26^{***}(0.02)$& $0.16^{***}(0.03)$& $0.29^{***}(0.04)$\\
+($w=10\%$) &$\rho^\star$&&&&\\
+&$\mu^\star$&& $0.12^{***}(0.02)$& $0.12^{***}(0.02)$& $0.22^{***}(0.03)$\\
+&$\nu^\star$&& $0.05^{}(0.03)$& $0.17^{***}(0.03)$& $0.31^{***}(0.04)$\\
+&$\gamma$& $0.08^{***}(0.01)$& $-0.17^{***}(0.03)$& $-0.14^{***}(0.03)$& $-0.22^{***}(0.04)$\\ \hline
+Homogenous &$\nu$& $-0.01^{***}(0)$& $0.32^{***}(0.04)$& $0.65^{***}(0.04)$& $0.95^{***}(0.04)$\\ 
+($w=5\%$) &$\mu$&& $0.25^{***}(0.02)$& $0.15^{***}(0.03)$& $0.32^{***}(0.04)$\\ 
+&$\rho^\star$&& $0.07^{***}(0.01)$& $0.01^{}(0.03)$&\\ 
+&$\mu^\star$&& $0.07^{***}(0.02)$& $0.12^{***}(0.02)$& $0.19^{***}(0.03)$\\ 
+&$\nu^\star$&& $-0.02^{}(0.03)$& $0.13^{***}(0.03)$& $0.34^{***}(0.04)$\\ 
+&$\alpha$& $0.02^{**}(0.01)$& $0.07^{***}(0.02)$& $0.1^{***}(0.03)$& $0.19^{***}(0.03)$\\
+&$\beta$& $0.14^{***}(0.01)$& $0.48^{***}(0.02)$& $0.63^{***}(0.03)$& $0.44^{***}(0.03)$\\
+&$\gamma$& $0.15^{***}(0.01)$& $-0.05^{**}(0.03)$& $-0.07^{**}(0.03)$& $-0.16^{***}(0.03)$\\ 
 \end{tabular}
 \begin{tabular}{l|ccc} Parameter & First degree & Second degree & Secondary \\ \hline 
-$\nu$& $0.18(0.04)$& $0.56(0.04)$& $0.88(0.04)$\\
-$\mu$& $0.22(0.03)$& $0.09(0.03)$& $0.24(0.06)$\\
-$\rho^\star$& $0.14(0.02)$& $0.08(0.04)$&\\
-$\mu^\star$& $0.13(0.02)$& $0.16(0.02)$& $0.3(0.03)$\\
-$\nu^\star$& $-0.01(0.05)$& $0.18(0.04)$& $0.47(0.05)$\\
-$\gamma$& $0.02(0.03)$& $-0.01(0.03)$& $-0.19(0.04)$\\
-$\omega$& $0.64(0.05)$& $0.84(0.07)$& $0.8(0.07)$\\
+$\nu$& $0.33(0.04)$& $0.67(0.04)$& $0.93(0.04)$\\
+$\mu$& $0.21(0.02)$& $0.17(0.04)$& $0.22(0.06)$\\
+$\rho$&& $0.13(0.06)$&\\
+$\rho^\star$& $0.09(0.02)$& $0.03(0.03)$&\\
+$\mu^\star$& $0.11(0.02)$& $0.12(0.02)$& $0.21(0.03)$\\
+$\nu^\star$& $0.03(0.03)$& $0.15(0.03)$& $0.32(0.04)$\\
+$\gamma$& $-0.05(0.03)$& $-0.07(0.03)$& $-0.16(0.03)$\\
+$\omega$& $0.55(0.04)$& $0.73(0.06)$& $0.63(0.06)$\\
 \end{tabular}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Further, we aggregated the parameters by an average weighted by values shown in the first column and with upper estimates of standard errors.
-
-\begin{tabular}{l|ccc}
-Parameter & First degree & Second degree & Secondary \\ \hline
-$\nu$	& $0.11(0.05)$	& $0.5(0.04)$	& $0.86(0.05)$	\\
-$\mu$	& $0.22(0.03)$	& $0.04(0.04)$	& $0.22(0.06)$	\\
-$\rho^\star$	& $0.24(0.02)$	& $0.18(0.05)$	&	\\
-$\mu^\star$	& $0.29(0.03)$	& $0.34(0.03)$	& $0.51(0.05)$	\\
-$\nu^\star$	& $0.09(0.08)$	& $0.39(0.07)$	& $0.89(0.09)$	\\
-$\gamma$	& $0.05(0.03)$	& $0.02(0.03)$	& $-0.2(0.05)$	\\
-$\omega$	& $0.67(0.05)$	& $0.88(0.08)$	& $0.88(0.08)$	\\
+\begin{tabular}{l|ccc} Parameter & First degree & Second degree & Secondary \\ \hline 
+$\nu$& $0.33(0.04)$& $0.67(0.04)$& $0.93(0.04)$\\
+$\mu$& $0.21(0.02)$& $0.17(0.04)$& $0.22(0.06)$\\
+$\rho^\star$& $0.09(0.02)$& $0.08(0.04)$&\\
+$\mu^\star$& $0.11(0.02)$& $0.12(0.02)$& $0.21(0.03)$\\
+$\nu^\star$& $0.03(0.03)$& $0.15(0.03)$& $0.32(0.04)$\\
+$\gamma$& $-0.05(0.03)$& $-0.07(0.03)$& $-0.16(0.03)$\\
+$\omega$& $0.55(0.04)$& $0.73(0.06)$& $0.63(0.06)$\\
 \end{tabular}
+
 
 
 
