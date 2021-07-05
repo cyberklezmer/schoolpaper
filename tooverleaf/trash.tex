@@ -1,0 +1,115 @@
+Our goal is to examine whether opening of schools contributes to the
+epidemic and whether masks play role in schools. To this end we assume
+that the expected weekly number number of newly infected children
+of the $i$-th cohort outside schools is Compound Poisson with mean
+\[
+\beta_{t}^{i}X_{t-1},\qquad X_{t-1}=\sum_{j=1}^{5}X_{t-1}^{j},\qquad\beta_{t}=R_{t}\beta,
+\]
+where $\beta$ is an unknown constant and $R_{t}$ the reproduction
+number.
+
+Further, we hypothesize that the number of children of the $i$-th
+cohort, infected at school, is Compound Poisson with mean 
+
+\[
+\gamma_{t}^{i}(1-M_{t-1}^{i}\mu)S_{t-1}^{i}X_{t-1}^{i}\qquad\gamma_{t}^{i}=r_{t}\gamma^{i}
+\]
+where $\mu^{i}$ is an unknown efficiency of masks, $\gamma^{i}$
+is an unknown constant and $r_{t}=R_{t}/C_{t-2}$ is the the basic
+reproduction number, 
+
+The logic behind our model is following: without schools, the cohort
+of interest is infected ``as usual'' which means that the rate of
+their infection is proportional to the reproduction number and the
+number of infected in the whole population (a proxy for which up to
+constant is the daily number of infected). In schools, the situation
+is similar with the difference that we explicitly model the contact
+intensity therein (by variables $S$ and $M$ and constants $\gamma$
+and $\delta$), so the reproduction number has to be stripped of the
+influence of the overall contact restriction; therefore, we assume
+the infection to be proportional to $r$ rather than to $R$.
+
+Summed up, we have 
+
+\begin{multline*}
+X_{t}^{i}=\beta_{t}^{i}X_{t-1}+\gamma_{t}^{i}(1-M_{t-1}^{i}\mu^{i})S_{t-1}^{i}X_{t-1}^{i}+\epsilon_{t}^{i}\\
+=\beta^{i}R_{t}X_{t-1}+\gamma^{i}r_{t}S_{t-1}^{i}X_{t-1}^{i}+\delta^{i}r_{t}M_{t-1}^{i}S_{t-1}^{i}X_{t-1}^{i}+\epsilon_{t}^{i},\qquad\delta^{i}=\gamma^{i}\mu^{i}.
+\end{multline*}
+where $\mathbb{E}\epsilon_{t}^{i}=0$ and $\mathrm{var}(\epsilon_{t}^{i})$
+is, up to a constant, equal to the r.h.s. minus the residuum.
+
+Finally, we assume that the observed numbers $Y_{t}^{1},\dots,Y_{t}^{5}$
+of the infected are proportional to the actual ones, namely $Y_{t}^{i}=cX_{t}^{i}+e_{t}^{i}$
+where $c$ is an unknown constant and $e_{t}^{t}$ are centered with
+$\mathrm{var(e_{t}^{i})\sim}X_{t}^{i}$. This gives
+
+\begin{multline*}
+Y_{t}^{i}=\beta^{i}I_{t}+\gamma^{i}U_{t}^{i}+\delta^{i}V_{t}^{i}+\eta_{t}^{i},\qquad I_{t}=R_{t}Y_{t-1},\qquad U_{t}^{i}=r_{t}S_{t-1}^{i}Y_{t-1}^{i},\qquad V_{t}^{i}=r_{t}M_{t-1}^{i}S_{t-1}^{i}Y_{t-1}^{i}\\
+\eta_{t}^{i}=\frac{\epsilon_{t}^{i}}{c}+r_{t}\left[\beta^{i}\sum_{j=1}^{k}e_{t}^{j}+(\gamma^{i}S_{t-1}^{i}+\delta^{i}M_{t-1}^{i}S_{t-1}^{i})e_{t}^{i}\right]
+\end{multline*}
+Note that $\mathbb{\ensuremath{E}}\eta_{t}^{i}=0$ and $\mathrm{var(}\eta_{i}^{i})=\sum_{j}d_{t}^{i,j}X_{t}^{j}$
+for some $d_{i,t}^{t}$. As, in practice, the ratio of $X_{t}^{i}$
+does not vary much in time, we approximate $\text{var}(\eta_{i}^{i})\doteq dX_{t}\doteq\frac{d}{c}I_{t}$
+where $d$ is unknown parameter. 
+
+Our hypotheses are 
+
+\[
+H_{0}^{i}:\gamma^{i}=0\text{ against }H_{1}^{i}:\gamma^{i}>0
+\]
+(schools do not/do have influence) and 
+\[
+\tilde{H}_{0}^{i}:\delta^{i}=0\text{ against }\tilde{H}_{1}^{i}:\delta^{i}<0
+\]
+(masks do not / do have influence).
+
+We use WLS to estimate coefficients in (\ref{eq:wls}), i.e. OLS after
+dividing the equation by $\sqrt{I_{t}}$ for each $t$, and test the
+hypotheses by $t$-tests for each $i.$
+\end{document}
+
+Further, assuming that, only a ratio $c$ of cases is reported, we
+may divide (\ref{eq:x}) by $c$ to get 
+\begin{equation}
+Y_{t}\doteq r_{t}C_{t-1}Y_{t-1},\qquad Y_{t}^{i}\doteq\alpha^{i}r_{t}C_{t-1}Y_{t-1}+\gamma^{i}r_{t}S_{t-1}^{i}Y_{t-1}^{i},\qquad1\leq i\leq4,\label{eq:y}
+\end{equation}
+where $Y_{t}\doteq cX_{t}$ is the overall reported number of infections
+and $Y_{t}^{i}\doteq cX_{t}^{i}$ is the reported infections number
+in the $i$-th cohort. By dividing by the size of the cohort $i$,
+we get
+\begin{equation}
+P_{t}^{i}\doteq\beta^{i}r_{t}C_{t-1}P_{t-1}+\gamma^{i}r_{t}S_{t-1}^{i}P_{t-1}^{i},\qquad P_{t}^{i}=\frac{Y_{t}^{i}}{s^{i}},\qquad P_{t}=\frac{Y_{t}}{s},\qquad\beta^{i}=\frac{s}{s^{i}},\label{eq:prp}
+\end{equation}
+where $s_{i}$ is the size of the $i$-th cohort and $s$ is the whole
+population size. 
+
+Clearly, adding cohort $X^5_{i,t}=\sum_{j} Z^j_{i,t} - \sum_{j} X^j_{i,t,}$ and summing over $1\leq j \leq 5$ gives
+\begin{equation}
+X_{i,t} = (\alpha+\beta) Q_t + e_{i,t}
+\label{eq:xi}
+\end{equation}
+which, by summing over all $i$, gives (\ref{eq:x}) provided that $\alpha + \beta = 1$.
+
+
+\begin{equation}
+X_{i,t} = f_t(d_i Y_{t-1}) + \beta_i Q_{i,t}
++ \gamma U_{i,t} + \delta V_{i,t} + e_{i,t}
+\label{eq:x}
+\end{equation}
+$$
+Q_{i,t}=D_tC_{t-1}Y_{i,t-1} , \qquad U_{i,t}=D_t N_t X_{i,t-1}
+\qquad V_{i,t}=D_t M_t X_{i,t-1}
+$$
+
+ $d_i$ is the fraction of population living in the $i$-th district
+ 
+ 
+ The values of contact reduction $C_t$ were taken from the longitudinal sociological survey \cite{paqcovid}. The trend $r_{t}$ is computed by double exponential smoothing of series
+$\frac{Y_{t}/Y_{t-1}}{C_{t-1}}$ with parameter $\alpha=0.2,\gamma=0.5$.  
+
+
+The values of $N$ and $M$ are estimated from publicly available
+sources, mostly from resolutions of the Czech government concerning
+school attendance, which have been put into effect through decrees
+of the Ministry of Education (see the electronic supplement for
+details).

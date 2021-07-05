@@ -314,7 +314,6 @@ scalar mu1exp2std = $stderr(UM2tn)
 scalar mu2exp2 = $coeff(UM2cn)
 scalar mu2exp2std = $stderr(UM2cn)
 
-
  
 fdnl <- ols Y2exp Q2n UdM2n qs
 
@@ -332,7 +331,8 @@ scalar muexp2std = $stderr(UdM2n)
 #scalar muexpc2std = $stderr(UdM2n)
 
 
-fdallg <- ols Y2n UN2n UM2n UR2n UMT2n UNT2n Q2n qs
+
+fdallg <- ols Y2n UN2n UM2n URT2n UMT2n UNT2n Q2n qs
 
 scalar mug2 = $coeff(UM2n)
 scalar mug2std = $stderr(UM2n)
@@ -342,14 +342,13 @@ scalar mutg2 = $coeff(UMT2n)
 scalar mutg2std = $stderr(UMT2n)
 scalar nutg2 = $coeff(UNT2n)
 scalar nutg2std = $stderr(UNT2n)
-scalar rhotg2 = $coeff(UR2n)
-scalar rhotg2std = $stderr(UR2n)
+scalar rhotg2 = $coeff(URT2n)
+scalar rhotg2std = $stderr(URT2n)
 scalar gammag2 = $coeff(Q2n)
 scalar gammag2std = $stderr(Q2n)
 
 
-
-fdall <- ols Y2n RYn RYDn UN2n UM2n UR2n UMT2n UNT2n Q2n
+fdall <- ols Y2n RYn RYDn UN2n UM2n URT2n UMT2n UNT2n Q2n
 
 scalar alpha2 = c2* $coeff(RYn)
 scalar alpha2std = c2* $stderr(RYn)
@@ -365,8 +364,17 @@ scalar mut2 = $coeff(UMT2n)
 scalar mut2std = $stderr(UMT2n)
 scalar nut2 = $coeff(UNT2n)
 scalar nut2std = $stderr(UNT2n)
-scalar rhot2 = $coeff(UR2n)
-scalar rhot2std = $stderr(UR2n)
+scalar rhot2 = $coeff(URT2n)
+scalar rhot2std = $stderr(URT2n)
+
+genr Phi2 = A2 * RYn
+genr Psi2 = A2 * RYDn
+
+fdphi<-ols Y2n Psi2 RYn RYDn UN2n UM2n URT2n UMT2n UNT2n Q2n 
+#scalar phi2 = c2* $coeff(Phi2)
+# scalar phi2std = c2* $stderr(Phi2)
+scalar psi2 = c2* $coeff(Psi2)
+scalar psi2std = c2* $stderr(Psi2)
 
 
 
@@ -415,7 +423,7 @@ scalar rhoexp3std = $stderr(UdR3n)
 #scalar nuexpc3std = $stderr(UdN3n)
 
 
-sdallg <- ols Y3n UM3n UN3n URT3n UMT3n UNT3n  Q3n qs
+sdallg <- ols Y3n UM3n UN3n UR3n URT3n UMT3n UNT3n  Q3n qs
 scalar nug3 = $coeff(UN3n)
 scalar nug3std = $stderr(UN3n)
 scalar mug3 = $coeff(UM3n)
@@ -426,11 +434,13 @@ scalar nutg3 = $coeff(UNT3n)
 scalar nutg3std = $stderr(UNT3n)
 scalar rhotg3 = $coeff(URT3n)
 scalar rhotg3std = $stderr(URT3n)
+scalar rhog3 = $coeff(UR3n)
+scalar rhog3std = $stderr(UR3n)
 scalar gammag3 = $coeff(Q3n)
 scalar gammag3std = $stderr(Q3n)
 
 
-sdall <- ols Y3n RYn RYDn UM3n UN3n URT3n UMT3n UNT3n Q3n
+sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n URT3n UMT3n UNT3n Q3n
 
 scalar alpha3 = c3* $coeff(RYn)
 scalar alpha3std = c3* $stderr(RYn)
@@ -448,8 +458,17 @@ scalar nut3 = $coeff(UNT3n)
 scalar nut3std = $stderr(UNT3n)
 scalar rhot3 = $coeff(URT3n)
 scalar rhot3std = $stderr(URT3n)
+scalar rho3 = $coeff(UR3n)
+scalar rho3std = $stderr(UR3n)
 
-# sdphi <- ols Y3n RYn RYDn U3n V3n W3n
+genr Phi3 = A3 * RYn
+genr Psi3 = A3 * RYDn
+
+sdphi <- ols Y3n Psi3 RYn RYDn UM3n UN3n UR3n URT3n UMT3n UNT3n Q3n
+#scalar phi3 = c3* $coeff(Phi3)
+#scalar phi3std = c3* $stderr(Phi3)
+scalar psi3 = c3* $coeff(Psi3)
+scalar psi3std = c3* $stderr(Psi3)
 
 sdns <- ols Y3n RYn RYDn Q3n
 
@@ -463,7 +482,7 @@ scalar gamman3std = $stderr(Q3n)
 
 genr Y4exp = Y4tn - Y4cn
 
-secnldif <- ols Y4exp UM4tn UM4cn  Q4n Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 QG_0	QG_1	QG_2	QG_3	QG_4	QG_5	QG_6	QG_7	QG_8	QG_9	QG_10	QG_11	QG_12	QG_13	QG_14	QG_15	QG_16	QG_17	QG_18	QG_19	QG_20	QG_21	QG_22	QG_23	QG_24	QG_25	QG_26	QG_27	QG_28	QG_29	QG_30	QG_31	QG_32	QG_33	QG_34	QG_35	QG_36	QG_37	QG_38	QG_39	QG_40	QG_41	QG_42	QG_43	QG_44	QG_45	QG_46	QG_47	QG_48	QG_49	QG_50	QG_51	QG_52	QG_53	QG_54	QG_55	QG_56	QG_57	QG_58	QG_59	QG_60	QG_61	QG_62	QG_63	QG_64	QG_65	QG_66	QG_67	QG_68	QG_69	QG_70	QG_71	QG_72	QG_73	QG_74	QG_75	QG_76
+secnldif <- ols Y4exp UM4tn UM4cn  Q4n qs
 
 scalar mu1exp4 = $coeff(UM4tn)
 scalar mu1exp4std = $stderr(UM4tn)
@@ -471,7 +490,7 @@ scalar mu2exp4 = $coeff(UM4cn)
 scalar mu2exp4std = $stderr(UM4cn)
 
 
-secnl <- ols Y4exp UdM4n Q4n Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 QG_0	QG_1	QG_2	QG_3	QG_4	QG_5	QG_6	QG_7	QG_8	QG_9	QG_10	QG_11	QG_12	QG_13	QG_14	QG_15	QG_16	QG_17	QG_18	QG_19	QG_20	QG_21	QG_22	QG_23	QG_24	QG_25	QG_26	QG_27	QG_28	QG_29	QG_30	QG_31	QG_32	QG_33	QG_34	QG_35	QG_36	QG_37	QG_38	QG_39	QG_40	QG_41	QG_42	QG_43	QG_44	QG_45	QG_46	QG_47	QG_48	QG_49	QG_50	QG_51	QG_52	QG_53	QG_54	QG_55	QG_56	QG_57	QG_58	QG_59	QG_60	QG_61	QG_62	QG_63	QG_64	QG_65	QG_66	QG_67	QG_68	QG_69	QG_70	QG_71	QG_72	QG_73	QG_74	QG_75	QG_76
+secnl <- ols Y4exp UdM4n Q4n qs
 
 scalar muexp4 = $coeff(UdM4n)
 scalar muexp4std = $stderr(UdM4n)
@@ -525,7 +544,16 @@ scalar mut4std = $stderr(UMT4n)
 scalar nut4 = $coeff(UNT4n)
 scalar nut4std = $stderr(UNT4n)
 
-#secphi<-ols Y4n RYn RYDn U4n V4n W4n
+
+genr Phi4 = A4 * RYn
+genr Psi4 = A4 * RYDn
+
+secphi<-ols Y4n Psi4 RYn RYDn UN4n UM4n UMT4n UNT4n Q4n
+#scalar phi4= c4* $coeff(Phi4)
+#scalar phi3std = c4* $stderr(Phi4)
+scalar psi4 = c4* $coeff(Psi4)
+scalar psi4std = c4* $stderr(Psi4)
+
 
 secns<-ols Y4n RYn RYDn Q4n
 
