@@ -3,6 +3,7 @@
 \documentclass[english]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \def\P{\mathbb{P}}
@@ -17,7 +18,7 @@
 
 \usepackage{babel}
 \begin{document}
-\title{Schools during Covid-19 Pandemic: the Case of the Czech Republic}
+\title{Contribution of Schools to Covid-19 Pandemic: the Case of the Czech Republic}
 \author{Martin \v Sm\'\i d, Jakub Drbohlav, Milan Zaj\'\i\v{c}ek\thanks{Institute of Information Theory and Automation of the CAS, BISOP}}
 \maketitle
 
@@ -39,12 +40,15 @@
 
 Closing schools during the present pandemics is the one of the most
 controversial issues. According to epidemiological mainstream, schools
-are strong drivers of respiratory diseases {[}cit - Gold, 2021; Stein-Zamir et al., 2020; Torres et al.,2020); see also Forbes et al. (2021); Ismail et al. (2021); Lessler et al. (2021); SAGE (2020);Brauner et al. (2021); Haug et al. (2020), but also Zhu et al. (2020); Zimmerman et al.(2021).{]}; therefore, closing
+are strong drivers of respiratory diseases \cite{gold_clusters_2021,stein-zamir_large_2020,torres_severe_2020}; see also 
+\cite{forbes_association_2021,sage_tfc_nodate, ismail_sars-cov-2_2021, lessler_household_2021, brauner_inferring_2021,haug_ranking_2020}, but also 
+\cite{zhu_meta-analysis_2020, zimmerman_incidence_2021}; therefore, closing
 schools was one of the first governmental reactions to the outburst
 of the present pandemic. However, the price the society pays for closing schools
 is high. Online education is not an equivalent substitute for the
-in-person one {[}cit - Di Pietro et al., 2020; Engzell et al., 2020; Maldonado and De Witte,2020{]}; moreover, the isolation of students leaves deficit
-in their necessary social contacts {[}cit - Bignardi et al., 2020; ECDC, 2020; Di Pietro et al., 2020;Ravens-Sieberer et al., 2021){]}. Thus, for the society,
+in-person one \cite{dipietro_impact_2020, engzell_learning_2020, maldonado_effect_nodate}; moreover, the isolation of students leaves deficits
+in their necessary social contacts \cite{bignardi_longitudinal_2020,
+noauthor_covid-19_2020,dipietro_impact_2020,ravens-sieberer_impact_2021}. Thus, for the society,
 decision whether and when to close schools means a painful trade-off,
 making any decision political rather then scientific; science, however,
 has irreplaceable role in giving the best possible (quantitative)
@@ -60,7 +64,7 @@ counter-epidemic measures are usually being introduced (and released)
 together, so it is difficult to distinguish their effects, and even
 in cases when the measures are applied in different times, still they
 can be assessed only in the context of the other measures applied.
-{[}Kulweit 2020{]}, for instance, regards school closure as a very
+\cite{brauner2021inferring}, for instance, regards school closure as a very
 effective means of curbing the present pandemics; however, it is necessary
 to take into account that school closures were usually the first measures
 applied, so their measured effect may be overestimated in comparison with the other measures.
@@ -132,7 +136,7 @@ June-30 & \multicolumn{4}{c}{end of school year}
 
 \section*{Methods}
 
-To determine the influence of attending schools of a given kind, we examine the number of reported infections $X_{i,t}$ in the corresponding age cohort for each district $i$ at time $t$. Generally, we assume that this number depends on the previous-week number of infections, the contact restriction reported two weeks earlier, and current rate of infectiousness. In addition to the total number of infections in population, we take into account the number of infections in the same district, and the number of infections in the same cohort within the district. See Appendix TBD for the justification of this general model. We also consider the influence of school opening regime on the infection number in the cohort. In particular,
+To determine the influence of attending schools of a given kind, we examine the number of reported infections $X_{i,t}$ in the corresponding age cohort for each district $i$ at time $t$. Generally, we assume that this number depends on the previous-week number of infections, the contact restriction reported two weeks earlier, and current rate of infectiousness. In addition to the total number of infections in population, we take into account the number of infections in the same district, and the number of infections in the same cohort within the district. See Appendix \ref{sec:epimodel} for the justification of this general model. We also consider the influence of school opening regime on the infection number in the cohort. In particular,
 \begin{equation}
 X_{i,t} = \alpha_i D_t Y_{t-1} + \beta_i D_t Y_{i,t-1} + \gamma D_t X_{i,t-1}
 + S_t X_{i,t-1} + e_{i,t}
@@ -144,7 +148,7 @@ S_t = D_t (\nu N_{t-1} + \mu M_{t-1} + \varrho R_{t-1} + \nu^\star N^\star_{t-1}
 + \mu^\star M^{\star}_{t-1} + \varrho^\star R^\star_{t-1} 
 )
 $$
-for each district $i$ and time $t$. Here, $Y_t$ is the number of overall infections within the population at $t$, $Y_{i,t}$ is the number of infections within the $i$-th district at $t$, $N_t$, $M_t$, $R_t$ evaluate the degree of school opening without masks, with masks, with weekly rotations (with masks on), respectively (zero means all classes closed, one means all classes opened), $N^\star_t$, $M^\star_t$, $R^\star_t$ stand for the same regimes with the addition that students are regularly tested at schools,  and $e_{i,t}$ is the error term. Finally, $d_t$ is the (predicted) rate of infectiousness and $C_t$ is the contact restriction at $t$, see Appendix TBD for details.
+for each district $i$ and time $t$. Here, $Y_t$ is the number of overall infections within the population at $t$, $Y_{i,t}$ is the number of infections within the $i$-th district at $t$, $N_t$, $M_t$, $R_t$ evaluate the degree of school opening without masks, with masks, with weekly rotations (with masks on), respectively (zero means all classes closed, one means all classes opened), $N^\star_t$, $M^\star_t$, $R^\star_t$ stand for the same regimes with the addition that students are regularly tested at schools,  and $e_{i,t}$ is the error term. Finally, $d_t$ is the (predicted) rate of infectiousness and $C_t$ is the contact restriction at $t$, see Appendix \ref{sec:epimodel} for details.
 
 We estimate the impact of school opening four ways: by comparing two sub-cohorts of the examined cohort assuming each of them to follow (\ref{eq:x}) either with the same or with different school regime coefficients $\nu,\mu,\dots,\varrho^\star$, by estimating parameters from (\ref{eq:x}) applied to the whole cohort and, finally, by estimating the parameters from simplified version of (\ref{eq:x}) with homogeneous impact of districts.
 
@@ -242,10 +246,10 @@ For simplicity we assume that the frontier one-year cohorts split
 by half between the competing school categories, so the infections
 happening in the cohort split by two between each category. 
 Consequently, the number of cases by pre-school children over week $t$ in
-the $i$-th district will be $X_{i,t}^{1}=Z_{i,t}^{3}+Z_{i,t}^{4}+Z_{i,t}^{5}+\frac{1}{2}Z_{i,t}^{6}$,
-the number by the first degree $X_{i,t}^{2}=\frac{1}{2}Z_{i,t}^{6}+Z_{i,t}^{7}+\dots+\frac{1}{2}Z_{i,t}^{11}$,
-by the second degree $X_{i,t}^{3}=\frac{1}{2}Z_{i,t}^{11}+Z_{i,t}^{12}+\dots+\frac{1}{2}Z_{i,t}^{15}$
-and that by the secondary schools $X_{i,t}^{4}=\frac{1}{2}Z_{i,t}^{15}+Z_{i,t}^{16}+\dots+\frac{1}{2}Z_{i,t}^{19},$where
+the $i$-th district will be $X_{i,t}^{k}=Z_{i,t}^{3}+Z_{i,t}^{4}+Z_{i,t}^{5}+\frac{1}{2}Z_{i,t}^{6}$,
+the number by the first degree $X_{i,t}^{f}=\frac{1}{2}Z_{i,t}^{6}+Z_{i,t}^{7}+\dots+\frac{1}{2}Z_{i,t}^{11}$,
+by the second degree $X_{i,t}^{s}=\frac{1}{2}Z_{i,t}^{11}+Z_{i,t}^{12}+\dots+\frac{1}{2}Z_{i,t}^{15}$
+and that by the secondary schools $X_{i,t}^{e}=\frac{1}{2}Z_{i,t}^{15}+Z_{i,t}^{16}+\dots+\frac{1}{2}Z_{i,t}^{19},$where
 $Z_{i,t}^{j}$ is the number of cases by the $j$-year old individuals
 in the $i$-th district. 
 We take the values $Z^j_{i,t}$ from the public dataset by the Czech Ministry of
@@ -317,15 +321,16 @@ Further, we computed aggregated estimates of the regime parameters as the weight
 \begin{center}
 \small
 \begin{tabular}{l|ccc|ccc|ccc} Para- & \multicolumn{3}{c}{First degree} & \multicolumn{3}{c}{Second degree} & \multicolumn{3}{c}{Secondary} \\ meter  & par. & inc. & rel. & par. & inc.& rel.& par.& inc. & rel.\\  \hline  
-$\nu$& $0.33(0.04)$& $0.66$&$0.15$& $0.68(0.04)$& $1.03$&$0.15$& $0.92(0.04)$& $1.96$& $0.15$\\
-$\mu$& $0.2(0.02)$& $0.41$&$1$& $0.17(0.04)$& $0.27$&$0.3$& $0.22(0.06)$& $0.47$& $1$\\
+$\nu$& $0.33(0.04)$& $0.66$&$0.15$& $0.68(0.04)$& $1.04$&$0.15$& $0.9(0.04)$& $1.91$& $0.15$\\
+$\mu$& $0.21(0.02)$& $0.42$&$1$& $0.18(0.04)$& $0.27$&$0.3$& $0.23(0.06)$& $0.48$& $1$\\
 $\rho$&&&& $0.12(0.05)$& $0.18$&$0.3$&&& \\
-$\rho^\star$& $0.09(0.01)$& $0.19$&$0.15$& $0.03(0.03)$& $0.05$&$0.15$&&& \\
-$\mu^\star$& $0.11(0.02)$& $0.22$&$0.15$& $0.12(0.02)$& $0.19$&$0.15$& $0.21(0.03)$& $0.45$& $0.15$\\
-$\nu^\star$& $0.02(0.03)$& $0.04$&$0.15$& $0.15(0.03)$& $0.23$&$0.15$& $0.31(0.04)$& $0.66$& $0.15$\\
-$\gamma$& $-0.05(0.03)$& –& –& $-0.07(0.03)$& –& –& $-0.17(0.03)$& –& –\\
-$\omega$& $0.55(0.04)$& –& –& $0.72(0.06)$& –& –& $0.64(0.06)$& –& –\\
+$\rho^\star$& $0.09(0.02)$& $0.19$&$0.15$& $0.03(0.03)$& $0.05$&$0.15$&&& \\
+$\mu^\star$& $0.1(0.02)$& $0.2$&$0.15$& $0.13(0.02)$& $0.19$&$0.15$& $0.2(0.03)$& $0.43$& $0.15$\\
+$\nu^\star$& $0.08(0.03)$& $0.17$&$0.15$& $0.21(0.03)$& $0.32$&$0.15$& $0.39(0.03)$& $0.82$& $0.15$\\
+$\gamma$& $-0.05(0.03)$& –& –& $-0.09(0.03)$& –& –& $-0.17(0.03)$& –& –\\
+$\omega$& $0.55(0.04)$& –& –& $0.74(0.06)$& –& –& $0.65(0.06)$& –& –\\
 \end{tabular}
+
 \caption{Aggregated estimates of regime coefficients.{\em par.} -- aggregated estimate(standard error), {\em inc.} -- percentage increase given no contact restriction (see (\ref{eq:rhoproc})), {\em rel.} -- the sum of source coefficients' weights.}
 \label{tab:metacomp}
 \end{center}
@@ -374,12 +379,50 @@ that children, not going to schools, are infected anyway in other
 environments. This would mean, in the language of (\ref{eq:linear}), that 
 additional $\phi D_t (1-A_{t-1}) Y_{i,t-1}$ would be infected. Both the hypotheses can be tested by adding a term $\psi D_t A_{t-1} Y_{i,t-1}$ into (\ref{eq:linear}) with positive values of $\psi$ speaking of additional infections in schools; negative values speaking for infections outside when the school is closed. Doing that, we got significant positive values for all the first degree, the second degree and secondary schools; however, estimates of regime coefficients came out shifted. The reason is that addition of a new covariate, correlated with the regime ones, introduced co-linearity, producing spurious results, into the models, as confirmed by Belsley-Kuh-Welsch tests. Nevertheless, the results speak against the hypothesis that, during school closures, children are more infected elsewhere.
 
+\bibliographystyle{apalike}
+\bibliography{schools}
+
 \appendix 
 \section*{Appendix}
 
 \section{The Epidemic Model}
+\label{sec:epimodel}
 
-TBD
+To capture the influence of other infection sources than schools, we use a simple model in which the infections $X_{i,t}$ in the cohort within the district $i$ at time $t$ depend on the previous week overall infections, the infections within the district and the infections within the cohort in the district:
+\begin{equation}
+X_{i,t} = \alpha_i D_t Y_{t-1} + \beta_i D_t Y_{i,t-1} + \gamma D_t X_{i,t-1}
++ e_{i,t},\qquad D_t = d_t C_{t-2}
+\label{eq:g}
+\end{equation}
+Here, $C_{t}$ is the overall contact reduction reported by the longitudinal sociological study \cite{paqcovid} and $d_t$ is the rate of infectiousness. The time lag two of the contact restriction was chosen as that maximizing the correlation: $\max_\tau \mathrm{corr}(Y_t,C_{t-\tau} Y_{t-1})$, the infection ratio was determined as $d_t = w_t r_t i_t$. Here, $w_t = (1 + \varsigma \cos(at+b))$, where $\varsigma = 0.18$, $a$ and $b$ are set so that the period is one-year period and the peak is on January, 10th, is a cyclic component reflecting the (direct or indirect) influence of weather conditions. Further, $r_t$ is the course of infectiousness, determined by the composition of the virus variants present in the Czech republic; in particular, we assumed $r_t$ to be constant, equal to $r^0=1.55$, up to the end of 2020, linear up to March 1st, 2021, and then constant, equal to $r^1=2.44$. Finally, $i_t$ is the effect of natural immunization, $t_t = (1-\alpha \iota_t)$ where $\alpha=0.4$ is the ascertainment rate and $\iota_t$ is the ratio of total reported infections within the examined cohorts (from 3 to 21 year old with only half of the latter cohort). The parameters $\varsigma, r^0, r^1 $ we obtained by estimation; notably, the value of $\varsigma$ is very close to that obtained independently by \cite{gavenvciak2021seasonal}. The value $\alpha$ has been set according the rate of respondents of \cite{paqcovid} suffering from typical covid symptoms and who underwent testing.  See Figure \ref{fig:dt} for the course of $d_t$ and its empirical counterparts, and also Table \ref{tab:global} for the estimation of homogenized version of (\ref{eq:g}):
+\begin{equation}
+X_{i,t} = \alpha h s_i D_t Y_{t-1} + \beta h D_t Y_{i,t-1} + \gamma D_t X_{i,t-1}
++ e_{i,t}
+\label{eq:global}
+\end{equation}
+where $h$ is the relative size of the examined cohort with respect to the rest of the population and $s_i$ is the relative size of the $i$-th district's population.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8cm]{dt.eps} 
+\caption{Course of $d_t$ (line),  $\frac{Y_{t}}{Y_{t-1} C_{t-2}}$ (triangles) and 
+$\frac{\overline{X}_{t}}{\overline{X}_{t-1} C_{t-2}}$ (diamonds) where $overline{X}_{t}=X^k_t+X^f_t+X^s_t+X^e_t$ is the number of infections in all the examined cohorts.
+}
+\label{fig:dt}
+\end{center}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l|cccc} Parameter & Kindergartens & First degree & Second degree & Secondary \\ \hline 
+$\alpha$& $0.1^{***}(0.01)$& $0.14^{***}(0.01)$& $0.19^{***}(0.02)$& $0.23^{***}(0.02)$\\
+$\beta$& $0.37^{***}(0.01)$& $0.4^{***}(0.01)$& $0.45^{***}(0.01)$& $0.26^{***}(0.02)$\\
+$\gamma$& $0.14^{***}(0.01)$& $0.07^{***}(0.01)$& $0.11^{***}(0.01)$& $0.23^{***}(0.01)$\\
+\end{tabular}
+\caption{Estimation of (\ref{eq:global})}
+\label{tab:global}
+\end{center}
+\end{table}
 
 
 \section{Covariates}
@@ -398,29 +441,29 @@ TBD
 \begin{table}
 \begin{center}
 \begin{tabular}{lc|cccc} \multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline 
-S &$\nu^1$& $0^{}(0.03)$&&&\\
+S &$\nu^1$& $0.01^{}(0.03)$&&&\\
 ($w=15\%$ &$\nu^2$& $-0.01^{}(0.03)$&&&\\
 Each)  &$\mu^1$&& $0.15^{***}(0.01)$& $0.19^{***}(0.04)$& $0.16^{***}(0.06)$\\
 &$\mu^2$&& $0.29^{***}(0.04)$&& $0.32^{***}(0.08)$\\ 
 &$\rho^2$&&& $0.13^{**}(0.05)$&\\ \hline
-C &$\mu$&& $0.18^{***}(0.02)$&& $0.19^{***}(0.06)$\\
+C &$\mu$&& $0.19^{***}(0.02)$&& $0.2^{***}(0.07)$\\
 ($w=55\%$) &$\mu-\rho$&&& $0.04^{}(0.05)$&\\ \hline
-W &$\nu$& $0^{}(0)$& $0.33^{***}(0.04)$& $0.69^{***}(0.04)$& $0.91^{***}(0.04)$\\
-($w=10\%$) &$\mu$&& $0.26^{***}(0.02)$& $0.17^{***}(0.03)$& $0.31^{***}(0.04)$\\
+W &$\nu$& $0^{}(0)$& $0.33^{***}(0.04)$& $0.69^{***}(0.04)$& $0.88^{***}(0.04)$\\
+($w=10\%$) &$\mu$&& $0.26^{***}(0.02)$& $0.17^{***}(0.03)$& $0.29^{***}(0.04)$\\
 ($w=10\%$) &$\rho$&&& $0.11^{***}(0.04)$&\\
 &$\rho^\star$&& $0.1^{***}(0.02)$& $0.04^{}(0.03)$&\\
-&$\mu^\star$&& $0.12^{***}(0.02)$& $0.13^{***}(0.02)$& $0.22^{***}(0.03)$\\
-&$\nu^\star$&& $0.04^{}(0.03)$& $0.16^{***}(0.03)$& $0.3^{***}(0.04)$\\
-&$\gamma$& $0.08^{***}(0.01)$& $-0.16^{***}(0.03)$& $-0.14^{***}(0.03)$& $-0.22^{***}(0.04)$\\ \hline
-WH&$\nu$& $-0.01^{***}(0)$& $0.32^{***}(0.04)$& $0.65^{***}(0.03)$& $0.94^{***}(0.04)$\\
-($w=5\%$) &$\mu$&& $0.25^{***}(0.02)$& $0.15^{***}(0.03)$& $0.33^{***}(0.04)$\\
-&$\rho$&&& $0.1^{***}(0.04)$&\\
+&$\mu^\star$&& $0.11^{***}(0.02)$& $0.13^{***}(0.02)$& $0.21^{***}(0.03)$\\
+&$\nu^\star$&& $0.1^{***}(0.03)$& $0.22^{***}(0.03)$& $0.37^{***}(0.03)$\\
+&$\gamma$& $0.08^{***}(0.01)$& $-0.16^{***}(0.03)$& $-0.15^{***}(0.03)$& $-0.19^{***}(0.03)$\\ \hline
+WH&$\nu$& $-0.01^{***}(0)$& $0.32^{***}(0.04)$& $0.66^{***}(0.04)$& $0.95^{***}(0.04)$\\
+($w=5\%$) &$\mu$&& $0.25^{***}(0.02)$& $0.16^{***}(0.03)$& $0.33^{***}(0.04)$\\
+&$\rho$&&& $0.1^{**}(0.04)$&\\
 &$\rho^\star$&& $0.07^{***}(0.01)$& $0.02^{}(0.03)$&\\
 &$\mu^\star$&& $0.07^{***}(0.02)$& $0.12^{***}(0.02)$& $0.19^{***}(0.02)$\\
-&$\nu^\star$&& $-0.02^{}(0.03)$& $0.12^{***}(0.03)$& $0.33^{***}(0.04)$\\
-&$\alpha$& $0.02^{**}(0.01)$& $0.07^{***}(0.02)$& $0.09^{***}(0.03)$& $0.19^{***}(0.03)$\\
-&$\beta$& $0.13^{***}(0.01)$& $0.48^{***}(0.02)$& $0.63^{***}(0.03)$& $0.45^{***}(0.03)$\\
-&$\gamma$& $0.15^{***}(0.01)$& $-0.05^{*}(0.03)$& $-0.07^{***}(0.03)$& $-0.17^{***}(0.03)$\\
+&$\nu^\star$&& $0.05^{}(0.03)$& $0.19^{***}(0.03)$& $0.43^{***}(0.03)$\\
+&$\alpha$& $0.02^{**}(0.01)$& $0.06^{***}(0.02)$& $0.08^{***}(0.03)$& $0.18^{***}(0.03)$\\
+&$\beta$& $0.13^{***}(0.01)$& $0.48^{***}(0.02)$& $0.66^{***}(0.03)$& $0.46^{***}(0.03)$\\
+&$\gamma$& $0.15^{***}(0.01)$& $-0.05^{**}(0.03)$& $-0.09^{***}(0.03)$& $-0.17^{***}(0.03)$\\
 \end{tabular}
 \caption{Parameter estimates by individual models.}
 \label{tab:params}
@@ -471,6 +514,49 @@ $\nu$& $0.58(0.04)$& –& $0.76(0.06)$& –& $0.7(0.06)$& –\\
 
 
 
+tmp
+
+\begin{tabular}{lc|cccc} \multicolumn{2}{c}{Model}& Kindergartens & First degree & Second degree & Secondary \\ \hline 
+S &$\nu^1$& $0.01^{}(0.04)$&&&\\
+($w=15\%$ &$\nu^2$& $-0.01^{}(0.04)$&&&\\
+Each)  &$\mu^1$&& $0.19^{***}(0.02)$& $0.2^{***}(0.04)$& $0.17^{***}(0.06)$\\
+&$\mu^2$&& $0.32^{***}(0.04)$&& $0.34^{***}(0.08)$\\ 
+&$\rho^2$&&& $0.14^{**}(0.06)$&\\ \hline
+C &$\mu$&& $0.23^{***}(0.02)$&& $0.2^{***}(0.07)$\\
+($w=55\%$) &$\mu-\rho$&&& $0.04^{}(0.06)$&\\ \hline
+W &$\nu$& $0^{}(0)$& $0.12^{***}(0.04)$& $0.53^{***}(0.04)$& $0.78^{***}(0.04)$\\
+($w=10\%$) &$\mu$&& $0.16^{***}(0.03)$& $0.02^{}(0.03)$& $0.18^{***}(0.04)$\\
+($w=10\%$) &$\rho$&&& $0.08^{*}(0.05)$&\\
+&$\rho^\star$&& $0.13^{***}(0.02)$& $0.06^{*}(0.04)$&\\
+&$\mu^\star$&& $0.12^{***}(0.03)$& $0.15^{***}(0.03)$& $0.32^{***}(0.04)$\\
+&$\nu^\star$&& $0.09^{*}(0.04)$& $0.25^{***}(0.04)$& $0.56^{***}(0.05)$\\
+&$\gamma$& $0.11^{***}(0.01)$& $-0.05^{*}(0.03)$& $-0.05^{*}(0.03)$& $-0.18^{***}(0.03)$\\ \hline
+WH&$\nu$& $-0.01^{**}(0)$& $0.15^{***}(0.04)$& $0.53^{***}(0.04)$& $0.87^{***}(0.03)$\\
+($w=5\%$) &$\mu$&& $0.18^{***}(0.03)$& $0.03^{}(0.03)$& $0.23^{***}(0.03)$\\
+&$\rho$&&& $0.06^{}(0.05)$&\\
+&$\rho^\star$&& $0.09^{***}(0.02)$& $0.05^{}(0.04)$&\\
+&$\mu^\star$&& $0.07^{***}(0.02)$& $0.15^{***}(0.02)$& $0.28^{***}(0.03)$\\
+&$\nu^\star$&& $0.01^{}(0.04)$& $0.22^{***}(0.04)$& $0.61^{***}(0.04)$\\
+&$\alpha$& $0.02^{*}(0.01)$& $0.1^{***}(0.02)$& $0.12^{***}(0.03)$& $0.25^{***}(0.03)$\\
+&$\beta$& $0.16^{***}(0.01)$& $0.52^{***}(0.03)$& $0.71^{***}(0.04)$& $0.55^{***}(0.04)$\\
+&$\gamma$& $0.17^{***}(0.01)$& $0.04^{*}(0.02)$& $0^{}(0.02)$& $-0.15^{***}(0.03)$\\
+\end{tabular}
+\begin{tabular}{l|cccc} Parameter & Kindergartens & First degree & Second degree & Secondary \\ \hline 
+$\alpha$& $0.14^{***}(0.01)$& $0.2^{***}(0.01)$& $0.28^{***}(0.02)$& $0.33^{***}(0.02)$\\
+$\beta$& $0.36^{***}(0.01)$& $0.38^{***}(0.01)$& $0.44^{***}(0.02)$& $0.29^{***}(0.02)$\\
+$\gamma$& $0.18^{***}(0.01)$& $0.13^{***}(0.01)$& $0.14^{***}(0.01)$& $0.21^{***}(0.01)$\\
+\end{tabular}
+
+\begin{tabular}{l|ccc|ccc|ccc} Para- & \multicolumn{3}{c}{First degree} & \multicolumn{3}{c}{Second degree} & \multicolumn{3}{c}{Secondary} \\ meter  & par. & inc. & rel. & par. & inc.& rel.& par.& inc. & rel.\\  \hline  
+$\nu$& $0.13(0.04)$& $0.2$&$0.15$& $0.53(0.04)$& $0.64$&$0.15$& $0.81(0.04)$& $1.24$& $0.15$\\
+$\mu$& $0.23(0.02)$& $0.35$&$1$& $0.11(0.04)$& $0.13$&$0.3$& $0.21(0.07)$& $0.33$& $1$\\
+$\rho$&&&& $0.11(0.05)$& $0.13$&$0.3$&&& \\
+$\rho^\star$& $0.12(0.02)$& $0.18$&$0.15$& $0.06(0.04)$& $0.07$&$0.15$&&& \\
+$\mu^\star$& $0.1(0.03)$& $0.15$&$0.15$& $0.15(0.03)$& $0.18$&$0.15$& $0.31(0.04)$& $0.47$& $0.15$\\
+$\nu^\star$& $0.06(0.04)$& $0.09$&$0.15$& $0.24(0.04)$& $0.29$&$0.15$& $0.58(0.05)$& $0.88$& $0.15$\\
+$\gamma$& $0.04(0.02)$& –& –& $0(0.02)$& –& –& $-0.15(0.03)$& –& –\\
+$\omega$& $0.62(0.05)$& –& –& $0.83(0.07)$& –& –& $0.81(0.07)$& –& –\\
+\end{tabular}
 
 
 \end{document}

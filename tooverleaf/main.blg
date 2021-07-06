@@ -1,48 +1,50 @@
 This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-I found no \citation commands---while reading file main.aux
-I found no \bibdata command---while reading file main.aux
-I found no \bibstyle command---while reading file main.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 482 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
-int.to.chr$ -- 0
+The style file: apalike.bst
+Database file #1: schools.bib
+Warning--empty journal in bignardi_longitudinal_2020
+Warning--empty institution in dipietro_impact_2020
+Warning--there's a number but no volume in torres_severe_2020
+You've used 20 entries,
+            1935 wiz_defined-function locations,
+            577 strings with 10717 characters,
+and the built_in function-call counts, 10978 in all, are:
+= -- 963
+> -- 906
+< -- 6
++ -- 349
+- -- 340
+* -- 1048
+:= -- 2024
+add.period$ -- 66
+call.type$ -- 20
+change.case$ -- 271
+chr.to.int$ -- 19
+cite$ -- 23
+duplicate$ -- 289
+empty$ -- 454
+format.name$ -- 362
+if$ -- 2000
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+missing$ -- 14
+newline$ -- 109
+num.names$ -- 60
+pop$ -- 234
+preamble$ -- 1
+purify$ -- 269
 quote$ -- 0
-skip$ -- 0
+skip$ -- 252
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 408
+swap$ -- 52
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
+type$ -- 120
+warning$ -- 3
+while$ -- 48
 width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+write$ -- 265
+(There were 3 warnings)
