@@ -1,7 +1,7 @@
 #open /home/martin/Documents/s/covid/schools/data.ods --sheet=6
 #setobs District Week --panel-vars
 
-open /home/martin/Documents/s/covid/schools/data.ods --sheet=9
+open /home/martin/Documents/s/covid/schools/data.ods --sheet=10
 setobs District Week --panel-vars
 
 dummify District
