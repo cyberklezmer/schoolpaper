@@ -6,45 +6,45 @@ Database file #1: schools.bib
 Warning--empty journal in bignardi_longitudinal_2020
 Warning--empty institution in dipietro_impact_2020
 Warning--there's a number but no volume in torres_severe_2020
-You've used 20 entries,
+You've used 22 entries,
             1935 wiz_defined-function locations,
-            577 strings with 10717 characters,
-and the built_in function-call counts, 10978 in all, are:
-= -- 963
-> -- 906
-< -- 6
-+ -- 349
-- -- 340
-* -- 1048
-:= -- 2024
-add.period$ -- 66
-call.type$ -- 20
-change.case$ -- 271
-chr.to.int$ -- 19
-cite$ -- 23
-duplicate$ -- 289
-empty$ -- 454
-format.name$ -- 362
-if$ -- 2000
+            586 strings with 10960 characters,
+and the built_in function-call counts, 11468 in all, are:
+= -- 1015
+> -- 920
+< -- 8
++ -- 353
+- -- 344
+* -- 1078
+:= -- 2122
+add.period$ -- 72
+call.type$ -- 22
+change.case$ -- 283
+chr.to.int$ -- 21
+cite$ -- 25
+duplicate$ -- 309
+empty$ -- 484
+format.name$ -- 368
+if$ -- 2090
 int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 14
-newline$ -- 109
-num.names$ -- 60
-pop$ -- 234
+newline$ -- 119
+num.names$ -- 66
+pop$ -- 240
 preamble$ -- 1
-purify$ -- 269
+purify$ -- 281
 quote$ -- 0
-skip$ -- 252
+skip$ -- 270
 stack$ -- 0
-substring$ -- 408
+substring$ -- 432
 swap$ -- 52
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
+type$ -- 132
 warning$ -- 3
-while$ -- 48
+while$ -- 52
 width$ -- 0
-write$ -- 265
+write$ -- 289
 (There were 3 warnings)

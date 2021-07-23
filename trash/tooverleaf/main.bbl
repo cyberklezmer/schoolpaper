@@ -26,6 +26,17 @@ Brauner, J.~M., Mindermann, S., Sharma, M., Johnston, D., Salvatier, J.,
 \newblock Publisher: American Association for the Advancement of Science
   Section: Research Article.
 
+\bibitem[Brom, 2021]{Neruda}
+Brom, Cyril, e.~a. (2021).
+\newblock Rotation-based schedules in elementary schoolsto prevent covid-19
+  spread: A simulation study.
+\newblock to appear.
+
+\bibitem[{Chech Ministry of Health}, 2021]{osoby}
+{Chech Ministry of Health} (2021).
+\newblock Open datasets.
+\newblock \url{https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/osoby.csv}.
+
 \bibitem[Di~Pietro et~al., 2020]{dipietro_impact_2020}
 Di~Pietro, G., Biagi, F., Costa, P., Karpi{\'n}ski, Z., and Mazza, J. (2020).
 \newblock The likely impact of covid-19 on education: Reflections based on the
