@@ -259,6 +259,10 @@ scalar nu1exp1std = $stderr(UN1tn)
 scalar nu2exp1 = $coeff(UN1cn)
 scalar nu2exp1std = $stderr(UN1cn)
 
+kondnl <- ols Y1exp Q1n UdN1n qs
+
+scalar nuexp1 = $coeff(UdN1n)
+scalar nuexp1std = $stderr(UdN1n)
 
 #scalar nuexp1 = $coeff(UdN1n)
 #scalar nuexp1std = $stderr(UdN1n)
@@ -272,23 +276,23 @@ scalar nu2exp1std = $stderr(UN1cn)
 #scalar nuexpc1std = $stderr(UdN1n)
 
 
-kindallg <- ols Y11n Q11n UN1tn qs
-scalar nug1 = $coeff(UN1tn)
-scalar nug1std = $stderr(UN1tn)
-scalar gammag1 = $coeff(Q11n)
-scalar gammag1std = $stderr(Q11n)
+kindallg <- ols Y1n Q1n UN1n qs
+scalar nug1 = $coeff(UN1n)
+scalar nug1std = $stderr(UN1n)
+scalar gammag1 = $coeff(Q1n)
+scalar gammag1std = $stderr(Q1n)
 
-kindall <- ols Y11n Q11n RYn RYDn UN1tn 
+kindall <- ols Y1n Q1n RYn RYDn UN1n 
 
 
 scalar alpha1 = c1* $coeff(RYn)
 scalar alpha1std = c1* $stderr(RYn)
 scalar beta1 = c1*$coeff(RYDn)
 scalar beta1std = c1*$stderr(RYDn)
-scalar gamma1 = $coeff(Q11n)
-scalar gamma1std = $stderr(Q11n)
-scalar nu1 = $coeff(UN1tn)
-scalar nu1std = $stderr(UN1tn)
+scalar gamma1 = $coeff(Q1n)
+scalar gamma1std = $stderr(Q1n)
+scalar nu1 = $coeff(UN1n)
+scalar nu1std = $stderr(UN1n)
 
 # kindphi <- ols Y1n RYn RYDn U1n W1n
 
