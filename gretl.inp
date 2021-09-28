@@ -1,7 +1,7 @@
-#open /home/martin/Documents/s/covid/schools/data.ods --sheet=6
-#setobs District Week --panel-vars
 
 open /home/martin/Documents/s/covid/schools/data.ods --sheet=10
+
+#open /home/martin/tmp/data.presens.ods --sheet=10
 setobs District Week --panel-vars
 
 dummify District
@@ -236,33 +236,41 @@ genr TQ_70 = DWeek_70 * RYDn
 genr TQ_71 = DWeek_71 * RYDn
 genr TQ_72 = DWeek_72 * RYDn
 
-
-scalar c1=31.7681541301955
+scalar c1=38.1790039271689
 scalar c2=18.7459708378764
 scalar c3=23.9766621937179
 scalar c4=25.7611097527338
 
+
 list qs = Q_0 Q_1 Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 QG_0	QG_1	QG_2	QG_3	QG_4	QG_5	QG_6	QG_7	QG_8	QG_9	QG_10	QG_11	QG_12	QG_13	QG_14	QG_15	QG_16	QG_17	QG_18	QG_19	QG_20	QG_21	QG_22	QG_23	QG_24	QG_25	QG_26	QG_27	QG_28	QG_29	QG_30	QG_31	QG_32	QG_33	QG_34	QG_35	QG_36	QG_37	QG_38	QG_39	QG_40	QG_41	QG_42	QG_43	QG_44	QG_45	QG_46	QG_47	QG_48	QG_49	QG_50	QG_51	QG_52	QG_53	QG_54	QG_55	QG_56	QG_57	QG_58	QG_59	QG_60	QG_61	QG_62	QG_63	QG_64	QG_65	QG_66	QG_67	QG_68	QG_69	QG_70	QG_71	QG_72	QG_73	QG_74	QG_75	QG_76
-list tq = Q_0	Q_1	Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 TQ_1	TQ_2	TQ_3	TQ_4	TQ_5	TQ_6	TQ_7	TQ_8	TQ_9	TQ_10	TQ_11	TQ_12	TQ_13	TQ_14	TQ_15	TQ_16	TQ_17	TQ_18	TQ_19	TQ_20	TQ_21	TQ_22	TQ_23	TQ_24	TQ_25	TQ_26	TQ_27	TQ_28	TQ_29	TQ_30	TQ_31	TQ_32	TQ_33	TQ_34	TQ_35	TQ_36	TQ_37	TQ_38	TQ_39	TQ_40	TQ_41	TQ_42	TQ_43	TQ_44	TQ_45	TQ_46	TQ_47	TQ_48	TQ_49	TQ_50	TQ_51	TQ_52	TQ_53	TQ_54	TQ_55	TQ_56	TQ_57	TQ_58	TQ_59	TQ_60	TQ_61	TQ_62	TQ_63	TQ_64	TQ_65	TQ_66	TQ_67	TQ_68	TQ_69	TQ_70	TQ_71	TQ_72
+#list tq = Q_0	Q_1	Q_2	Q_3	Q_4	Q_5	Q_6	Q_7	Q_8	Q_9	Q_10	Q_11	Q_12	Q_13	Q_14	Q_15	Q_16	Q_17	Q_18	Q_19	Q_20	Q_21	Q_22	Q_23	Q_24	Q_25	Q_26	Q_27	Q_28	Q_29	Q_30	Q_31	Q_32	Q_33	Q_34	Q_35	Q_36	Q_37	Q_38	Q_39	Q_40	Q_41	Q_42	Q_43	Q_44	Q_45	Q_46	Q_47	Q_48	Q_49	Q_50	Q_51	Q_52	Q_53	Q_54	Q_55	Q_56	Q_57	Q_58	Q_59	Q_60	Q_61	Q_62	Q_63	Q_64	Q_65	Q_66	Q_67	Q_68	Q_69	Q_70	Q_71	Q_72	Q_73	Q_74	Q_75	Q_76 TQ_1	TQ_2	TQ_3	TQ_4	TQ_5	TQ_6	TQ_7	TQ_8	TQ_9	TQ_10	TQ_11	TQ_12	TQ_13	TQ_14	TQ_15	TQ_16	TQ_17	TQ_18	TQ_19	TQ_20	TQ_21	TQ_22	TQ_23	TQ_24	TQ_25	TQ_26	TQ_27	TQ_28	TQ_29	TQ_30	TQ_31	TQ_32	TQ_33	TQ_34	TQ_35	TQ_36	TQ_37	TQ_38	TQ_39	TQ_40	TQ_41	TQ_42	TQ_43	TQ_44	TQ_45	TQ_46	TQ_47	TQ_48	TQ_49	TQ_50	TQ_51	TQ_52	TQ_53	TQ_54	TQ_55	TQ_56	TQ_57	TQ_58	TQ_59	TQ_60	TQ_61	TQ_62	TQ_63	TQ_64	TQ_65	TQ_66	TQ_67	TQ_68	TQ_69	TQ_70	TQ_71	TQ_72
 
 
 #kindergartens
 
+#genr Y1exp = Y1tn - Y1cn
+#genr Q12n = Q1n + Q2n
+
+#genr Y1exp = Y1tn - 2.06 * Y1cn
+
+#kindnldif <- ols Y1exp UN1tn UN1cn Q1n minq qs
+
+
+#scalar nu1exp1 = $coeff(UN1tn)
+#scalar nu1exp1std = $stderr(UN1tn)
+#scalar nu2exp2 = $coeff(UN1cn)
+#scalar nu2exp2std = $stderr(UN1cn)
+
 genr Y1exp = Y1tn - Y1cn
+#genr minq = -Q2n
 
 
-kindnldif <- ols Y1exp UN1tn UN1cn Q1n qs
-
-
-scalar nu1exp1 = $coeff(UN1tn)
-scalar nu1exp1std = $stderr(UN1tn)
-scalar nu2exp1 = $coeff(UN1cn)
-scalar nu2exp1std = $stderr(UN1cn)
-
-kondnl <- ols Y1exp Q1n UdN1n qs
+kindnl <- ols Y1exp Q1n  UdN1n qs
 
 scalar nuexp1 = $coeff(UdN1n)
 scalar nuexp1std = $stderr(UdN1n)
+
+
 
 #scalar nuexp1 = $coeff(UdN1n)
 #scalar nuexp1std = $stderr(UdN1n)
@@ -275,6 +283,11 @@ scalar nuexp1std = $stderr(UdN1n)
 #scalar nuexpc1 = $coeff(UdN1n)
 #scalar nuexpc1std = $stderr(UdN1n)
 
+#genr T1Oexp = dN1(-1) * RYn
+#genr T1Dexp = dN1(-1) * RYDn
+#ols Y1exp Q1n minq UdN1n qs T1Oexp T1Dexp
+
+
 
 kindallg <- ols Y1n Q1n UN1n qs
 scalar nug1 = $coeff(UN1n)
@@ -282,17 +295,18 @@ scalar nug1std = $stderr(UN1n)
 scalar gammag1 = $coeff(Q1n)
 scalar gammag1std = $stderr(Q1n)
 
-kindall <- ols Y1n Q1n RYn RYDn UN1n 
+kindall <- ols Y1n RYn RYDn UN1n #Q1n 
 
 
 scalar alpha1 = c1* $coeff(RYn)
 scalar alpha1std = c1* $stderr(RYn)
 scalar beta1 = c1*$coeff(RYDn)
 scalar beta1std = c1*$stderr(RYDn)
-scalar gamma1 = $coeff(Q1n)
-scalar gamma1std = $stderr(Q1n)
+#scalar gamma1 = $coeff(Q1n)
+#scalar gamma1std = $stderr(Q1n)
 scalar nu1 = $coeff(UN1n)
 scalar nu1std = $stderr(UN1n)
+scalar sigma1 = $sigma
 
 # kindphi <- ols Y1n RYn RYDn U1n W1n
 
@@ -352,27 +366,68 @@ scalar gammag2 = $coeff(Q2n)
 scalar gammag2std = $stderr(Q2n)
 
 
-fdall <- ols Y2n RYn RYDn UN2n UM2n URT2n UMT2n UNT2n Q2n
+fdall <- ols Y2n RYn RYDn UN2n UM2n URT2n UMT2n UNT2n #Q2n
 
 scalar alpha2 = c2* $coeff(RYn)
 scalar alpha2std = c2* $stderr(RYn)
 scalar beta2 = c2*$coeff(RYDn)
 scalar beta2std = c2*$stderr(RYDn)
-scalar gamma2 = $coeff(Q2n)
-scalar gamma2std = $stderr(Q2n)
-scalar mu2 = $coeff(UM2n)
-scalar mu2std = $stderr(UM2n)
+#scalar gamma2 = $coeff(Q2n)
+#scalar gamma2std = $stderr(Q2n)
 scalar nu2 = $coeff(UN2n)
 scalar nu2std = $stderr(UN2n)
+scalar mu2 = $coeff(UM2n)
+scalar mu2std = $stderr(UM2n)
 scalar mut2 = $coeff(UMT2n)
 scalar mut2std = $stderr(UMT2n)
 scalar nut2 = $coeff(UNT2n)
 scalar nut2std = $stderr(UNT2n)
 scalar rhot2 = $coeff(URT2n)
 scalar rhot2std = $stderr(URT2n)
+scalar sigma2 = $sigma
+scalar s2=sqrt(var($uhat))
 
-genr Phi2 = A2 * RYn
-genr Psi2 = A2 * RYDn
+genr TO2 = T2(-1) * RYn
+genr TD2 = T2(-1) * RYDn
+
+scalar alphaf2 = $coeff(RYn)
+scalar betaf2 = $coeff(RYDn)
+scalar ff2 = 1
+scalar nuf2 = nu2
+scalar muf2 = mu2 
+scalar rhotf2 = rhot2
+scalar mutf2 = mut2
+scalar nutf2 = nut2
+
+smpl TO2>=0 --restrict
+
+fdt <- nls Y2n = alphaf2 * RYn + betaf2 * RYDn + alphaf2 * (ff2-1) * TO2 + betaf2 * (ff2-1) * TD2 + nuf2* UN2n+ muf2 * UM2n + rhotf2 * URT2n + mutf2 * UMT2n + nutf2 * UNT2n
+deriv alphaf2 = RYn + (ff2-1) * TO2 
+deriv betaf2 = RYDn + (ff2-1) * TD2 
+deriv ff2 = alphaf2 * TO2 + betaf2 * TD2 
+deriv nuf2 = UN2n
+deriv muf2 = UM2n 
+deriv rhotf2 = URT2n 
+deriv mutf2 = UMT2n 
+deriv nutf2 = UNT2n
+end nls
+
+scalar alphaf2std = c2* $stderr(alphaf2)
+scalar betaf2std = c2*$stderr(betaf2)
+scalar nuf2std = $stderr(nuf2)
+scalar muf2std = $stderr(muf2)
+scalar rhotf2std = $stderr(rhotf2)
+scalar mutf2std = $stderr(mutf2)
+scalar nutf2std = $stderr(nutf2)
+scalar ff2std = $stderr(ff2)
+
+alphaf2 *= c2 
+betaf2 *= c2 
+
+smpl full
+
+genr Phi2 = A2(-1) * RYn
+genr Psi2 = A2(-1) * RYDn
 
 fdphi<-ols Y2n Psi2 RYn RYDn UN2n UM2n URT2n UMT2n UNT2n Q2n 
 #scalar phi2 = c2* $coeff(Phi2)
@@ -444,14 +499,14 @@ scalar gammag3 = $coeff(Q3n)
 scalar gammag3std = $stderr(Q3n)
 
 
-sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n URT3n UMT3n UNT3n Q3n
+sdall <- ols Y3n RYn RYDn UM3n UN3n UR3n URT3n UMT3n UNT3n #Q3n
 
 scalar alpha3 = c3* $coeff(RYn)
 scalar alpha3std = c3* $stderr(RYn)
 scalar beta3 = c3*$coeff(RYDn)
 scalar beta3std = c3*$stderr(RYDn)
-scalar gamma3 = $coeff(Q3n)
-scalar gamma3std = $stderr(Q3n)
+#scalar gamma3 = $coeff(Q3n)
+#scalar gamma3std = $stderr(Q3n)
 scalar nu3 = $coeff(UN3n)
 scalar nu3std = $stderr(UN3n)
 scalar mu3 = $coeff(UM3n)
@@ -464,9 +519,54 @@ scalar rhot3 = $coeff(URT3n)
 scalar rhot3std = $stderr(URT3n)
 scalar rho3 = $coeff(UR3n)
 scalar rho3std = $stderr(UR3n)
+scalar sigma3 = $sigma
 
-genr Phi3 = A3 * RYn
-genr Psi3 = A3 * RYDn
+genr TO3 = T3(-1) * RYn
+genr TD3 = T3(-1) * RYDn
+
+scalar alphaf3 = $coeff(RYn)
+scalar betaf3 = $coeff(RYDn)
+scalar ff3 = 1
+scalar nuf3 = nu3
+scalar muf3 = mu3 
+scalar rhof3 = rho3 
+scalar rhotf3 = rhot3
+scalar mutf3 = mut3
+scalar nutf3 = nut3
+
+smpl TO3>=0 --restrict
+
+sdt <- nls Y3n = alphaf3 * RYn + betaf3 * RYDn + alphaf3 * (ff3-1) * TO3 + betaf3 * (ff3-1) * TD3 + nuf3* UN3n+ muf3 * UM3n +  rhof3 * UR3n + rhotf3 * URT3n + mutf3 * UMT3n + nutf3 * UNT3n
+deriv alphaf3 = RYn + (ff3-1) * TO3 
+deriv betaf3 = RYDn + (ff3-1) * TD3
+deriv ff3 = alphaf3 * TO3 + betaf3 * TD3 
+deriv nuf3 = UN3n
+deriv muf3 = UM3n 
+deriv rhof3 = UR3n 
+deriv rhotf3 = URT3n 
+deriv mutf3 = UMT3n 
+deriv nutf3 = UNT3n
+end nls
+
+scalar alphaf3std = c3* $stderr(alphaf3)
+scalar betaf3std = c3*$stderr(betaf3)
+scalar nuf3std = $stderr(nuf3)
+scalar muf3std = $stderr(muf3)
+scalar rhof3std = $stderr(rhof3)
+scalar rhotf3std = $stderr(rhotf3)
+scalar mutf3std = $stderr(mutf3)
+scalar nutf3std = $stderr(nutf3)
+scalar ff3std = $stderr(ff3)
+
+alphaf3 *= c3
+betaf3 *= c3 
+
+
+smpl full
+
+
+genr Phi3 = A3(-1) * RYn
+genr Psi3 = A3(-1) * RYDn
 
 sdphi <- ols Y3n Psi3 RYn RYDn UM3n UN3n UR3n URT3n UMT3n UNT3n Q3n
 #scalar phi3 = c3* $coeff(Phi3)
@@ -530,15 +630,15 @@ scalar gammag4 = $coeff(Q4n)
 scalar gammag4std = $stderr(Q4n)
 
 
-secall<-ols Y4n RYn RYDn UN4n UM4n UMT4n UNT4n Q4n
+secall<-ols Y4n RYn RYDn UN4n UM4n UMT4n UNT4n #Q4n
 
 
 scalar alpha4 = c4* $coeff(RYn)
 scalar alpha4std = c4* $stderr(RYn)
 scalar beta4 = c4*$coeff(RYDn)
 scalar beta4std = c4*$stderr(RYDn)
-scalar gamma4 = $coeff(Q4n)
-scalar gamma4std = $stderr(Q4n)
+#scalar gamma4 = $coeff(Q4n)
+#scalar gamma4std = $stderr(Q4n)
 scalar nu4 = $coeff(UN4n)
 scalar nu4std = $stderr(UN4n)
 scalar mu4 = $coeff(UM4n)
@@ -547,10 +647,50 @@ scalar mut4 = $coeff(UMT4n)
 scalar mut4std = $stderr(UMT4n)
 scalar nut4 = $coeff(UNT4n)
 scalar nut4std = $stderr(UNT4n)
+scalar sigma4 = $sigma
 
 
-genr Phi4 = A4 * RYn
-genr Psi4 = A4 * RYDn
+genr TO4 = T4(-1) * RYn
+genr TD4 = T4(-1) * RYDn
+
+scalar alphaf4 = $coeff(RYn)
+scalar betaf4 = $coeff(RYDn)
+scalar ff4 = 1
+scalar nuf4 = nu4
+scalar muf4 = mu4 
+scalar mutf4 = mut4
+scalar nutf4 = nut4
+
+smpl TO4>=0 --restrict
+
+sect <- nls Y4n = alphaf4 * RYn + betaf4 * RYDn + alphaf4 * (ff4-1) * TO4 + betaf4 * (ff4-1) * TD4 + nuf4* UN4n+ muf4 * UM4n + mutf4 * UMT4n + nutf4 * UNT4n
+deriv alphaf4 = RYn + (ff4-1) * TO4
+deriv betaf4 = RYDn + (ff4-1) * TD4  
+deriv ff4 = alphaf4 * TO4 + betaf4 * TD4 
+deriv nuf4 = UN4n
+deriv muf4 = UM4n 
+deriv mutf4 = UMT4n 
+deriv nutf4 = UNT4n
+end nls
+
+scalar alphaf4std = c4* $stderr(alphaf4)
+scalar betaf4std = c4*$stderr(betaf4)
+scalar nuf4std = $stderr(nuf4)
+scalar muf4std = $stderr(muf4)
+scalar mutf4std = $stderr(mutf4)
+scalar nutf4std = $stderr(nutf4)
+scalar ff4std = $stderr(ff4)
+
+alphaf4 *= c4
+betaf4 *= c4 
+
+
+smpl full
+
+
+
+genr Phi4 = A4(-1) * RYn
+genr Psi4 = A4(-1) * RYDn
 
 secphi<-ols Y4n Psi4 RYn RYDn UN4n UM4n UMT4n UNT4n Q4n
 #scalar phi4= c4* $coeff(Phi4)
@@ -569,6 +709,180 @@ scalar gamman4 = $coeff(Q4n)
 scalar gamman4std = $stderr(Q4n)
 
 all <- ols YDn RYn RYDn
+
+
+# sensitivity
+
+lags 1 dN1																																																																													
+genr phig0=dN1_1 * RYn * DDistrict_0																																																																													
+genr phig1=dN1_1 * RYn * DDistrict_1																																																																													
+genr phig2=dN1_1 * RYn * DDistrict_2																																																																													
+genr phig3=dN1_1 * RYn * DDistrict_3																																																																													
+genr phig4=dN1_1 * RYn * DDistrict_4																																																																													
+genr phig5=dN1_1 * RYn * DDistrict_5																																																																													
+genr phig6=dN1_1 * RYn * DDistrict_6																																																																													
+genr phig7=dN1_1 * RYn * DDistrict_7																																																																													
+genr phig8=dN1_1 * RYn * DDistrict_8																																																																													
+genr phig9=dN1_1 * RYn * DDistrict_9																																																																													
+genr phig10=dN1_1 * RYn * DDistrict_10																																																																													
+genr phig11=dN1_1 * RYn * DDistrict_11																																																																													
+genr phig12=dN1_1 * RYn * DDistrict_12																																																																													
+genr phig13=dN1_1 * RYn * DDistrict_13																																																																													
+genr phig14=dN1_1 * RYn * DDistrict_14																																																																													
+genr phig15=dN1_1 * RYn * DDistrict_15																																																																													
+genr phig16=dN1_1 * RYn * DDistrict_16																																																																													
+genr phig17=dN1_1 * RYn * DDistrict_17																																																																													
+genr phig18=dN1_1 * RYn * DDistrict_18																																																																													
+genr phig19=dN1_1 * RYn * DDistrict_19																																																																													
+genr phig20=dN1_1 * RYn * DDistrict_20																																																																													
+genr phig21=dN1_1 * RYn * DDistrict_21																																																																													
+genr phig22=dN1_1 * RYn * DDistrict_22																																																																													
+genr phig23=dN1_1 * RYn * DDistrict_23																																																																													
+genr phig24=dN1_1 * RYn * DDistrict_24																																																																													
+genr phig25=dN1_1 * RYn * DDistrict_25																																																																													
+genr phig26=dN1_1 * RYn * DDistrict_26																																																																													
+genr phig27=dN1_1 * RYn * DDistrict_27																																																																													
+genr phig28=dN1_1 * RYn * DDistrict_28																																																																													
+genr phig29=dN1_1 * RYn * DDistrict_29																																																																													
+genr phig30=dN1_1 * RYn * DDistrict_30																																																																													
+genr phig31=dN1_1 * RYn * DDistrict_31																																																																													
+genr phig32=dN1_1 * RYn * DDistrict_32																																																																													
+genr phig33=dN1_1 * RYn * DDistrict_33																																																																													
+genr phig34=dN1_1 * RYn * DDistrict_34																																																																													
+genr phig35=dN1_1 * RYn * DDistrict_35																																																																													
+genr phig36=dN1_1 * RYn * DDistrict_36																																																																													
+genr phig37=dN1_1 * RYn * DDistrict_37																																																																													
+genr phig38=dN1_1 * RYn * DDistrict_38																																																																													
+genr phig39=dN1_1 * RYn * DDistrict_39																																																																													
+genr phig40=dN1_1 * RYn * DDistrict_40																																																																													
+genr phig41=dN1_1 * RYn * DDistrict_41																																																																													
+genr phig42=dN1_1 * RYn * DDistrict_42																																																																													
+genr phig43=dN1_1 * RYn * DDistrict_43																																																																													
+genr phig44=dN1_1 * RYn * DDistrict_44																																																																													
+genr phig45=dN1_1 * RYn * DDistrict_45																																																																													
+genr phig46=dN1_1 * RYn * DDistrict_46																																																																													
+genr phig47=dN1_1 * RYn * DDistrict_47																																																																													
+genr phig48=dN1_1 * RYn * DDistrict_48																																																																													
+genr phig49=dN1_1 * RYn * DDistrict_49																																																																													
+genr phig50=dN1_1 * RYn * DDistrict_50																																																																													
+genr phig51=dN1_1 * RYn * DDistrict_51																																																																													
+genr phig52=dN1_1 * RYn * DDistrict_52																																																																													
+genr phig53=dN1_1 * RYn * DDistrict_53																																																																													
+genr phig54=dN1_1 * RYn * DDistrict_54																																																																													
+genr phig55=dN1_1 * RYn * DDistrict_55																																																																													
+genr phig56=dN1_1 * RYn * DDistrict_56																																																																													
+genr phig57=dN1_1 * RYn * DDistrict_57																																																																													
+genr phig58=dN1_1 * RYn * DDistrict_58																																																																													
+genr phig59=dN1_1 * RYn * DDistrict_59																																																																													
+genr phig60=dN1_1 * RYn * DDistrict_60																																																																													
+genr phig61=dN1_1 * RYn * DDistrict_61																																																																													
+genr phig62=dN1_1 * RYn * DDistrict_62																																																																													
+genr phig63=dN1_1 * RYn * DDistrict_63																																																																													
+genr phig64=dN1_1 * RYn * DDistrict_64																																																																													
+genr phig65=dN1_1 * RYn * DDistrict_65																																																																													
+genr phig66=dN1_1 * RYn * DDistrict_66																																																																													
+genr phig67=dN1_1 * RYn * DDistrict_67																																																																													
+genr phig68=dN1_1 * RYn * DDistrict_68																																																																													
+genr phig69=dN1_1 * RYn * DDistrict_69																																																																													
+genr phig70=dN1_1 * RYn * DDistrict_70																																																																													
+genr phig71=dN1_1 * RYn * DDistrict_71																																																																													
+genr phig72=dN1_1 * RYn * DDistrict_72																																																																													
+genr phig73=dN1_1 * RYn * DDistrict_73																																																																													
+genr phig74=dN1_1 * RYn * DDistrict_74																																																																													
+genr phig75=dN1_1 * RYn * DDistrict_75																																																																													
+genr phig76=dN1_1 * RYn * DDistrict_76																																																																													
+genr phid0=dN1_1 * RYDn * DDistrict_0																																																																													
+genr phid1=dN1_1 * RYDn * DDistrict_1																																																																													
+genr phid2=dN1_1 * RYDn * DDistrict_2																																																																													
+genr phid3=dN1_1 * RYDn * DDistrict_3																																																																													
+genr phid4=dN1_1 * RYDn * DDistrict_4																																																																													
+genr phid5=dN1_1 * RYDn * DDistrict_5																																																																													
+genr phid6=dN1_1 * RYDn * DDistrict_6																																																																													
+genr phid7=dN1_1 * RYDn * DDistrict_7																																																																													
+genr phid8=dN1_1 * RYDn * DDistrict_8																																																																													
+genr phid9=dN1_1 * RYDn * DDistrict_9																																																																													
+genr phid10=dN1_1 * RYDn * DDistrict_10																																																																													
+genr phid11=dN1_1 * RYDn * DDistrict_11																																																																													
+genr phid12=dN1_1 * RYDn * DDistrict_12																																																																													
+genr phid13=dN1_1 * RYDn * DDistrict_13																																																																													
+genr phid14=dN1_1 * RYDn * DDistrict_14																																																																													
+genr phid15=dN1_1 * RYDn * DDistrict_15																																																																													
+genr phid16=dN1_1 * RYDn * DDistrict_16																																																																													
+genr phid17=dN1_1 * RYDn * DDistrict_17																																																																													
+genr phid18=dN1_1 * RYDn * DDistrict_18																																																																													
+genr phid19=dN1_1 * RYDn * DDistrict_19																																																																													
+genr phid20=dN1_1 * RYDn * DDistrict_20																																																																													
+genr phid21=dN1_1 * RYDn * DDistrict_21																																																																													
+genr phid22=dN1_1 * RYDn * DDistrict_22																																																																													
+genr phid23=dN1_1 * RYDn * DDistrict_23																																																																													
+genr phid24=dN1_1 * RYDn * DDistrict_24																																																																													
+genr phid25=dN1_1 * RYDn * DDistrict_25																																																																													
+genr phid26=dN1_1 * RYDn * DDistrict_26																																																																													
+genr phid27=dN1_1 * RYDn * DDistrict_27																																																																													
+genr phid28=dN1_1 * RYDn * DDistrict_28																																																																													
+genr phid29=dN1_1 * RYDn * DDistrict_29																																																																													
+genr phid30=dN1_1 * RYDn * DDistrict_30																																																																													
+genr phid31=dN1_1 * RYDn * DDistrict_31																																																																													
+genr phid32=dN1_1 * RYDn * DDistrict_32																																																																													
+genr phid33=dN1_1 * RYDn * DDistrict_33																																																																													
+genr phid34=dN1_1 * RYDn * DDistrict_34																																																																													
+genr phid35=dN1_1 * RYDn * DDistrict_35																																																																													
+genr phid36=dN1_1 * RYDn * DDistrict_36																																																																													
+genr phid37=dN1_1 * RYDn * DDistrict_37																																																																													
+genr phid38=dN1_1 * RYDn * DDistrict_38																																																																													
+genr phid39=dN1_1 * RYDn * DDistrict_39																																																																													
+genr phid40=dN1_1 * RYDn * DDistrict_40																																																																													
+genr phid41=dN1_1 * RYDn * DDistrict_41																																																																													
+genr phid42=dN1_1 * RYDn * DDistrict_42																																																																													
+genr phid43=dN1_1 * RYDn * DDistrict_43																																																																													
+genr phid44=dN1_1 * RYDn * DDistrict_44																																																																													
+genr phid45=dN1_1 * RYDn * DDistrict_45																																																																													
+genr phid46=dN1_1 * RYDn * DDistrict_46																																																																													
+genr phid47=dN1_1 * RYDn * DDistrict_47																																																																													
+genr phid48=dN1_1 * RYDn * DDistrict_48																																																																													
+genr phid49=dN1_1 * RYDn * DDistrict_49																																																																													
+genr phid50=dN1_1 * RYDn * DDistrict_50																																																																													
+genr phid51=dN1_1 * RYDn * DDistrict_51																																																																													
+genr phid52=dN1_1 * RYDn * DDistrict_52																																																																													
+genr phid53=dN1_1 * RYDn * DDistrict_53																																																																													
+genr phid54=dN1_1 * RYDn * DDistrict_54																																																																													
+genr phid55=dN1_1 * RYDn * DDistrict_55																																																																													
+genr phid56=dN1_1 * RYDn * DDistrict_56																																																																													
+genr phid57=dN1_1 * RYDn * DDistrict_57																																																																													
+genr phid58=dN1_1 * RYDn * DDistrict_58																																																																													
+genr phid59=dN1_1 * RYDn * DDistrict_59																																																																													
+genr phid60=dN1_1 * RYDn * DDistrict_60																																																																													
+genr phid61=dN1_1 * RYDn * DDistrict_61																																																																													
+genr phid62=dN1_1 * RYDn * DDistrict_62																																																																													
+genr phid63=dN1_1 * RYDn * DDistrict_63																																																																													
+genr phid64=dN1_1 * RYDn * DDistrict_64																																																																													
+genr phid65=dN1_1 * RYDn * DDistrict_65																																																																													
+genr phid66=dN1_1 * RYDn * DDistrict_66																																																																													
+genr phid67=dN1_1 * RYDn * DDistrict_67																																																																													
+genr phid68=dN1_1 * RYDn * DDistrict_68																																																																													
+genr phid69=dN1_1 * RYDn * DDistrict_69																																																																													
+genr phid70=dN1_1 * RYDn * DDistrict_70																																																																													
+genr phid71=dN1_1 * RYDn * DDistrict_71																																																																													
+genr phid72=dN1_1 * RYDn * DDistrict_72																																																																													
+genr phid73=dN1_1 * RYDn * DDistrict_73																																																																													
+genr phid74=dN1_1 * RYDn * DDistrict_74																																																																													
+genr phid75=dN1_1 * RYDn * DDistrict_75																																																																													
+genr phid76=dN1_1 * RYDn * DDistrict_76																																																																													
+																																																																													
+list phis = 	 phig0 phid0	 phig1 phid1	 phig2 phid2	 phig3 phid3	 phig4 phid4	 phig5 phid5	 phig6 phid6	 phig7 phid7	 phig8 phid8	 phig9 phid9	 phig10 phid10	 phig11 phid11	 phig12 phid12	 phig13 phid13	 phig14 phid14	 phig15 phid15	 phig16 phid16	 phig17 phid17	 phig18 phid18	 phig19 phid19	 phig20 phid20	 phig21 phid21	 phig22 phid22	 phig23 phid23	 phig24 phid24	 phig25 phid25	 phig26 phid26	 phig27 phid27	 phig28 phid28	 phig29 phid29	 phig30 phid30	 phig31 phid31	 phig32 phid32	 phig33 phid33	 phig34 phid34	 phig35 phid35	 phig36 phid36	 phig37 phid37	 phig38 phid38	 phig39 phid39	 phig40 phid40	 phig41 phid41	 phig42 phid42	 phig43 phid43	 phig44 phid44	 phig45 phid45	 phig46 phid46	 phig47 phid47	 phig48 phid48	 phig49 phid49	 phig50 phid50	 phig51 phid51	 phig52 phid52	 phig53 phid53	 phig54 phid54	 phig55 phid55	 phig56 phid56	 phig57 phid57	 phig58 phid58	 phig59 phid59	 phig60 phid60	 phig61 phid61	 phig62 phid62	 phig63 phid63	 phig64 phid64	 phig65 phid65	 phig66 phid66	 phig67 phid67	 phig68 phid68	 phig69 phid69	 phig70 phid70	 phig71 phid71	 phig72 phid72	 phig73 phid73	 phig74 phid74	 phig75 phid75	 phig76 phid76
+																																																																													
+kindphi <- ols Y1exp Q1n UdN1n phis qs																																																																													
+
+scalar nuf1 = $coeff(UdN1n)
+scalar nuf1std = $stderr(UdN1n)
+
+genr phig = dN1_1 * RYn
+genr phid = dN1_1 * RYDn
+kindphilin <- ols Y1exp Q1n UdN1n RYn RYDn phig phid
+
+scalar nuflin1 = $coeff(UdN1n)
+scalar nuflin1std = $stderr(UdN1n)
+
 
 stop here
 
