@@ -1,41 +1,43 @@
-Contribution of Schools to Covid-19 Pandemic]{Contribution of Schools to Covid-19 Pandemic: Evidence from Czechia
+
+**Contribution of Schools to Covid-19 Pandemic: Evidence from Czechia**
 
 C. Brom, J. Drbohlav, M. Šmíd and M. Zajíček.
 
-DATA ITEM
+*data item*
 
 
-1. Data sources
+**Data sources**
 
 For the computation, the following data sources have been used
+ - Anonymized preson-level public dataset of covid infections in
+   Czechia, provided by the Czech Ministry of Health, available at
+   https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/osoby.csv  
+ - Estimates of contact restrictions during the Covid-19 pandemics by
+   PaQ research, publicly available at
+   https://zivotbehempandemie.cz/kontakty
+  - Various publicly available data including press releases and
+   public materials by the Czech Ministry of Education, Yuouth and
+   Sports.
 
-A. Anonymized preson-level public dataset of covid infections in Czechia, provided by the Czech Ministry of Health, available at https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/osoby.csv
-
-B. Estimates of contact restrictions during the Covid-19 pandemics by PaQ research, publicly available at https://zivotbehempandemie.cz/kontakty
-
-C. Various publicly available data including press releases and public materials by the Czech Ministry of Education, Yuouth and Sports.
-
-
-2. Code
+**Code**
 
 All results are replicable by means of LibreOffice Calc (or, alternatively, Microsoft Excel), Gretl (free statistical software) and Gnuplot (free graphing software). 
-
 All the inputs and code are contained in the following files
-* data.ods - contains all the input data, their preprocessing, inputs for Gretl and Gnuplot and outputs (TeX source of tables and graphs)
-* gretl.inp - gretl script
-* rho.plt - gnuplot script
+ 1. data.ods - contains all the input data, their preprocessing, inputs for Gretl and Gnuplot and outputs (LaTeX source of tables and graphs)
+ 2. gretl.inp - gretl script
+ 3. rho.plt - gnuplot script
 
+**Preparation** 
 
-3. Replication 
+Download data.ods, gretl.inp and rho.plt and change the path data.ods in the first line of gretl.inp.
 
-Preparation: Download data.ods, gretl.inp and rho.plt and change the path data.ods in the first line of gretl.inp.
+**Computation** 
 
-Computing the main results: 
-A. Run the script gretl.inp
-B. From the Icon View of Gretl, copy the values of the scalars into the clipboard (as CSV) by right-clicking on the Scalars icon.
-C. Paste the content of the clipboard to the gray rectangle of "Results" sheet of data.ods, close and again open "data.ods".
-D. The Latex sources for Tables 8, 9. 10, 1 and 2 are in "to tex" sheet. 
-E. To get the figures:
+1. Run the script gretl.inp
+2. From the Icon View of Gretl, copy the values of the scalars into the clipboard (as CSV) by right-clicking on the Scalars icon.
+3. Paste the content of the clipboard to the gray rectangle of "Results" sheet of data.ods, close and again open "data.ods".
+4. The Latex sources for Tables 8, 9. 10, 1 and 2 are in "to tex" sheet. 
+5. To get the figures:
   - Export graphs for Figure 1 and Figure 7 from "Results" sheet (below, around 90th row)
   - Export the graph for Figure 9 from "Work" sheet (below)
   - Export the graphs for Figures 3 - 6 from "Prevalence" sheet
@@ -46,9 +48,8 @@ E. To get the figures:
     - "nuflin1" and "nuflin1std" (estimate in the linearized CC analysis)
 
 
-Sensitivity analyisi: Computing the variants infectionsness $d_t$ (Section D)
+**Computing the variants infectionsness $d_t$ (Section D)**
 
 Change "dt type" parameter to 3 (B7 of "Params" sheet) and proceesd as with the main analysis 
-
 
 
